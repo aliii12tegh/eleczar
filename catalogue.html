@@ -245,6 +245,10 @@
                             </button>
                         </form>
                     </div>
+                                        <a href="client.html" class="p-2 hover:bg-gray-50 dark:hover:bg-slate-800 rounded-full text-gray-500 hover:text-[#0055FF] transition-colors relative" aria-label="Panier de devis">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-secondary text-white text-[9px] font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center hidden">0</span>
+                    </a>
                     <button id="dark-mode-toggle" class="p-2 hover:bg-gray-50 dark:hover:bg-slate-800 rounded-full text-gray-500 hover:text-[#0055FF] transition-colors">
                         <span class="material-symbols-outlined">dark_mode</span>
                     </button>
@@ -257,6 +261,10 @@
                     <button id="mobile-search-trigger" class="p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full text-gray-600 hover:text-[#0055FF]">
                         <span class="material-symbols-outlined">search</span>
                     </button>
+                                        <a href="client.html" class="p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full text-gray-600 dark:text-zinc-300 hover:text-[#0055FF] relative" aria-label="Panier de devis">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        <span id="cart-badge-mobile" class="absolute -top-1 -right-1 bg-secondary text-white text-[9px] font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center hidden">0</span>
+                    </a>
                     <button id="mobile-menu-trigger" class="p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full text-gray-700 dark:text-white">
                         <span class="material-symbols-outlined">menu</span>
                     </button>
@@ -1154,14 +1162,17 @@
         window.updateCartBadge = function() {
             const list = getQuoteList();
             const totalItems = list.reduce((sum, item) => sum + item.qty, 0);
-            if (cartBadge) {
-                cartBadge.textContent = totalItems;
-                if (totalItems > 0) {
-                    cartBadge.classList.remove('hidden');
-                } else {
-                    cartBadge.classList.add('hidden');
+            const badges = [document.getElementById('cart-badge'), document.getElementById('cart-badge-mobile')];
+            badges.forEach(badge => {
+                if (badge) {
+                    badge.textContent = totalItems;
+                    if (totalItems > 0) {
+                        badge.classList.remove('hidden');
+                    } else {
+                        badge.classList.add('hidden');
+                    }
                 }
-            }
+            });
         };
         
         window.showToast = function(message) {
@@ -1527,14 +1538,17 @@
         window.updateCartBadge = function() {
             const list = getQuoteList();
             const totalItems = list.reduce((sum, item) => sum + item.qty, 0);
-            if (cartBadge) {
-                cartBadge.textContent = totalItems;
-                if (totalItems > 0) {
-                    cartBadge.classList.remove('hidden');
-                } else {
-                    cartBadge.classList.add('hidden');
+            const badges = [document.getElementById('cart-badge'), document.getElementById('cart-badge-mobile')];
+            badges.forEach(badge => {
+                if (badge) {
+                    badge.textContent = totalItems;
+                    if (totalItems > 0) {
+                        badge.classList.remove('hidden');
+                    } else {
+                        badge.classList.add('hidden');
+                    }
                 }
-            }
+            });
         };
         
         window.showToast = function(message) {
