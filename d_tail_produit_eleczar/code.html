@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .circuit-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(0, 65, 200, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "tertiary-fixed-dim": "#bec6e0",
+                "on-primary": "#ffffff",
+                "outline": "#737688",
+                "on-tertiary-fixed-variant": "#3f465c",
+                "surface": "#f7f9fb",
+                "on-background": "#191c1e",
+                "on-primary-fixed": "#001551",
+                "on-secondary": "#ffffff",
+                "error-container": "#ffdad6",
+                "on-primary-fixed-variant": "#0039b3",
+                "on-secondary-fixed-variant": "#7c2e00",
+                "on-surface": "#191c1e",
+                "inverse-surface": "#2d3133",
+                "surface-tint": "#004dea",
+                "primary-fixed-dim": "#b6c4ff",
+                "on-error": "#ffffff",
+                "on-tertiary-container": "#e0e7ff",
+                "inverse-on-surface": "#eff1f3",
+                "surface-bright": "#f7f9fb",
+                "outline-variant": "#c3c5d9",
+                "secondary-container": "#fe6500",
+                "secondary-fixed-dim": "#ffb596",
+                "on-primary-container": "#e3e6ff",
+                "error": "#ba1a1a",
+                "surface-container-highest": "#e0e3e5",
+                "primary": "#0041c8",
+                "on-secondary-fixed": "#360f00",
+                "background": "#f7f9fb",
+                "on-tertiary-fixed": "#131b2e",
+                "primary-container": "#0055ff",
+                "surface-container-lowest": "#ffffff",
+                "inverse-primary": "#b6c4ff",
+                "on-tertiary": "#ffffff",
+                "tertiary-container": "#5f677e",
+                "surface-variant": "#e0e3e5",
+                "tertiary": "#474f65",
+                "secondary-fixed": "#ffdbcd",
+                "tertiary-fixed": "#dae2fd",
+                "surface-container-high": "#e6e8ea",
+                "surface-container-low": "#f2f4f6",
+                "primary-fixed": "#dce1ff",
+                "on-error-container": "#93000a",
+                "on-surface-variant": "#434656",
+                "secondary": "#a33e00",
+                "surface-container": "#eceef0",
+                "surface-dim": "#d8dadc",
+                "on-secondary-container": "#541d00"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "md": "16px",
+                "unit": "4px",
+                "lg": "24px",
+                "max-width": "1280px",
+                "xl": "32px",
+                "sm": "8px",
+                "xs": "4px",
+                "xxl": "48px",
+                "gutter": "24px",
+                "margin-desktop": "64px",
+                "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                "display-lg": ["Inter"],
+                "headline-md": ["Inter"],
+                "body-sm": ["Inter"],
+                "label-sm": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "display-lg-mobile": ["Inter"],
+                "headline-sm": ["Inter"],
+                "label-md": ["Inter"]
+              },
+              "fontSize": {
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<header class="bg-surface dark:bg-inverse-surface shadow-md docked full-width top-0 sticky z-50">
+<nav class="flex justify-between items-center w-full px-lg py-md max-w-max-width mx-auto">
+<div class="flex items-center gap-xl">
+<a href="../index.html" class="flex items-center">
+    <img src="../public/Untitled%20design.svg" alt="ELECZAR" class="h-10 w-auto" />
+</a>
+<div class="hidden md:flex gap-lg">
+<a class="font-headline-sm text-headline-sm text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed hover:transition-colors" href="#">Produits</a>
+<a class="font-headline-sm text-headline-sm text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed hover:transition-colors" href="#">Secteurs</a>
+<a class="font-headline-sm text-headline-sm text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed hover:transition-colors" href="#">Services</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden lg:flex items-center bg-surface-container-low px-md py-xs rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-sm w-64" placeholder="Rechercher un composant..." type="text"/>
+</div>
+<button class="material-symbols-outlined p-sm hover:bg-surface-variant rounded-full" data-icon="bolt"></button>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-md text-label-md hover:shadow-lg transition-all active:scale-95">Commander en ligne</button>
+</div>
+</nav>
+</header>
+<main class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-xxl circuit-bg">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-xs mb-lg text-on-surface-variant font-label-sm text-label-sm">
+<a class="hover:text-primary" href="#">Accueil</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Distribution Électrique</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-bold">Disjoncteur MasterPact MTZ2</span>
+</nav>
+<!-- Product Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xxl">
+<!-- Left: Image Gallery (Span 7) -->
+<div class="lg:col-span-7 flex flex-col gap-md">
+<div class="relative aspect-square bg-white rounded-xl overflow-hidden border border-outline-variant shadow-sm group">
+<img class="w-full h-full object-contain p-xl transform group-hover:scale-105 transition-transform duration-500" data-alt="A professional close-up photo of a high-tech industrial electrical circuit breaker with metallic finishes and digital interfaces. The product is set against a clean, clinical white background with soft, technical blue lighting that accentuates its precise engineering. The composition is minimalist and high-contrast, following a premier corporate tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8DsAOYU2o1rGqzcgBCdJmXLbzQnxbfwxg9Ho4zf33EH91EhaOsldbU3iEBZkBEXhsLsS29K_zNXklN8YFmlqW-jmZ58vKZxb8NkIYt40-fe6dNtkUmozMxqbB8WIr9fZauRAyr4vBhELW8NiVIYcW4rd_G-72XDydCS4zKlkAVE5fLQoOJndbDkYZsn8X3uoIdFSfFdz7eAY4N6awGW0I-SlFvIo1hbQQsRCXk0FvIygTKqmhlKYbOJZ4tVPEUI2ZfA_Xb-qEF2KE"/>
+<div class="absolute bottom-md right-md">
+<button class="flex items-center gap-xs bg-white/90 backdrop-blur-sm border border-outline-variant px-md py-sm rounded-full font-label-md text-label-md hover:bg-primary hover:text-white transition-colors shadow-md">
+<span class="material-symbols-outlined" data-icon="360"></span>
+                            Vue 360°
+                        </button>
+</div>
+</div>
+<div class="flex gap-md overflow-x-auto hide-scrollbar pb-sm">
+<!-- Thumbnails -->
+<button class="min-w-[80px] h-[80px] rounded-lg border-2 border-primary overflow-hidden bg-white">
+<img class="w-full h-full object-cover" data-alt="Thumbnail showing frontal view of a complex industrial power distribution unit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCaaODjT7PdONA_5kPNdUTAiLdljjGyQMi3lSWAAolECnuodgQp4d73FHdVSRhmf_Japr77tMmiD1ivDI0d7wWb9VPIz8jzD2P-7q8bkmL0AMr2ucv-SXlpeEY15QsPFPb1IZLl7dC5_IAIGVaurryO6emgOFQ79l2mPKZ258dErImIPi3BC3Uakg8xfbMa8VuKzXrii3BeYomxtlYVprbc1q-IMN5VKbiHxJdOA-1AbCvjVr5ts5pP_bDN-wWA0Bb2Ginr-bKWQJz"/>
+</button>
+<button class="min-w-[80px] h-[80px] rounded-lg border border-outline-variant overflow-hidden bg-white hover:border-primary transition-all">
+<img class="w-full h-full object-cover" data-alt="Detail shot of electrical terminals and safety labeling on a circuit breaker." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMGbtnNRCP2NzhbwYvuB_XdZ98dNGovUv9nNE-yYRjDVrNUt5gpGbLuFC_Bt65TKfq4HOI2_P7gWB7HGSND1TC_g0yUT7x0KuKpTtFETAe5k81otlFykUmVoZR_3OgEMjS3c8Ha7M0AnNLWBMGCinrKSiFVUYsacTaqsOUTKbIVv0bCR5Q3nOrNQG7--9nCTSJeWJIdzFcTE1sbtp9iUJp1PduSdQ5eE9sQKBFzrDKDoqXvCH_EnACjGfUuGfZf0L5NxApM403YG0e"/>
+</button>
+<button class="min-w-[80px] h-[80px] rounded-lg border border-outline-variant overflow-hidden bg-white hover:border-primary transition-all">
+<img class="w-full h-full object-cover" data-alt="Technical view of the side chassis of an electrical distribution unit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkHRoXL9sCA-Uns_wIuujCwPoXPVe9U5oWyuQqgnVFxmRjP4_2-m6dic4EXiWY0KciPX9ZVfVic0Qxhxnt_sAfPLqBJX3bQmCwMVC6hLIo9igN9bRLReCGH5XTFc_EkIjlaNnpTG2blS7vdfXrEIhX40lUEMEASee-DppsAT16o-2yBFXkInyQklgfquDwIJrrQ37NaYW-sqVXC-6ELNzpzxwG3PQQMA29yAjmmbTnA__biCLlz35LJP8ppC4F-nb9w6WmBjTzgrcI"/>
+</button>
+<button class="min-w-[80px] h-[80px] rounded-lg border border-outline-variant overflow-hidden bg-white hover:border-primary transition-all">
+<img class="w-full h-full object-cover" data-alt="Macro photo of digital control panel with glowing indicators." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3RQQ16rB7P4-1GAFkjNZ8D_TGPQjJSE7fM776Cb5s8cjV0VDlwPzkMeX724ieNeCm_NxS-61Ce3PiBpzKDIJPXp5uCg1rBMtSGLWoXGE4xDDmqmJot34ZIfNLPMGuvUKknegvH2kgv-P-UPc-8M-E-TvmFvuDRTThaPhiJ4FxicF-K129PpkJzAlhwv_jG2Po4BanGK9lKoRmw7yBIiXrVnbXIVjc2vwh8fsjdszMICTBXVLBEUycc5apNYzTWKFu_bQU4N8D4dMT"/>
+</button>
+<button class="min-w-[80px] h-[80px] rounded-lg border border-outline-variant overflow-hidden bg-white hover:border-primary transition-all">
+<img class="w-full h-full object-cover" data-alt="Engineered internal components visible through a transparent casing section." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ3dphe409vCjPu8eRBfyx2cyiVpbSOcb4FuIXEbR315G8tNrCYCV_aXSULRfUR1sGJ_J5NqH7rHlqjJFU1ir28jMep2AC-cgjDyairBlbwypxW6YPP_VMqPpJHQGaFNHpIu2qG0VPkGQPbkGQoZrLvEQY3skO_SUCo8pm0Bb3XeiA1GTcgvjwfQAdMtowlZE1rrzc6tZbD1V_tjCV5NXS4ri_bwUilukRWsjVnsqZLkp93UF7AdWaI59cCuFmhH8W_UNXI-BFUTNb"/>
+</button>
+<button class="min-w-[80px] h-[80px] rounded-lg border border-outline-variant overflow-hidden bg-white hover:border-primary transition-all">
+<img class="w-full h-full object-cover" data-alt="Installation of the electrical unit in a professional server room rack." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqsEKiGJyju9oDOngLXEQ8aheWlccCTtNQtLT41qj-z8uw3x-qURHDqU4EGaqC-g9caL_rLhU8x6H5p0a1CfgaHgQm5GzuQxxQO0tO56uBcOo3kMRLT7HbE-529KZOaCWU3Cs9KzyC_vQRL_dKrL44Lff8kRQF9qx3q0PB-gDIg72ft81Wb8cuiACofJkxgkvZFjlkVrhAaufXuYa6qOvHYsuW4t-jClzFANVA7PdkZFCYrpT1iVjtIHZH9lUI-sd1XpHK070d2MJ0"/>
+</button>
+</div>
+</div>
+<!-- Right: Details & Pricing (Span 5) -->
+<div class="lg:col-span-5 flex flex-col gap-xl">
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<span class="bg-surface-container-high text-on-surface-variant px-sm py-xs rounded font-label-sm text-label-sm">SKU: MTZ2-40H1-630A</span>
+<div class="h-8 w-24 bg-surface-variant flex items-center justify-center rounded">
+<span class="text-primary font-bold text-label-md">SCHNEIDER</span>
+</div>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Disjoncteur MasterPact MTZ2 40H1 - 6300A</h1>
+<p class="text-body-md text-on-surface-variant">Unité de contrôle intelligente avec communication Micrologic X. Protection avancée pour réseaux industriels critiques. Intégration IoT native.</p>
+</div>
+<div class="p-lg bg-surface-container-lowest rounded-xl border border-outline-variant flex flex-col gap-md">
+<div class="flex items-baseline gap-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Prix Professionnel (HT)</span>
+<span class="font-display-lg text-display-lg text-primary">12 450,00 MAD</span>
+</div>
+<div class="flex flex-col text-on-surface-variant line-through opacity-50">
+<span class="text-body-sm">14 200,00 MAD</span>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded font-bold text-label-sm">
+                            -12% PROMO
+                        </div>
+</div>
+<div class="text-body-sm text-on-surface-variant">
+                        Prix Public (TTC): 14 940,00 MAD
+                    </div>
+</div>
+<div class="flex flex-col gap-md">
+<div class="flex items-center justify-between p-md bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-success text-[20px] text-green-600">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">En stock: 24 pièces</span>
+<span class="text-body-sm text-on-surface-variant">Unité de vente: Pièce</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-primary">Livraison 24/48h</span>
+<span class="text-body-sm text-on-surface-variant">Casablanca / Meknès</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-sm">
+<button class="w-full bg-secondary-container text-on-secondary-container font-headline-sm text-headline-sm py-md rounded-xl hover:shadow-xl transition-all active:scale-[0.98] flex items-center justify-center gap-md">
+<span class="material-symbols-outlined">request_quote</span>
+                        Demander un devis personnalisé
+                    </button>
+<div class="grid grid-cols-2 gap-sm">
+<button class="bg-[#25D366] text-white py-md rounded-xl font-label-md text-label-md flex items-center justify-center gap-xs hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">chat</span>
+                            WhatsApp
+                        </button>
+<button class="bg-primary-container text-on-primary-container py-md rounded-xl font-label-md text-label-md flex items-center justify-center gap-xs hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">call</span>
+                            Contact Direct
+                        </button>
+</div>
+</div>
+<!-- Downloads Section -->
+<div class="border-t border-outline-variant pt-lg">
+<h3 class="font-headline-sm text-headline-sm mb-md">Documentations</h3>
+<div class="grid grid-cols-1 gap-sm">
+<a class="flex items-center justify-between p-sm border border-outline-variant rounded-lg hover:bg-surface-variant transition-colors" href="#">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-error">picture_as_pdf</span>
+<span class="font-label-md text-label-md">Fiche Technique (PDF)</span>
+</div>
+<span class="material-symbols-outlined">download</span>
+</a>
+<a class="flex items-center justify-between p-sm border border-outline-variant rounded-lg hover:bg-surface-variant transition-colors" href="#">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">description</span>
+<span class="font-label-md text-label-md">Certificat de conformité CE</span>
+</div>
+<span class="material-symbols-outlined">download</span>
+</a>
+<a class="flex items-center justify-between p-sm border border-outline-variant rounded-lg hover:bg-surface-variant transition-colors" href="#">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">book</span>
+<span class="font-label-md text-label-md">E-catalogue Schneider 2024</span>
+</div>
+<span class="material-symbols-outlined">download</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Tabs Section -->
+<div class="mt-xxl">
+<div class="flex border-b border-outline-variant gap-xl mb-lg">
+<button class="pb-md border-b-4 border-primary font-headline-sm text-headline-sm text-primary">Spécifications</button>
+<button class="pb-md font-headline-sm text-headline-sm text-on-surface-variant hover:text-on-surface transition-colors">FAQ</button>
+<button class="pb-md font-headline-sm text-headline-sm text-on-surface-variant hover:text-on-surface transition-colors">Normes &amp; Certifs</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xxl">
+<div class="bg-surface-container-low rounded-xl p-lg">
+<table class="w-full text-left">
+<tbody class="divide-y divide-outline-variant">
+<tr>
+<td class="py-md font-label-md text-label-md text-on-surface-variant">Tension Assignée (Ue)</td>
+<td class="py-md font-body-md text-body-md text-on-surface">690 V CA 50/60 Hz</td>
+</tr>
+<tr>
+<td class="py-md font-label-md text-label-md text-on-surface-variant">Courant Nominal (In)</td>
+<td class="py-md font-body-md text-body-md text-on-surface">6300 A</td>
+</tr>
+<tr>
+<td class="py-md font-label-md text-label-md text-on-surface-variant">Pouvoir de coupure (Icu)</td>
+<td class="py-md font-body-md text-body-md text-on-surface">100 kA @ 415 V</td>
+</tr>
+<tr>
+<td class="py-md font-label-md text-label-md text-on-surface-variant">Nombre de pôles</td>
+<td class="py-md font-body-md text-body-md text-on-surface">4P</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex flex-col gap-lg">
+<div class="flex items-center gap-md p-md bg-white rounded-lg border border-outline-variant shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary-container/10 text-primary rounded-full">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm">Conformité NFC 15-100</h4>
+<p class="text-body-sm text-on-surface-variant">Certifié pour les installations tertiaires et industrielles haute exigence.</p>
+</div>
+</div>
+<div class="flex items-center gap-md p-md bg-white rounded-lg border border-outline-variant shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary-container/10 text-secondary rounded-full">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm">Garantie Constructeur</h4>
+<p class="text-body-sm text-on-surface-variant">Extension de garantie 5 ans disponible via ELECZAR Care.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Upsell Sections -->
+<section class="mt-xxl border-t border-outline-variant pt-xxl">
+<div class="flex justify-between items-end mb-lg">
+<h2 class="font-headline-lg text-headline-lg">Produits complémentaires</h2>
+<div class="flex gap-sm">
+<button class="material-symbols-outlined p-sm border border-outline-variant rounded-full hover:bg-surface-variant">chevron_left</button>
+<button class="material-symbols-outlined p-sm border border-outline-variant rounded-full hover:bg-surface-variant">chevron_right</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group bg-white rounded-xl border border-outline-variant overflow-hidden hover:shadow-lg transition-all">
+<div class="aspect-square bg-surface-container-low p-md">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform" data-alt="Technical professional photography of a modular electrical contactor on a DIN rail. Clean lighting and sharp focus on the terminal labels." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2anp8E9UhSeSNuLfLYfwWiSvgYTKloyk5tWphR4d2Y3H3WBWP7LrJxBHhUJUAsxDn3m0PWH4rV3b6TorZOG9aQMLCXZugYbvhkbUYpolEjIYZSh5Spx6ZoUPddWTf7ThBIccFZBFf4PZ8PkybhmErUGOzM31e04hmcB9T2QQnHciM9rGo1miODGKJKo-IwjGGdck49ke_eUqKtNb_UY8NqeLus5xJspS6GT2agKfPf_sKyfXwTuSTDhRIAEZwhmiZtRcLSfTyOVE5"/>
+</div>
+<div class="p-md flex flex-col gap-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Contacteurs</span>
+<h4 class="font-label-md text-label-md text-on-surface">Contacteur TeSys D 25A</h4>
+<span class="font-headline-sm text-headline-sm text-primary">850,00 MAD</span>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-white rounded-xl border border-outline-variant overflow-hidden hover:shadow-lg transition-all">
+<div class="aspect-square bg-surface-container-low p-md">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform" data-alt="Digital representation of high-precision current transformers for power monitoring, set against a dark industrial background with blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVX9H74vLQLb98bSg9tDwTTXtwM37CaEPnuVY-CfK8c8rQumOhwkMVi1TXmNAJnk9I2FnKGnbzBL99RC9RJKIZuJZhgOvwndOq7OtXsDePVsH6FvC1Ym1pnZ6jleQsmQ27q7PglOcIqgXGjHLY-9-gGQBbWRK7o-rg83PWPS9_nSZLu6z7_0d6TrHtHnZVL-1hPjnOO_kZmnN7J6z6POl4AtMBQ3xESnExB02mMTuvgy41BtP264HKZTL6YzGddyEpR1Zn4Xhp2_Oc"/>
+</div>
+<div class="p-md flex flex-col gap-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Mesure</span>
+<h4 class="font-label-md text-label-md text-on-surface">Centrale de Mesure PM5300</h4>
+<span class="font-headline-sm text-headline-sm text-primary">2 150,00 MAD</span>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-white rounded-xl border border-outline-variant overflow-hidden hover:shadow-lg transition-all">
+<div class="aspect-square bg-surface-container-low p-md">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform" data-alt="Close-up of industrial wiring accessories and cable management systems in a modern electrical cabinet." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQUsYampBzpff_WaRnrSzpn5X88UfPfSZbZD3hHpNQ1XO5TGz0qtofrcBIllBIAcSUvw04z_wheuI1tM71UxXnnPof6tukMk8oruVkivmG54Lzi9b6NrVG09sUWnotR8z8xeNiAMW5shW_WhIP64ROD8SKbCd8yz_3AURD9ICJ5dumxyU4IEHLmkq7aRwmcYHdnAzOKoiBsXmOl0M0tvG0pAkylrYPt0plF00F-TmHiZLEYf_Nw9P8FdVsCduAnE5Ll4x88JmvWAz6"/>
+</div>
+<div class="p-md flex flex-col gap-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Câblage</span>
+<h4 class="font-label-md text-label-md text-on-surface">Bornier de puissance 400A</h4>
+<span class="font-headline-sm text-headline-sm text-primary">420,00 MAD</span>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-white rounded-xl border border-outline-variant overflow-hidden hover:shadow-lg transition-all">
+<div class="aspect-square bg-surface-container-low p-md">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform" data-alt="An industrial Ethernet switch designed for DIN rail mounting, featuring multiple ports and status LEDs, glowing in a high-tech lab setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwNmig1ESZJrwuwI9TrDAOmq8dUE5mWWxYY6hsA6dmJ7xB_xOutYYZdIyJPtvz0qLO8Jk11GQ1jC8xzihB4t_7AKZw4Jd3Ec2duPJcdngbObI32j8GhiOjAcEzUjySwTZIZmm6tReORpN2OwxYDHu56znE8R1YCwVUO04wboqgDlRnUs7CSRzVYHNMT1NJHPuH16aknDpzatdtN6mxBiPW_dLXTZFKKZ1GxDV-fvgS_le_IQ2vOdh6ZV3olbW43B8olaX4wdSZGNXq"/>
+</div>
+<div class="p-md flex flex-col gap-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Communication</span>
+<h4 class="font-label-md text-label-md text-on-surface">Passerelle Modbus/TCP</h4>
+<span class="font-headline-sm text-headline-sm text-primary">3 400,00 MAD</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant full-width py-xxl mt-xxl">
+<div class="max-w-max-width mx-auto px-margin-desktop grid grid-cols-2 md:grid-cols-6 gap-gutter">
+<div class="col-span-2">
+<span class="font-headline-sm text-headline-sm font-bold text-primary mb-md block">ELECZAR</span>
+<p class="text-body-sm text-on-surface-variant pr-xl">Distributeur leader de solutions électriques haute performance pour le Maroc et l'Afrique.</p>
+<div class="flex gap-md mt-lg">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">bolt</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">precision_manufacturing</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">electric_car</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold mb-md">Solutions</h4>
+<ul class="flex flex-col gap-sm">
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Transformers</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Switchgear</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Automation</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold mb-md">Support</h4>
+<ul class="flex flex-col gap-sm">
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Contact</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Maintenance</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">E-Catalogues</a></li>
+</ul>
+</div>
+<div class="col-span-2">
+<h4 class="font-label-md text-label-md font-bold mb-md">Newsletter Technique</h4>
+<div class="flex gap-xs">
+<input class="bg-white border-outline-variant rounded-lg p-sm w-full text-body-sm focus:ring-primary focus:border-primary" placeholder="Votre email pro" type="email"/>
+<button class="bg-primary text-on-primary px-md py-sm rounded-lg material-symbols-outlined">send</button>
+</div>
+</div>
+</div>
+<div class="max-w-max-width mx-auto px-margin-desktop pt-xxl flex flex-col md:flex-row justify-between border-t border-outline-variant mt-xxl opacity-60">
+<span class="text-body-sm">© 2024 ELECZAR. Precision Electrical Distribution. ICE: 001234567890001</span>
+<div class="flex gap-lg">
+<a class="text-body-sm hover:underline" href="#">Meknès HQ</a>
+<a class="text-body-sm hover:underline" href="#">Mentions Légales</a>
+</div>
+</div>
+</footer>
+<!-- AI Chatbot 'AL Montassira' Widget -->
+<div class="fixed bottom-lg right-lg z-[100] group" id="ai-chatbot">
+<div class="hidden absolute bottom-20 right-0 w-80 bg-white shadow-2xl rounded-2xl border border-outline-variant flex flex-col overflow-hidden" id="chat-window">
+<div class="bg-primary p-md text-on-primary flex justify-between items-center">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<div>
+<p class="font-label-md text-label-md leading-tight">AL Montassira</p>
+<p class="text-[10px] opacity-80 uppercase tracking-widest">Support IA Expert</p>
+</div>
+</div>
+<button class="material-symbols-outlined" onclick="toggleChat()">close</button>
+</div>
+<div class="h-64 p-md overflow-y-auto bg-surface-container-lowest flex flex-col gap-sm">
+<div class="bg-surface-variant p-sm rounded-lg text-body-sm max-w-[85%]">
+                    Bonjour ! Je suis AL Montassira. Comment puis-je vous aider dans le choix de votre équipement électrique ?
+                </div>
+</div>
+<div class="p-sm border-t border-outline-variant flex gap-xs">
+<input class="w-full bg-surface p-xs rounded border-none focus:ring-0 text-body-sm" placeholder="Posez votre question technique..." type="text"/>
+<button class="material-symbols-outlined text-primary p-xs">send</button>
+</div>
+</div>
+<button class="w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all relative" onclick="toggleChat()">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<span class="absolute -top-1 -right-1 w-4 h-4 bg-secondary-container border-2 border-white rounded-full"></span>
+</button>
+</div>
+<script>
+        function toggleChat() {
+            const chatWindow = document.getElementById('chat-window');
+            chatWindow.classList.toggle('hidden');
+        }
+
+        // Simple thumbnail switcher interaction
+        document.querySelectorAll('button img').forEach(thumb => {
+            thumb.parentElement.addEventListener('click', () => {
+                const mainImg = document.querySelector('.lg\\:col-span-7 img');
+                mainImg.src = thumb.src.replace('w=200', 'w=1000');
+                
+                // Update active state on thumbnails
+                document.querySelectorAll('button').forEach(btn => btn.classList.remove('border-primary'));
+                thumb.parentElement.classList.add('border-primary');
+            });
+        });
+    </script>
+</body></html>

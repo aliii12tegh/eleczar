@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>ELECZAR | Distributeur de Matériel Électrique</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "tertiary-fixed-dim": "#bec6e0",
+                "on-primary": "#ffffff",
+                "outline": "#737688",
+                "on-tertiary-fixed-variant": "#3f465c",
+                "surface": "var(--color-surface)",
+                "on-background": "#191c1e",
+                "on-primary-fixed": "#001551",
+                "on-secondary": "#ffffff",
+                "error-container": "#ffdad6",
+                "on-primary-fixed-variant": "#0039b3",
+                "on-secondary-fixed-variant": "#7c2e00",
+                "on-surface": "var(--color-on-surface)",
+                "inverse-surface": "var(--color-inverse-surface)",
+                "surface-tint": "var(--color-primary)",
+                "primary-fixed-dim": "#b6c4ff",
+                "on-error": "#ffffff",
+                "on-tertiary-container": "#e0e7ff",
+                "inverse-on-surface": "var(--color-inverse-on-surface)",
+                "surface-bright": "var(--color-surface-bright)",
+                "outline-variant": "var(--color-outline-variant)",
+                "secondary-container": "#fe6500",
+                "secondary-fixed-dim": "#ffb596",
+                "on-primary-container": "#e3e6ff",
+                "error": "#ba1a1a",
+                "surface-container-highest": "var(--color-surface-container-highest)",
+                "primary": "var(--color-primary)",
+                "on-secondary-fixed": "#360f00",
+                "background": "var(--color-surface)",
+                "on-tertiary-fixed": "#131b2e",
+                "primary-container": "var(--color-primary-container)",
+                "surface-container-lowest": "var(--color-surface-container-lowest)",
+                "inverse-primary": "#b6c4ff",
+                "on-tertiary": "#ffffff",
+                "tertiary-container": "#5f677e",
+                "surface-variant": "var(--color-surface-variant)",
+                "tertiary": "#474f65",
+                "secondary-fixed": "#ffdbcd",
+                "tertiary-fixed": "#dae2fd",
+                "surface-container-high": "var(--color-surface-container-high)",
+                "surface-container-low": "var(--color-surface-container-low)",
+                "primary-fixed": "#dce1ff",
+                "on-error-container": "#93000a",
+                "on-surface-variant": "var(--color-on-surface-variant)",
+                "secondary": "var(--color-secondary)",
+                "surface-container": "var(--color-surface-container)",
+                "surface-dim": "var(--color-surface-dim)",
+                "on-secondary-container": "#541d00"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.5rem",
+                "lg": "1rem",
+                "xl": "1.5rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "md": "16px",
+                "unit": "4px",
+                "lg": "24px",
+                "max-width": "1280px",
+                "xl": "32px",
+                "sm": "8px",
+                "xs": "4px",
+                "xxl": "48px",
+                "gutter": "24px",
+                "margin-desktop": "64px",
+                "margin-mobile": "16px"
+              }
+            }
+          }
+        }
+    </script>
+    <style>
+        :root {
+            --color-primary: #0041c8;
+            --color-primary-container: #0055ff;
+            --color-secondary: #a33e00;
+            --color-surface: #f7f9fb;
+            --color-on-surface: #191c1e;
+            --color-surface-bright: #f7f9fb;
+            --color-surface-dim: #d8dadc;
+            --color-inverse-surface: #2d3133;
+            --color-inverse-on-surface: #eff1f3;
+            --color-surface-container: #eceef0;
+            --color-surface-container-high: #e6e8ea;
+            --color-surface-container-low: #f2f4f6;
+            --color-surface-container-highest: #e0e3e5;
+            --color-surface-container-lowest: #ffffff;
+            --color-on-surface-variant: #434656;
+            --color-outline-variant: #c3c5d9;
+        }
+        .dark {
+            --color-primary: #3b82f6;
+            --color-primary-container: #1d4ed8;
+            --color-secondary: #f97316;
+            --color-surface: #0b0f19;
+            --color-on-surface: #f8fafc;
+            --color-surface-bright: #0f172a;
+            --color-surface-dim: #020617;
+            --color-inverse-surface: #f8fafc;
+            --color-inverse-on-surface: #0f172a;
+            --color-surface-container: #1e293b;
+            --color-surface-container-high: #334155;
+            --color-surface-container-low: #0f172a;
+            --color-surface-container-highest: #475569;
+            --color-surface-container-lowest: #020617;
+            --color-on-surface-variant: #94a3b8;
+            --color-outline-variant: #334155;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .infinite-scroll {
+            display: flex;
+            width: calc(250px * 24);
+            animation: scroll 40s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 12)); }
+        }
+        .circuit-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, var(--color-primary-container), transparent);
+            height: 1px;
+            width: 100%;
+            opacity: 0.1;
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 65, 200, 0.7), rgba(15, 23, 42, 0.95));
+        }
+        /* Hide scrollbar */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md">
+    <!-- ==========================================
+        1. PREMIUM MEGA-MENU NAVIGATION BAR (HTML/JS)
+        ========================================== -->
+    <header class="w-full bg-white text-[#1F2937] sticky top-0 z-50 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.06),0_1px_6px_-2px_rgba(0,0,0,0.04)] dark:bg-slate-900 dark:text-white border-b border-gray-100 dark:border-slate-800">
+        
+        <!-- B2B Top Utility Bar -->
+        <div class="hidden lg:block w-full bg-[#1F2937] text-white border-b border-gray-700">
+            <div class="max-w-7xl mx-auto px-6 h-10 flex justify-between items-center text-xs font-medium tracking-wide">
+                <div class="flex items-center space-x-6 text-gray-300">
+                    <span class="flex items-center space-x-1.5 hover:text-white transition-colors duration-150">
+                        <span class="material-symbols-outlined text-sm text-[#0055FF]">call</span>
+                        <span>Support Pro : <strong>+212 535 000 000</strong></span>
+                    </span>
+                    <span class="flex items-center space-x-1.5 hover:text-white transition-colors duration-150">
+                        <span class="material-symbols-outlined text-sm text-[#0055FF]">mail</span>
+                        <span>contact@eleczar.ma</span>
+                    </span>
+                    <span class="flex items-center space-x-1.5 hover:text-white transition-colors duration-150">
+                        <span class="material-symbols-outlined text-sm text-[#0055FF]">location_on</span>
+                        <span>Zone Industrielle, Meknès</span>
+                    </span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                        <span class="text-gray-300 font-semibold">Livraison Rapide 24/48h au Maroc</span>
+                    </div>
+                    <div class="h-4 w-px bg-gray-600"></div>
+                    <a href="client.html" class="text-[#0055FF] bg-white px-3 py-1 rounded hover:bg-[#0055FF] hover:text-white font-bold transition-all duration-200">
+                        Espace Client (Pro)
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="w-full bg-white dark:bg-slate-900 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex justify-between items-center">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="flex items-center space-x-2 group">
+                        <div class="p-1.5 bg-gray-50 dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-lg shadow-sm group-hover:shadow transition-shadow">
+                            <svg class="w-6 h-6 text-[#0055FF]" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M11 21h-1l1.5-6.5h-5.5c-.5 0-.8-.3-.9-.6-.1-.3 0-.7.3-.9l10-12h1l-1.5 6.5h5.5c.5 0 .8.3.9.6.1.3 0 .7-.3.9l-10 12z" />
+                            </svg>
+                        </div>
+                        <span class="text-2xl font-black tracking-tight text-[#1F2937] dark:text-white transition-colors duration-200">
+                            ELEC<span class="text-[#0055FF] group-hover:text-blue-500">ZAR</span>
+                        </span>
+                    </a>
+                    
+                    <nav class="hidden lg:flex items-center space-x-1">
+                        <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-gray-700 dark:text-zinc-200 hover:text-[#0055FF] dark:hover:text-[#0055FF] hover:bg-gray-50 dark:hover:bg-slate-800 transition-all duration-200">
+                            Accueil
+                        </a>
+                        <div class="relative nav-dropdown-trigger" data-target="mega-menu-produits">
+                            <button class="px-4 py-2 rounded-lg text-sm font-semibold flex items-center space-x-1 text-[#0055FF] bg-blue-50/50 dark:bg-slate-800 transition-all duration-200">
+                                <span>Produits</span>
+                                <span class="material-symbols-outlined text-[16px] chevron-icon rotate-180">expand_more</span>
+                            </button>
+                        </div>
+                        <div class="relative nav-dropdown-trigger" data-target="dropdown-secteurs">
+                            <button class="px-4 py-2 rounded-lg text-sm font-semibold flex items-center space-x-1 text-gray-700 dark:text-zinc-200 hover:text-[#0055FF] hover:bg-gray-50 dark:hover:bg-slate-800 transition-all duration-200">
+                                <span>Secteurs</span>
+                                <span class="material-symbols-outlined text-[16px] chevron-icon">expand_more</span>
+                            </button>
+                        </div>
+                        <div class="relative nav-dropdown-trigger" data-target="dropdown-services">
+                            <button class="px-4 py-2 rounded-lg text-sm font-semibold flex items-center space-x-1 text-gray-700 dark:text-zinc-200 hover:text-[#0055FF] hover:bg-gray-50 dark:hover:bg-slate-800 transition-all duration-200">
+                                <span>Services</span>
+                                <span class="material-symbols-outlined text-[16px] chevron-icon">expand_more</span>
+                            </button>
+                        </div>
+                        <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-gray-700 dark:text-zinc-200 hover:text-[#0055FF] dark:hover:text-[#0055FF] hover:bg-gray-50 dark:hover:bg-slate-800 transition-all duration-200">
+                            Blog
+                        </a>
+                        <a href="a-propos.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-gray-700 dark:text-zinc-200 hover:text-[#0055FF] dark:hover:text-[#0055FF] hover:bg-gray-50 dark:hover:bg-slate-800 transition-all duration-200">
+                            À propos
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-4">
+                    <div class="relative" id="navbar-search-container">
+                        <button id="search-toggle-btn" class="p-2 hover:bg-gray-50 dark:hover:bg-slate-800 rounded-full text-gray-500 hover:text-[#0055FF] transition-colors">
+                            <span class="material-symbols-outlined">search</span>
+                        </button>
+                        <form id="search-form" action="catalogue.html" method="GET" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-slate-900 border border-gray-300 dark:border-slate-700 rounded-lg px-2 py-1 flex items-center hidden z-50 shadow-lg w-72">
+                            <input type="text" name="q" placeholder="Référence, marque, mot-clé..." class="border-none bg-transparent text-sm w-full focus:outline-none focus:ring-0 px-2 text-gray-800 dark:text-white" />
+                            <button type="submit" class="text-gray-400 hover:text-[#0055FF] p-1">
+                                <span class="material-symbols-outlined">search</span>
+                            </button>
+                            <button type="button" id="search-close-btn" class="text-gray-400 hover:text-gray-600 p-1 text-xs">
+                                <span class="material-symbols-outlined text-[16px]">close</span>
+                            </button>
+                        </form>
+                    </div>
+                    <button id="dark-mode-toggle" class="p-2 hover:bg-gray-50 dark:hover:bg-slate-800 rounded-full text-gray-500 hover:text-[#0055FF] transition-colors">
+                        <span class="material-symbols-outlined">dark_mode</span>
+                    </button>
+                    <a href="contact.html" class="px-5 py-2.5 rounded-lg text-sm font-bold border-2 border-[#0055FF] text-[#0055FF] hover:bg-[#0055FF] hover:text-white shadow-[0_4px_10px_-2px_rgba(0,85,255,0.1)] transition-all duration-200">
+                        Contact
+                    </a>
+                </div>
+
+                <div class="flex lg:hidden items-center space-x-2">
+                    <button id="mobile-search-trigger" class="p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full text-gray-600 hover:text-[#0055FF]">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                    <button id="mobile-menu-trigger" class="p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full text-gray-700 dark:text-white">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- dropdown-panels -->
+            <div id="mega-menu-produits" class="absolute left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-800 transition-all duration-200 ease-out z-40 hidden shadow-xl opacity-0 -translate-y-2">
+                <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-12 gap-8">
+                    <div class="col-span-8 grid grid-cols-2 gap-8 border-r border-gray-100 dark:border-slate-800 pr-8">
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-2 text-gray-800 dark:text-white pb-2 border-b border-gray-50 dark:border-slate-800">
+                                <span class="material-symbols-outlined text-[#0055FF]">lightbulb</span>
+                                <h3 class="text-sm font-bold uppercase tracking-wider">Éclairage</h3>
+                            </div>
+                            <ul class="space-y-2.5 text-sm font-medium text-gray-600 dark:text-zinc-400">
+                                <li><a href="catalogue.html?cat=ecl-public" class="hover:text-[#0055FF]">Éclairage public/tout extérieur</a></li>
+                                <li><a href="catalogue.html?cat=ecl-interieur" class="hover:text-[#0055FF]">Éclairage intérieur (résidentiel)</a></li>
+                                <li><a href="catalogue.html?cat=ecl-industriel" class="hover:text-[#0055FF]">Éclairage industriel</a></li>
+                                <li><a href="catalogue.html?cat=ecl-smart" class="hover:text-[#0055FF]">Éclairage intelligent (domotique)</a></li>
+                                <li><a href="catalogue.html?cat=ecl-lampes" class="hover:text-[#0055FF]">Lampes & Ampoules</a></li>
+                                <li><a href="catalogue.html?cat=ecl-projecteurs" class="hover:text-[#0055FF]">Projecteurs</a></li>
+                                <li><a href="catalogue.html?cat=ecl-archi" class="hover:text-[#0055FF]">Luminaires architecturaux</a></li>
+                                <li><a href="catalogue.html?cat=ecl-tubes" class="hover:text-[#0055FF]">Néons & tubes LED</a></li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-2 text-gray-800 dark:text-white pb-2 border-b border-gray-50 dark:border-slate-800">
+                                <span class="material-symbols-outlined text-[#0055FF]">settings_input_component</span>
+                                <h3 class="text-sm font-bold uppercase tracking-wider">Appareillage électrique</h3>
+                            </div>
+                            <ul class="space-y-2.5 text-sm font-medium text-gray-600 dark:text-zinc-400">
+                                <li><a href="catalogue.html?cat=app-interrupteurs" class="hover:text-[#0055FF]">Interrupteurs (tous types)</a></li>
+                                <li><a href="catalogue.html?cat=app-prises" class="hover:text-[#0055FF]">Prises (BV, industrielles, USB)</a></li>
+                                <li><a href="catalogue.html?cat=app-variateurs" class="hover:text-[#0055FF]">Variateurs & gradateurs</a></li>
+                                <li><a href="catalogue.html?cat=app-poussoirs" class="hover:text-[#0055FF]">Boutons poussoirs</a></li>
+                                <li><a href="catalogue.html?cat=app-sonneries" class="hover:text-[#0055FF]">Timbres & sonneries</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-span-4 flex flex-col justify-between h-full bg-gray-50 dark:bg-slate-800 rounded-xl p-6 border border-gray-100 dark:border-slate-700">
+                        <div class="space-y-3">
+                            <span class="inline-block bg-[#0055FF]/10 text-[#0055FF] text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full">Services Pro</span>
+                            <h4 class="text-base font-bold text-gray-800 dark:text-white">Devis Rapide sous 4h</h4>
+                            <p class="text-sm text-gray-600 dark:text-zinc-300 leading-relaxed">Vous gérez un chantier à Meknès ou Fès ? Transmettez vos schémas unifilaires et vos listes de matériel.</p>
+                        </div>
+                        <a href="services.html#devis" class="mt-6 inline-flex items-center justify-center space-x-2 w-full py-3 bg-[#0055FF] hover:bg-blue-600 text-white rounded-lg text-sm font-bold shadow-md">
+                            <span>Demander un Devis en ligne</span>
+                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- dropdown-secteurs -->
+            <div id="dropdown-secteurs" class="absolute left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-800 transition-all duration-200 ease-out z-40 hidden shadow-xl opacity-0 -translate-y-2">
+                <div class="max-w-4xl mx-auto px-6 py-8">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-4">Secteurs d'Activité</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="secteurs.html#residentiel" class="group flex items-start space-x-3 p-3 rounded-xl hover:bg-blue-50/30 dark:hover:bg-slate-800 transition-all">
+                            <div class="p-2 bg-gray-50 dark:bg-slate-850 border border-gray-100 dark:border-slate-700 rounded-lg group-hover:bg-[#0055FF]/10 transition-colors">
+                                <span class="material-symbols-outlined text-gray-400 group-hover:text-[#0055FF]">home</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-gray-800 dark:text-white group-hover:text-[#0055FF]">Résidentiel</h4>
+                                <p class="text-xs text-gray-500 dark:text-zinc-400 mt-0.5">Maisons individuelles, villas standing, appartements collectifs</p>
+                            </div>
+                        </a>
+                        <a href="secteurs.html#tertiaire" class="group flex items-start space-x-3 p-3 rounded-xl hover:bg-blue-50/30 dark:hover:bg-slate-800 transition-all">
+                            <div class="p-2 bg-gray-50 dark:bg-slate-850 border border-gray-100 dark:border-slate-700 rounded-lg group-hover:bg-[#0055FF]/10 transition-colors">
+                                <span class="material-symbols-outlined text-gray-400 group-hover:text-[#0055FF]">corporate_fare</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-gray-800 dark:text-white group-hover:text-[#0055FF]">Tertiaire</h4>
+                                <p class="text-xs text-gray-500 dark:text-zinc-400 mt-0.5">Bureaux professionnels, commerces de détail, hôtels, restaurants</p>
+                            </div>
+                        </a>
+                        <a href="secteurs.html#industriel" class="group flex items-start space-x-3 p-3 rounded-xl hover:bg-blue-50/30 dark:hover:bg-slate-800 transition-all">
+                            <div class="p-2 bg-gray-50 dark:bg-slate-850 border border-gray-100 dark:border-slate-700 rounded-lg group-hover:bg-[#0055FF]/10 transition-colors">
+                                <span class="material-symbols-outlined text-gray-400 group-hover:text-[#0055FF]">precision_manufacturing</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-gray-800 dark:text-white group-hover:text-[#0055FF]">Industriel</h4>
+                                <p class="text-xs text-gray-500 dark:text-zinc-400 mt-0.5">Usines de production, ateliers mécaniques, entrepôts logistiques</p>
+                            </div>
+                        </a>
+                        <a href="secteurs.html#batiment" class="group flex items-start space-x-3 p-3 rounded-xl hover:bg-blue-50/30 dark:hover:bg-slate-800 transition-all">
+                            <div class="p-2 bg-gray-50 dark:bg-slate-850 border border-gray-100 dark:border-slate-700 rounded-lg group-hover:bg-[#0055FF]/10 transition-colors">
+                                <span class="material-symbols-outlined text-gray-400 group-hover:text-[#0055FF]">construction</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-gray-800 dark:text-white group-hover:text-[#0055FF]">Bâtiment</h4>
+                                <p class="text-xs text-gray-500 dark:text-zinc-400 mt-0.5">Grands projets de construction neuve, programmes de rénovation</p>
+                            </div>
+                        </a>
+                        <a href="secteurs.html#infrastructure" class="group flex items-start space-x-3 p-3 rounded-xl hover:bg-blue-50/30 dark:hover:bg-slate-800 transition-all">
+                            <div class="p-2 bg-gray-50 dark:bg-slate-850 border border-gray-100 dark:border-slate-700 rounded-lg group-hover:bg-[#0055FF]/10 transition-colors">
+                                <span class="material-symbols-outlined text-gray-400 group-hover:text-[#0055FF]">traffic</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-gray-800 dark:text-white group-hover:text-[#0055FF]">Infrastructure</h4>
+                                <p class="text-xs text-gray-500 dark:text-zinc-400 mt-0.5">Réseaux d'éclairage public, voiries routières, parkings urbains</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- dropdown-services -->
+            <div id="dropdown-services" class="absolute left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-800 transition-all duration-200 ease-out z-40 hidden shadow-xl opacity-0 -translate-y-2">
+                <div class="max-w-5xl mx-auto px-6 py-8">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-4">Services & Support ELECZAR</h3>
+                    <div class="grid grid-cols-3 gap-6">
+                        <a href="services.html#devis" class="group flex flex-col justify-between p-4 rounded-xl border border-gray-100 dark:border-slate-800 hover:border-[#0055FF]/20 hover:bg-blue-50/20 dark:hover:bg-slate-800 shadow-sm transition-all">
+                            <div class="space-y-3">
+                                <div class="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg w-10 h-10 flex items-center justify-center group-hover:bg-[#0055FF] transition-colors">
+                                    <span class="material-symbols-outlined text-[#0055FF] group-hover:text-white">description</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-800 dark:text-white group-hover:text-[#0055FF]">Devis gratuit en ligne</h4>
+                                    <p class="text-xs text-gray-500 dark:text-zinc-400 mt-1">Réponse sur-mesure garantie sous 4 heures ouvrées</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="services.html#livraison" class="group flex flex-col justify-between p-4 rounded-xl border border-gray-100 dark:border-slate-800 hover:border-[#0055FF]/20 hover:bg-blue-50/20 dark:hover:bg-slate-800 shadow-sm transition-all">
+                            <div class="space-y-3">
+                                <div class="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg w-10 h-10 flex items-center justify-center group-hover:bg-[#0055FF] transition-colors">
+                                    <span class="material-symbols-outlined text-[#0055FF] group-hover:text-white">local_shipping</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-800 dark:text-white group-hover:text-[#0055FF]">Livraison Maroc</h4>
+                                    <p class="text-xs text-gray-500 dark:text-zinc-400 mt-1">Tarifs avantageux et délais fiables (24/48h local)</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="services.html#installation" class="group flex flex-col justify-between p-4 rounded-xl border border-gray-100 dark:border-slate-800 hover:border-[#0055FF]/20 hover:bg-blue-50/20 dark:hover:bg-slate-800 shadow-sm transition-all">
+                            <div class="space-y-3">
+                                <div class="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg w-10 h-10 flex items-center justify-center group-hover:bg-[#0055FF] transition-colors">
+                                    <span class="material-symbols-outlined text-[#0055FF] group-hover:text-white">handyman</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-800 dark:text-white group-hover:text-[#0055FF]">Installation &amp; Mise en service</h4>
+                                    <p class="text-xs text-gray-500 dark:text-zinc-400 mt-1">Assistance technique terrain pour nos équipements phares</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="services.html#maintenance" class="group flex flex-col justify-between p-4 rounded-xl border border-gray-100 dark:border-slate-800 hover:border-[#0055FF]/20 hover:bg-blue-50/20 dark:hover:bg-slate-800 shadow-sm transition-all">
+                            <div class="space-y-3">
+                                <div class="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg w-10 h-10 flex items-center justify-center group-hover:bg-[#0055FF] transition-colors">
+                                    <span class="material-symbols-outlined text-[#0055FF] group-hover:text-white">build_circle</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-800 dark:text-white group-hover:text-[#0055FF]">Maintenance &amp; Après-vente</h4>
+                                    <p class="text-xs text-gray-500 dark:text-zinc-400 mt-1">Contrats de maintenance et pièces détachées constructeurs</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="services.html#formations" class="group flex flex-col justify-between p-4 rounded-xl border border-gray-100 dark:border-slate-800 hover:border-[#0055FF]/20 hover:bg-blue-50/20 dark:hover:bg-slate-800 shadow-sm transition-all">
+                            <div class="space-y-3">
+                                <div class="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg w-10 h-10 flex items-center justify-center group-hover:bg-[#0055FF] transition-colors">
+                                    <span class="material-symbols-outlined text-[#0055FF] group-hover:text-white">school</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-800 dark:text-white group-hover:text-[#0055FF]">Formations électriciens</h4>
+                                    <p class="text-xs text-gray-500 dark:text-zinc-400 mt-1">Séminaires techniques réguliers dans les locaux ELECZAR</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="services.html#conseil" class="group flex flex-col justify-between p-4 rounded-xl border border-gray-100 dark:border-slate-800 hover:border-[#0055FF]/20 hover:bg-blue-50/20 dark:hover:bg-slate-800 shadow-sm transition-all">
+                            <div class="space-y-3">
+                                <div class="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg w-10 h-10 flex items-center justify-center group-hover:bg-[#0055FF] transition-colors">
+                                    <span class="material-symbols-outlined text-[#0055FF] group-hover:text-white">support_agent</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-800 dark:text-white group-hover:text-[#0055FF]">Conseil technique gratuit</h4>
+                                    <p class="text-xs text-gray-500 dark:text-zinc-400 mt-1">Ligne dédiée d'ingénieurs conseils pour vos chantiers</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile drawer backdrop -->
+        <div id="mobile-backdrop" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 transition-opacity duration-300 lg:hidden hidden opacity-0"></div>
+
+        <div id="mobile-drawer" class="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white dark:bg-slate-900 z-50 shadow-2xl flex flex-col justify-between transform transition-transform duration-300 ease-out translate-x-full lg:hidden">
+            <div class="p-4 border-b border-gray-100 dark:border-slate-800 flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <span class="material-symbols-outlined text-[#0055FF] text-2xl font-bold">bolt</span>
+                    <span class="text-xl font-black text-gray-800 dark:text-white">ELEC<span class="text-[#0055FF]">ZAR</span></span>
+                </a>
+                <button id="mobile-drawer-close" class="p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full text-gray-500 dark:text-white">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto px-4 py-6 space-y-6">
+                <form action="catalogue.html" method="GET" class="relative w-full">
+                    <input id="mobile-search-input" type="text" name="q" placeholder="Rechercher..." class="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-slate-700 rounded-lg text-sm bg-transparent text-gray-800 dark:text-white focus:outline-none focus:border-[#0055FF]" />
+                    <span class="absolute left-3.5 top-2.5 text-gray-400 material-symbols-outlined text-[18px]">search</span>
+                </form>
+                <nav class="space-y-2">
+                    <a href="index.html" class="block px-4 py-3 rounded-lg text-sm font-semibold text-gray-700 dark:text-zinc-200 hover:bg-gray-50">Accueil</a>
+                    <div class="space-y-1">
+                        <button class="w-full flex justify-between items-center px-4 py-3 rounded-lg text-sm font-semibold text-gray-700 dark:text-zinc-200 hover:bg-gray-50 mobile-accordion-trigger" data-target="mobile-accordion-produits">
+                            <span>Produits</span>
+                            <span class="material-symbols-outlined text-[18px] text-gray-400 transition-transform duration-200">expand_more</span>
+                        </button>
+                        <div id="mobile-accordion-produits" class="pl-4 pr-2 py-2 border-l-2 border-blue-50 dark:border-slate-800 space-y-4 hidden">
+                            <div class="space-y-2">
+                                <h4 class="text-[11px] font-extrabold uppercase tracking-widest text-[#0055FF]">Éclairage</h4>
+                                <ul class="space-y-1">
+                                    <li><a href="catalogue.html?cat=ecl-public" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Éclairage public/tout extérieur</a></li>
+                                    <li><a href="catalogue.html?cat=ecl-interieur" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Éclairage intérieur (résidentiel)</a></li>
+                                    <li><a href="catalogue.html?cat=ecl-industriel" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Éclairage industriel</a></li>
+                                    <li><a href="catalogue.html?cat=ecl-smart" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Éclairage intelligent (domotique)</a></li>
+                                    <li><a href="catalogue.html?cat=ecl-lampes" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Lampes & Ampoules</a></li>
+                                    <li><a href="catalogue.html?cat=ecl-projecteurs" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Projecteurs</a></li>
+                                    <li><a href="catalogue.html?cat=ecl-archi" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Luminaires architecturaux</a></li>
+                                    <li><a href="catalogue.html?cat=ecl-tubes" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Néons & tubes LED</a></li>
+                                </ul>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="text-[11px] font-extrabold uppercase tracking-widest text-[#0055FF]">Appareillage électrique</h4>
+                                <ul class="space-y-1">
+                                    <li><a href="catalogue.html?cat=app-interrupteurs" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Interrupteurs (tous types)</a></li>
+                                    <li><a href="catalogue.html?cat=app-prises" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Prises (BV, industrielles, USB)</a></li>
+                                    <li><a href="catalogue.html?cat=app-variateurs" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Variateurs & gradateurs</a></li>
+                                    <li><a href="catalogue.html?cat=app-poussoirs" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Boutons poussoirs</a></li>
+                                    <li><a href="catalogue.html?cat=app-sonneries" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Timbres & sonneries</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <button class="w-full flex justify-between items-center px-4 py-3 rounded-lg text-sm font-semibold text-gray-700 dark:text-zinc-200 hover:bg-gray-50 mobile-accordion-trigger" data-target="mobile-accordion-secteurs">
+                            <span>Secteurs</span>
+                            <span class="material-symbols-outlined text-[18px] text-gray-400 transition-transform duration-200">expand_more</span>
+                        </button>
+                        <div id="mobile-accordion-secteurs" class="pl-4 pr-2 py-1 border-l-2 border-blue-50 dark:border-slate-800 space-y-1 hidden">
+                            <a href="secteurs.html#residentiel" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Résidentiel</a>
+                            <a href="secteurs.html#tertiaire" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Tertiaire</a>
+                            <a href="secteurs.html#industriel" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Industriel</a>
+                            <a href="secteurs.html#batiment" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Bâtiment</a>
+                            <a href="secteurs.html#infrastructure" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Infrastructure</a>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <button class="w-full flex justify-between items-center px-4 py-3 rounded-lg text-sm font-semibold text-gray-700 dark:text-zinc-200 hover:bg-gray-50 mobile-accordion-trigger" data-target="mobile-accordion-services">
+                            <span>Services</span>
+                            <span class="material-symbols-outlined text-[18px] text-gray-400 transition-transform duration-200">expand_more</span>
+                        </button>
+                        <div id="mobile-accordion-services" class="pl-4 pr-2 py-1 border-l-2 border-blue-50 dark:border-slate-800 space-y-1 hidden">
+                            <a href="services.html#devis" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Devis gratuit en ligne</a>
+                            <a href="services.html#livraison" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Livraison Maroc</a>
+                            <a href="services.html#installation" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Installation &amp; Mise en service</a>
+                            <a href="services.html#maintenance" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Maintenance &amp; Après-vente</a>
+                            <a href="services.html#formations" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Formations électriciens</a>
+                            <a href="services.html#conseil" class="block px-3 py-2 rounded-md text-xs font-semibold text-gray-600 dark:text-zinc-400">Conseil technique gratuit</a>
+                        </div>
+                    </div>
+                    <a href="blog.html" class="block px-4 py-3 rounded-lg text-sm font-semibold text-gray-700 dark:text-zinc-200 hover:bg-gray-50">Blog</a>
+                    <a href="a-propos.html" class="block px-4 py-3 rounded-lg text-sm font-semibold text-gray-700 dark:text-zinc-200 hover:bg-gray-50">À propos</a>
+                </nav>
+            </div>
+            <div class="p-4 border-t border-gray-100 dark:border-slate-800 bg-gray-50 dark:bg-slate-850 space-y-4">
+                <div class="space-y-2 text-xs text-gray-600 dark:text-zinc-400">
+                    <div class="flex items-center space-x-2 font-medium">
+                        <span class="material-symbols-outlined text-sm">call</span>
+                        <span>+212 535 000 000</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="material-symbols-outlined text-sm">location_on</span>
+                        <span>Zone Industrielle, Meknès</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <a href="client.html" class="py-2.5 rounded-lg text-xs font-bold text-center text-[#1F2937] dark:text-white bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 hover:bg-gray-100">Client (Pro)</a>
+                    <a href="contact.html" class="py-2.5 rounded-lg text-xs font-bold text-center text-white bg-[#0055FF] hover:bg-blue-600 shadow-sm">Contact Direct</a>
+                </div>
+            </div>
+        </div>
+    </header>
+<main class="max-w-max-width mx-auto px-margin-desktop md:px-lg py-xl">
+
+<!-- Product Interface Grid -->
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-64 flex-shrink-0">
+<div class="bg-surface-container p-md rounded-xl border border-outline-variant dark:bg-slate-900 dark:border-slate-800">
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-headline-sm text-headline-sm text-primary">Filtres</h2>
+<button onclick="resetFilters()" class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">restart_alt</button>
+</div>
+<!-- Marque -->
+<div class="mb-lg">
+<h3 class="font-label-md text-label-md uppercase tracking-wider mb-sm text-on-surface">Marque</h3>
+<div class="space-y-sm" id="brand-filters">
+<label class="flex items-center gap-sm cursor-pointer">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4 filter-brand" value="Schneider" type="checkbox" onchange="filterProducts()"/>
+<span class="text-body-sm text-on-surface">Schneider Electric</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4 filter-brand" value="Legrand" type="checkbox" onchange="filterProducts()"/>
+<span class="text-body-sm text-on-surface">Legrand</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4 filter-brand" value="ABB" type="checkbox" onchange="filterProducts()"/>
+<span class="text-body-sm text-on-surface">ABB</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4 filter-brand" value="Ingelec" type="checkbox" onchange="filterProducts()"/>
+<span class="text-body-sm text-on-surface">Ingelec</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4 filter-brand" value="Osram" type="checkbox" onchange="filterProducts()"/>
+<span class="text-body-sm text-on-surface">Osram</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4 filter-brand" value="Nexans" type="checkbox" onchange="filterProducts()"/>
+<span class="text-body-sm text-on-surface">Nexans</span>
+</label>
+</div>
+</div>
+<!-- Prix -->
+<div class="mb-lg">
+<h3 class="font-label-md text-label-md uppercase tracking-wider mb-sm text-on-surface">Prix Max: <span id="price-val">15 000</span> MAD</h3>
+<input id="price-slider" class="w-full h-1 bg-outline-variant rounded-lg appearance-none cursor-pointer accent-primary" type="range" min="0" max="15000" step="50" value="15000" oninput="updatePriceLabel(this.value)"/>
+<div class="flex justify-between mt-xs text-label-sm text-on-surface-variant">
+<span>0 MAD</span>
+<span>15 000 MAD</span>
+</div>
+</div>
+<!-- Disponibilité -->
+<div class="mb-lg">
+<h3 class="font-label-md text-label-md uppercase tracking-wider mb-sm text-on-surface">Disponibilité</h3>
+<label class="flex items-center gap-sm cursor-pointer">
+<input id="filter-stock" class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4" type="checkbox" onchange="filterProducts()"/>
+<span class="text-body-sm text-on-surface">En stock uniquement</span>
+</label>
+</div>
+<!-- Référence -->
+<div class="mb-lg">
+<h3 class="font-label-md text-label-md uppercase tracking-wider mb-sm text-on-surface">Référence / Nom</h3>
+<input id="filter-ref" class="w-full bg-surface-container-low border border-outline-variant rounded px-sm py-xs text-body-sm focus:border-primary focus:ring-0 dark:bg-slate-800 text-on-surface" placeholder="Ex: LV430630..." type="text" oninput="filterProducts()"/>
+</div>
+</div>
+</aside>
+<!-- Product Display Area -->
+<div class="flex-grow">
+<!-- Sorting & Stats -->
+<div class="flex flex-col md:flex-row justify-between items-center mb-lg gap-md bg-surface-container-low p-sm rounded-lg border border-outline-variant">
+<p class="font-body-sm text-body-sm text-on-surface-variant">Affichage de <span class="font-bold text-on-surface">15</span> produits sur 240</p>
+<div class="flex items-center gap-md">
+<span class="text-label-md">Trier par:</span>
+<select class="bg-surface border-outline-variant rounded-md px-md py-xs text-body-sm focus:ring-primary focus:border-primary">
+<option>Pertinence</option>
+<option>Prix croissant</option>
+<option>Prix décroissant</option>
+<option>Nouveautés</option>
+</select>
+</div>
+</div>
+<!-- Product Grid (15 items) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Repeated Cards for Prototype (Mocking 15 items) -->
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-md flex flex-col group hover:shadow-xl transition-all duration-300">
+<div class="relative h-48 mb-md overflow-hidden rounded-lg bg-surface-container">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" data-alt="A clean, studio-lit macro photograph of a high-power industrial circuit breaker from a top-tier brand. The product is shot from a three-quarter angle on a neutral white-to-gray gradient background, emphasizing its technical details, robust plastic casing, and copper contact points. The lighting is sharp and clinical, echoing a professional high-tech electrical distribution catalog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_7XOqY3UqbULCXLpptMhTtI082raxXn1zTNOyaa7_tugZvj8hnrl7o0Bq7re9r6vUvbXP8ypDS9oQkHRTg7hqG-iTxxCNb1CuDsxR2uqy7ilovVt7B21gCvp51TA8gAi_Qr6V2qr_shfeeKmVX1k_pGK_8d_oUa017sReSkaS5b2xa8wmum9m5fMCXCK2PU3Yq_iCibyYCG5FywZbpvOw7C9r6QDWiY4tpLLslmcjCChaZwlfq-ntE5MJOASW7wXiq6vtCcEeWlHm"/>
+<span class="absolute top-sm right-sm bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">En Stock</span>
+</div>
+<div class="flex-grow">
+<p class="text-label-sm text-secondary font-bold uppercase mb-xs">Schneider Electric</p>
+<h3 class="font-headline-sm text-headline-sm mb-xs group-hover:text-primary transition-colors">Disjoncteur NSX 160N 3P</h3>
+<p class="text-label-sm text-on-surface-variant mb-md">Ref: LV430630</p>
+</div>
+<div class="pt-md border-t border-outline-variant flex justify-between items-end">
+<div>
+<span class="block text-label-sm text-on-surface-variant">Prix HT</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">2 450,00 MAD</span>
+</div>
+<a href="detail.html" class="bg-primary text-on-primary px-md py-xs rounded-lg font-label-md flex items-center gap-xs hover:bg-primary-container transition-colors justify-center text-center">
+                                Voir Détails
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Repeat Logic... (Simplified 14 more items for visual representation) -->
+<!-- Product 2 (Out of stock) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-md flex flex-col group hover:shadow-xl transition-all duration-300">
+<div class="relative h-48 mb-md overflow-hidden rounded-lg bg-surface-container">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" data-alt="A professional technical photograph of a medium voltage transformer, showing cooling fins and high-voltage bushings. The setting is a clean electrical testing lab with blue and gray tones. Shot with a shallow depth of field to highlight the intricate mechanical parts and quality of build." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxMJm9HIfYnoPBfC4k7LSLNGsBu4UGa7pSO8-kepn4J7HlKeoPNc7ETY6iHzx3xLX_IJ5VbqNugFJdN9BCVW-EUTksKjg78pt1EKIBOUvDgaVTZ95b3zExSqpsk5EZSqPpLu717xyHwjroJJZvSCLWA2eP58esOGuQ3-hgmkzvBAqwfp66uo8R8KYk2mUKS7jUHCCga-A4V036hAIDuiY58Sr34jpYJ1wMoAo3igBXe9k5KByhiEjntzy1JxmIhm4zuU78Uq8pEB2Y"/>
+<span class="absolute top-sm right-sm bg-error text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">Sur Commande</span>
+</div>
+<div class="flex-grow">
+<p class="text-label-sm text-secondary font-bold uppercase mb-xs">Legrand</p>
+<h3 class="font-headline-sm text-headline-sm mb-xs group-hover:text-primary transition-colors">Contacteur CTX³ 3P 40A</h3>
+<p class="text-label-sm text-on-surface-variant mb-md">Ref: 416086</p>
+</div>
+<div class="pt-md border-t border-outline-variant flex justify-between items-end">
+<div>
+<span class="block text-label-sm text-on-surface-variant">Prix HT</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">890,00 MAD</span>
+</div>
+<a href="detail.html" class="bg-primary text-on-primary px-md py-xs rounded-lg font-label-md flex items-center gap-xs hover:bg-primary-container transition-colors justify-center text-center">
+                                Voir Détails
+                            </a>
+</div>
+</div>
+<!-- Generate 13 more identical placeholders to fill grid (truncated for brevity but implying 15 cards) -->
+<!-- Rendering a few more distinct items -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-md flex flex-col group hover:shadow-xl transition-all duration-300">
+<div class="relative h-48 mb-md overflow-hidden rounded-lg bg-surface-container">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" data-alt="An industrial automation PLC module by ABB, detailed macro shot showing the LED status indicators and terminal blocks. Sleek technological look with technical blue accents. The module is positioned against a slate gray background to suggest reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL_I3flpiTEAl3kGtV2CVX6v-2jMkjgqTqJ7GbEPOD1iHJNsFKcX9EkwJZGF58qb8oxn5K21J3sz3u29ddauo1U0Ygh2Pr6N5gXunFt-uN8essXAk4rT_lG6HumxwUO02bGkIgVua-NsxVT7GdHzmcfMy881q2erVA0BL3FB1ZeVKhSyj_UgrWqZbIL6SpLqCqY9_Vl491GcqBa_Ay4ftRrxEDA3EqIe52qtN12LQC9uWSZcFRd5m_dFlos0KmmYV-g9iJXQQdn4eq"/>
+<span class="absolute top-sm right-sm bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">En Stock</span>
+</div>
+<div class="flex-grow">
+<p class="text-label-sm text-secondary font-bold uppercase mb-xs">ABB</p>
+<h3 class="font-headline-sm text-headline-sm mb-xs group-hover:text-primary transition-colors">Automate AC500 V3</h3>
+<p class="text-label-sm text-on-surface-variant mb-md">Ref: 1SAP120500R0001</p>
+</div>
+<div class="pt-md border-t border-outline-variant flex justify-between items-end">
+<div>
+<span class="block text-label-sm text-on-surface-variant">Prix HT</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">12 400,00 MAD</span>
+</div>
+<a href="detail.html" class="bg-primary text-on-primary px-md py-xs rounded-lg font-label-md flex items-center gap-xs hover:bg-primary-container transition-colors justify-center text-center">
+                                Voir Détails
+                            </a>
+</div>
+</div>
+<!-- Placeholder loop starts -->
+<div class="hidden xl:block col-span-3 py-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Cards 4 through 15 simulated -->
+<script>
+                                for(let i=0; i<12; i++) {
+                                    document.write(`
+                                        <div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-md flex flex-col group hover:shadow-xl transition-all duration-300">
+                                            <div class="relative h-48 mb-md overflow-hidden rounded-lg bg-surface-container">
+                                                <div class="w-full h-full flex items-center justify-center text-outline-variant">
+                                                    <span class="material-symbols-outlined text-[64px]">factory</span>
+                                                </div>
+                                                <span class="absolute top-sm right-sm bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">En Stock</span>
+                                            </div>
+                                            <div class="flex-grow">
+                                                <p class="text-label-sm text-secondary font-bold uppercase mb-xs">PARTENAIRE PREMIUM</p>
+                                                <h3 class="font-headline-sm text-headline-sm mb-xs group-hover:text-primary transition-colors">Équipement Technique ${i+4}</h3>
+                                                <p class="text-label-sm text-on-surface-variant mb-md">Ref: ELEC-${1000 + i}</p>
+                                            </div>
+                                            <div class="pt-md border-t border-outline-variant flex justify-between items-end">
+                                                <div>
+                                                    <span class="block text-label-sm text-on-surface-variant">Prix HT</span>
+                                                    <span class="font-headline-sm text-headline-sm text-on-surface">${(Math.random()*5000 + 500).toFixed(2)} MAD</span>
+                                                </div>
+                                                <a href="detail.html" class="bg-primary text-on-primary px-md py-xs rounded-lg font-label-md flex items-center gap-xs hover:bg-primary-container transition-colors justify-center text-center">
+                                                    Voir Détails
+                                                </a>
+                                            </div>
+                                        </div>
+                                    `);
+                                }
+                            </script>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-xxl flex justify-center items-center gap-sm">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold">1</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors">2</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors">3</button>
+<span class="mx-sm text-outline">...</span>
+<button class="w-10 h-10 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors">16</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-slate-950 border-t border-outline-variant py-xxl">
+<div class="w-full px-margin-desktop py-xxl grid grid-cols-2 md:grid-cols-6 gap-gutter max-w-max-width mx-auto">
+    <div class="col-span-2">
+        <h4 class="font-headline-sm text-primary font-bold mb-lg">ELECZAR</h4>
+        <p class="text-body-sm text-on-surface-variant mb-xl font-body-sm">
+            Le partenaire de confiance des électriciens au Maroc. Qualité certifiée, stock permanent et expertise technique depuis 1999.
+        </p>
+        <div class="flex gap-md">
+            <a href="https://linkedin.com/company/eleczar" target="_blank" class="material-symbols-outlined text-outline cursor-pointer hover:text-primary">hub</a>
+            <a href="https://facebook.com/eleczar" target="_blank" class="material-symbols-outlined text-outline cursor-pointer hover:text-primary">face_nod</a>
+            <a href="https://instagram.com/eleczar" target="_blank" class="material-symbols-outlined text-outline cursor-pointer hover:text-primary">camera</a>
+        </div>
+    </div>
+    <div>
+        <h5 class="font-label-md text-on-surface mb-lg uppercase font-bold">Produits</h5>
+        <ul class="space-y-sm text-body-sm text-on-surface-variant font-medium">
+            <li><a href="catalogue.html?cat=ecl" class="hover:text-primary">Éclairage</a></li>
+            <li><a href="catalogue.html?cat=app" class="hover:text-primary">Appareillage</a></li>
+            <li><a href="catalogue.html?cat=prot" class="hover:text-primary">Protection</a></li>
+            <li><a href="catalogue.html?cat=tab" class="hover:text-primary">Tableaux</a></li>
+            <li><a href="catalogue.html?cat=cab" class="hover:text-primary">Câbles &amp; Fils</a></li>
+        </ul>
+    </div>
+    <div>
+        <h5 class="font-label-md text-on-surface mb-lg uppercase font-bold">Secteurs</h5>
+        <ul class="space-y-sm text-body-sm text-on-surface-variant font-medium">
+            <li><a href="secteurs.html#residentiel" class="hover:text-primary">Résidentiel</a></li>
+            <li><a href="secteurs.html#tertiaire" class="hover:text-primary">Tertiaire</a></li>
+            <li><a href="secteurs.html#industriel" class="hover:text-primary">Industriel</a></li>
+            <li><a href="secteurs.html#infrastructure" class="hover:text-primary">Infrastructure</a></li>
+        </ul>
+    </div>
+    <div>
+        <h5 class="font-label-md text-on-surface mb-lg uppercase font-bold">Légal</h5>
+        <ul class="space-y-sm text-body-sm text-on-surface-variant font-medium">
+            <li><a href="#" class="hover:text-primary">Mentions légales</a></li>
+            <li><a href="#" class="hover:text-primary">CGV</a></li>
+            <li><a href="#" class="hover:text-primary">Politique de Confidentialité</a></li>
+        </ul>
+    </div>
+    <div>
+        <h5 class="font-label-md text-on-surface mb-lg uppercase font-bold">Coordonnées</h5>
+        <p class="text-body-sm text-on-surface-variant mb-sm font-medium">
+            Zone Industrielle, Meknès, Maroc<br/>
+            Tél: +212 535 000 000<br/>
+            Email: contact@eleczar.ma<br/>
+            Lun - Ven: 8h30 - 18h00
+        </p>
+    </div>
+</div>
+<div class="max-w-max-width mx-auto px-margin-desktop py-lg border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-md">
+    <p class="text-body-sm text-on-surface-variant">© 2026 ELECZAR. Precision Electrical Distribution. ICE: 001234567890001</p>
+    <p class="text-body-sm text-on-surface-variant font-bold">Développé par l'Agence de Précision Digitale</p>
+</div>
+</footer>
+<!-- Floating Actions -->
+<div class="fixed bottom-lg right-lg flex flex-col gap-md z-50">
+<!-- AI Widget 'AL montassira' -->
+
+<div class="ml-sm">
+<p class="text-[10px] font-bold uppercase tracking-tighter opacity-80">AI Assistant</p>
+<p class="font-label-md text-label-md">AL montassira</p>
+</div>
+</div>
+<!-- WhatsApp Button -->
+<a class="w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform" href="https://wa.me/212000000000">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.483 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.991-.001-3.951-.5-5.688-1.448l-6.308 1.656zm6.29-4.113l.379.225c1.53.911 3.284 1.391 5.077 1.392 5.232 0 9.491-4.259 9.493-9.493.001-2.536-.987-4.92-2.782-6.714-1.793-1.795-4.175-2.784-6.71-2.785-5.236 0-9.492 4.258-9.494 9.492-.001 1.874.526 3.703 1.525 5.293l.244.386-1.003 3.666 3.757-.986zm11.554-7.054c-.26-.13-1.533-.757-1.774-.843-.239-.087-.414-.13-.588.13-.175.26-.677.844-.83.1 .017-.152.175-.412.325-.583.153-.175.13-.347.044-.607-.087-.26-.757-1.826-1.037-2.502-.274-.66-.554-.571-.757-.581-.197-.009-.424-.01-.65-.01-.226 0-.594.085-.905.433-.311.347-1.187 1.161-1.187 2.829 0 1.668 1.215 3.28 1.385 3.507.17.227 2.391 3.651 5.791 5.116.808.348 1.44.556 1.932.712.813.258 1.553.222 2.138.134.653-.098 1.533-.627 1.75-.1.233.217.627.525.757 1.258.13.733.13 1.365.065 1.625-.065.26-.26.39-.52.52z"></path></svg>
+</a>
+</div>
+<script>
+        // Micro-interactions
+        const aiWidget = document.getElementById('ai-widget');
+        aiWidget.addEventListener('click', () => {
+            alert('L\'assistant AL montassira est prêt à répondre à vos questions techniques ! (Démo)');
+        });
+
+        // Filter Logic Simulation
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', () => {
+                console.log('Filtrage mis à jour...');
+            });
+        });
+    </script>
+
+<script>
+    // Global list of products
+    const ALL_PRODUCTS = [
+        { name: "Disjoncteur phase+neutre 16A", brand: "Legrand", ref: "LEG-16A", price: 45, status: "En Stock", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuARJYeO-CBe5812e5Ki7FUUgYu0j_KqL-gA0-Fsjpj8asyoVKkyn0FeBtOnEC48tVtPYTl0YUBxiGJYXVJ71iQYC-_XYoq8WSC-RW9HIc_iS3bsZY61YXtAju1KHzzBx3brRMPgTUBsjwBhivj141zVzREMkZP7Uqnf3oZOLhRMe2WgqsJQs1ZXHfCvqaljc_ax34jAhgVINAIwhNM2f_RfwychHtiEDuEa_x-osyZrd6iwsiRp_dqUWccS7E5DgK-Tn-T62CaoaK_Y", cat: "disj-mod", description: "Disjoncteur phase+neutre DNX³ 4500 Legrand. Idéal pour la protection des circuits terminaux résidentiels." },
+        { name: "Projecteur LED 50W IP65", brand: "Osram", ref: "OSR-PROJ50", price: 290, status: "En Stock", tag: "Promo", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAlFDSgGFYOoguVgoFhTA06qOiZAVYyRZBKQgksKP874-tk6fKep6kVAiaAVwtJObqB42sNBKy48Gh1kiUA5bykBNQij6sTVdHXmHfA8211jLI8LmjErIMYEhxHQpOhw6yxiUSARxtBF17T04FogLIotJRm-RVHRcPGACU4epGfKKgyvSZauEdlituY7KarpsCgubFkilfdjWNM6nib638SoQN48NwusF83x--oZ7CripWrGhEWrBfpS9lh039gkt5FnVggNy2oLBEy", cat: "ecl-pub", description: "Projecteur LED de forte puissance extérieure Osram Eco." },
+        { name: "Prise Murale Smart WiFi", brand: "Ingelec", ref: "ING-SMART10", price: 120, status: "Sur Commande", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0yGrOkgHDQEGnZF6P3WSUOIhKO6XfavySa2XP1m4iPzv2iCm1PIdZXPEDBanh1_QdJQsxZKwcnvaGeQl3ynL_X88gopRd284NZgCW3Rk1NwLXjReCI4WRfa4fdPFa1FjnIHaNNgayOB73UFC9CqC9PvAT4ETHcnHxwFq7MafLV3ej2AUP91QY80t4SZy4GjbuqUDAAR8y3CNRLQMXeX5M8fOaeRR-Ey9krHQILCbGNDK8WoHNwkTJI6gMZt9jE-Z4ClObzu4M3j9x", cat: "dom-sys", description: "Prise intelligente Ingelec avec connexion WiFi intégrée." },
+        { name: "Câble RO2V 3G1.5mm²", brand: "Nexans", ref: "NEX-RO2V3G15", price: 15, status: "En Stock", tag: null, img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD4Sae-fudG0ondmYbSHpR6C_09o3hJ8B0nuXIWQP5iLNuRohgU3mfKMHABqs1BQ59PfqJjFRCwZwvpRjU4BQBcrpOhpu2RrJW2fwYMldAiDiGXZSzzwt7FJBbIBTmblj2jea9a9HHAHQrjBhe__8b2Bfzs4CWDUktQVoGij1adoloMORP4tR1W9aJYDKf3fIQXt4-HBXGCuMUYulZ9BmkqfaxsFdNRwXHvoNIfPGXeTqghS5fg5zTV-Fy77aG7Rvq4Crlw1qMWQA57", cat: "fil", description: "Câble rigide cuivre Nexans U-1000 AR2V 3G1.5mm²." },
+        { name: "Kit Interphone Vidéo Fermax", brand: "Fermax", ref: "FER-KITVIDEO", price: 1450, status: "En Stock", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAd9ZVLTCMpWmG1XYiZZw0w5PahE6NLdyXPO1l82vXF2nQ03IaXDCKECiVAhnM6GQLATy40yisRJk4fAKbzYIrxM0dz34iAxmIlh9jrFJKoI7lc7TAd1v4agiTpFmQzrObWnwVoA1wVFjqBePfN64ffrblBlE-uxRw-LeRR8B3_s_Z1x04gJo6zPMdsTWHMnM3db3IbhgT4o1X4aGHbrABQ58rulSjeBUV8nfjojBQdaVlsL3XwxqPRihZk82MKYy5dfxQhOM_ckY9j", cat: "sec-cam", description: "Kit interphone vidéo Fermax pour contrôle d'accès résidentiel." },
+        { name: "Multimètre Digital Pro UT33", brand: "ABB", ref: "ABB-UT33D", price: 580, status: "En Stock", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBlpnNSheQY1y_E0M0RyvYfx7sHcsV0HmiqPbGilqqukGqTMOhq0fHnnCEdqtPIV61ELE0Y7j3IMHmLA4rW1S2KsMi3L7RnPIpaSYl3wDhJ5uz1g4-424GDxfg-BKU9dWsFMDMiWSjZGCBaN7QzqTSvQh87zCiAbHnYiQtEU1RLpk6pj2RGtg9typodfjukKyiU5bj6b4LNVBDUXeiulI6n6MqjQf7SIwZlEeUsDiLmzn9jlP1oHxCrqmPr5qwW5zc4Dlgq5Pk9vWM6", cat: "out", description: "Instrument de mesure de précision pour électriciens." },
+        { name: "Disjoncteur NSX 160N 3P", brand: "Schneider", ref: "LV430630", price: 2450, status: "En Stock", tag: "Promo", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD_7XOqY3UqbULCXLpptMhTtI082raxXn1zTNOyaa7_tugZvj8hnrl7o0Bq7re9r6vUvbXP8ypDS9oQkHRTg7hqG-iTxxCNb1CuDsxR2uqy7ilovVt7B21gCvp51TA8gAi_Qr6V2qr_shfeeKmVX1k_pGK_8d_oUa017sReSkaS5b2xa8wmum9m5fMCXCK2PU3Yq_iCibyYCG5FywZbpvOw7C9r6QDWiY4tpLLslmcjCChaZwlfq-ntE5MJOASW7wXiq6vtCcEeWlHm", cat: "disj-mod", description: "Disjoncteur boîtier moulé Compact Schneider Electric." },
+        { name: "Contacteur CTX³ 3P 40A", brand: "Legrand", ref: "LEG-CTX40", price: 890, status: "Sur Commande", tag: null, img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxMJm9HIfYnoPBfC4k7LSLNGsBu4UGa7pSO8-kepn4J7HlKeoPNc7ETY6iHzx3xLX_IJ5VbqNugFJdN9BCVW-EUTksKjg78pt1EKIBOUvDgaVTZ95b3zExSqpsk5EZSqPpLu717xyHwjroJJZvSCLWA2eP58esOGuQ3-hgmkzvBAqwfp66uo8R8KYk2mUKS7jUHCCga-A4V036hAIDuiY58Sr34jpYJ1wMoAo3igBXe9k5KByhiEjntzy1JxmIhm4zuU78Uq8pEB2Y", cat: "disj-mod", description: "Contacteur triphasé CTX³ Legrand 40A." },
+        { name: "Automate AC500 V3", brand: "ABB", ref: "ABB-AC500", price: 12400, status: "En Stock", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBL_I3flpiTEAl3kGtV2CVX6v-2jMkjgqTqJ7GbEPOD1iHJNsFKcX9EkwJZGF58qb8oxn5K21J3sz3u29ddauo1U0Ygh2Pr6N5gXunFt-uN8essXAk4rT_lG6HumxwUO02bGkIgVua-NsxVT7GdHzmcfMy881q2erVA0BL3FB1ZeVKhSyj_UgrWqZbIL6SpLqCqY9_Vl491GcqBa_Ay4ftRrxEDA3EqIe52qtN12LQC9uWSZcFRd5m_dFlos0KmmYV-g9iJXQQdn4eq", cat: "dom-sys", description: "Automate programmable industriel AC500 ABB." },
+        { name: "Armoire Électrique Gemini", brand: "ABB", ref: "ABB-GEMINI5", price: 3100, status: "En Stock", tag: null, img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAd9ZVLTCMpWmG1XYiZZw0w5PahE6NLdyXPO1l82vXF2nQ03IaXDCKECiVAhnM6GQLATy40yisRJk4fAKbzYIrxM0dz34iAxmIlh9jrFJKoI7lc7TAd1v4agiTpFmQzrObWnwVoA1wVFjqBePfN64ffrblBlE-uxRw-LeRR8B3_s_Z1x04gJo6zPMdsTWHMnM3db3IbhgT4o1X4aGHbrABQ58rulSjeBUV8nfjojBQdaVlsL3XwxqPRihZk82MKYy5dfxQhOM_ckY9j", cat: "arm", description: "Coffret de distribution thermoplastique ABB Gemini." },
+        { name: "Néon LED Ingelec 120cm", brand: "Ingelec", ref: "ING-NEON120", price: 75, status: "En Stock", tag: "Promo", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCW1jtCSJVEm4qCFvyIbsioddrm5FOuHbCAKHdYej6uM7n-suduZLPlFrp18-euN4oBagfZ6riZgOFj-t53MGj1P0FuZhzsQ1KQSxNlnquT00YwopyyHx8-XGUMAYiuyokY_GizWTQV9AHgJEWJVzT3CbWOLkyqHhYrTznUl5KBM6ZW95Zomjp1bK4VD2k_Jc5JAS-N8cA_rJAmRoSJe-7a878PXzMnc8Ird6zCsQJMK3SrGb_G4NwbzOZSqa7vKty6Ubx2-p57gTH4", cat: "tub-led", description: "Réglette LED étanche Ingelec." }
+    ];
+
+    let currentCategory = null;
+
+    // Load queries from URL
+    function loadUrlParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Search query
+        const q = urlParams.get('q') || urlParams.get('query');
+        if (q) {
+            document.getElementById('filter-ref').value = q;
+        }
+
+        // Category filter
+        const cat = urlParams.get('cat');
+        if (cat) {
+            currentCategory = cat;
+            showCategoryBadge(cat);
+        }
+    }
+
+    function showCategoryBadge(catCode) {
+        const banner = document.getElementById('category-badge-banner');
+        const badgeSpan = document.getElementById('active-category-badge').querySelector('span');
+        badgeSpan.textContent = catCode.toUpperCase();
+        banner.classList.remove('hidden');
+    }
+
+    window.clearCategoryFilter = function() {
+        currentCategory = null;
+        document.getElementById('category-badge-banner').classList.add('hidden');
+        const url = new URL(window.location);
+        url.searchParams.delete('cat');
+        window.history.pushState({}, '', url);
+        filterProducts();
+    };
+
+    window.updatePriceLabel = function(val) {
+        document.getElementById('price-val').textContent = Number(val).toLocaleString();
+        filterProducts();
+    };
+
+    window.resetFilters = function() {
+        document.querySelectorAll('.filter-brand').forEach(cb => cb.checked = false);
+        document.getElementById('price-slider').value = 15000;
+        document.getElementById('price-val').textContent = "15 000";
+        document.getElementById('filter-stock').checked = false;
+        document.getElementById('filter-ref').value = '';
+        currentCategory = null;
+        document.getElementById('category-badge-banner').classList.add('hidden');
+        window.history.pushState({}, '', window.location.pathname);
+        filterProducts();
+    };
+
+    // Core Filtering logic
+    window.filterProducts = function() {
+        const query = document.getElementById('filter-ref').value.toLowerCase();
+        const maxPrice = Number(document.getElementById('price-slider').value);
+        const stockOnly = document.getElementById('filter-stock').checked;
+        const sortVal = document.getElementById('sort-select').value;
+
+        const selectedBrands = [];
+        document.querySelectorAll('.filter-brand:checked').forEach(cb => {
+            selectedBrands.push(cb.value);
+        });
+
+        let filtered = ALL_PRODUCTS.filter(p => {
+            if (query && !p.name.toLowerCase().includes(query) && !p.ref.toLowerCase().includes(query) && !p.brand.toLowerCase().includes(query)) {
+                return false;
+            }
+            if (p.price > maxPrice) {
+                return false;
+            }
+            if (stockOnly && p.status !== "En Stock") {
+                return false;
+            }
+            if (selectedBrands.length > 0 && !selectedBrands.includes(p.brand)) {
+                return false;
+            }
+            if (currentCategory) {
+                if (p.cat !== currentCategory && !p.cat.startsWith(currentCategory + '-')) {
+                    return false;
+                }
+            }
+            return true;
+        });
+
+        if (sortVal === "asc") {
+            filtered.sort((a, b) => a.price - b.price);
+        } else if (sortVal === "desc") {
+            filtered.sort((a, b) => b.price - a.price);
+        } else if (sortVal === "nouveau") {
+            filtered.sort((a, b) => (b.tag === "Nouveau" ? 1 : 0) - (a.tag === "Nouveau" ? 1 : 0));
+        }
+
+        renderGrid(filtered);
+    };
+
+    function renderGrid(list) {
+        const grid = document.getElementById('product-grid');
+        const visibleCount = document.getElementById('visible-count');
+        const totalCount = document.getElementById('total-count');
+
+        visibleCount.textContent = list.length;
+        totalCount.textContent = ALL_PRODUCTS.length;
+
+        if (list.length === 0) {
+            grid.innerHTML = `
+                <div class="col-span-3 flex flex-col items-center justify-center text-center p-xxl bg-surface-container-low dark:bg-slate-800 rounded-xl border border-outline-variant/30 min-h-[300px]">
+                    <span class="material-symbols-outlined text-[64px] text-outline mb-md">search_off</span>
+                    <h4 class="font-headline-sm text-on-surface font-bold mb-xs">Aucun produit trouvé</h4>
+                    <p class="text-body-sm text-on-surface-variant max-w-sm">Désolé, aucune référence ne correspond à vos filtres.</p>
+                </div>
+            `;
+            return;
+        }
+
+        grid.innerHTML = list.map(p => {
+            const badgeClass = p.status === "En Stock" ? "bg-green-500" : "bg-error";
+            const tagBadge = p.tag ? `<span class="absolute top-sm left-sm bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">${p.tag}</span>` : '';
+            return `
+                <div class="bg-surface-container-lowest dark:bg-slate-850 rounded-xl border border-outline-variant dark:border-slate-700 p-md flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
+                    <div>
+                        <div class="relative h-48 mb-md overflow-hidden rounded-lg bg-surface-container dark:bg-slate-800">
+                            <img class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500" src="${p.img}" alt="${p.name}"/>
+                            <span class="absolute top-sm right-sm ${badgeClass} text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">${p.status}</span>
+                            ${tagBadge}
+                        </div>
+                        <p class="text-label-sm text-secondary font-bold uppercase mb-xs">${p.brand}</p>
+                        <h3 class="font-headline-sm text-on-surface mb-xs group-hover:text-primary transition-colors text-sm font-bold">${p.name}</h3>
+                        <p class="text-label-sm text-on-surface-variant mb-md">Ref: ${p.ref}</p>
+                    </div>
+                    <div class="pt-md border-t border-outline-variant dark:border-slate-700 flex justify-between items-center gap-xs">
+                        <div>
+                            <span class="block text-[10px] text-on-surface-variant uppercase font-bold">Prix HT</span>
+                            <span class="font-headline-sm text-on-surface text-sm font-bold">${p.price.toLocaleString()} MAD</span>
+                        </div>
+                        <div class="flex gap-1 shrink-0">
+                            <a href="detail.html?ref=${p.ref}" class="bg-surface-container text-on-surface px-md py-xs rounded-lg font-label-md hover:bg-surface-variant transition-colors text-xs flex items-center justify-center dark:bg-slate-700 dark:hover:bg-slate-600">Détails</a>
+                            <button onclick="addToQuote('${p.name}', '${p.ref}', '${p.price} MAD', '${p.brand}')" class="bg-secondary text-on-primary px-md py-xs rounded-lg font-label-md hover:bg-secondary-container transition-colors text-xs flex items-center gap-xs">
+                                <span class="material-symbols-outlined text-sm">add_shopping_cart</span> Devis
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadUrlParams();
+        filterProducts();
+    });
+</script>
+
+<!-- Chatbot IA 'AL Montassira' -->
+
+            </div>
+            <button class="material-symbols-outlined hover:bg-white/15 rounded-full p-1" onclick="toggleChat()">close</button>
+        </div>
+        <div class="h-[280px] p-md overflow-y-auto bg-surface-container-lowest flex flex-col gap-sm" id="chat-messages">
+            <div class="bg-surface-variant p-sm rounded-lg text-body-sm max-w-[85%] self-start dark:bg-slate-800 dark:text-zinc-100 font-body-sm">
+                Bonjour ! Je suis AL Montassira, l'assistante intelligente d'ELECZAR. Comment puis-je vous aider dans votre projet électrique aujourd'hui ?
+            </div>
+            <div class="flex flex-wrap gap-xs my-xs" id="chat-presets">
+                <button class="bg-surface dark:bg-slate-800 border border-outline-variant px-sm py-1 rounded-full text-[11px] text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all text-left" onclick="sendChatMessage('Disponibilité en stock')">📦 Stock &amp; Dispo</button>
+                <button class="bg-surface dark:bg-slate-800 border border-outline-variant px-sm py-1 rounded-full text-[11px] text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all text-left" onclick="sendChatMessage('Délais de livraison')">🚚 Livraison</button>
+                <button class="bg-surface dark:bg-slate-800 border border-outline-variant px-sm py-1 rounded-full text-[11px] text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all text-left" onclick="sendChatMessage('Télécharger Catalogue PDF')">📄 Catalogue PDF</button>
+                <button class="bg-surface dark:bg-slate-800 border border-outline-variant px-sm py-1 rounded-full text-[11px] text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all text-left" onclick="sendChatMessage('Obtenir un Devis')">💰 Demander Devis</button>
+                <button class="bg-surface dark:bg-slate-800 border border-outline-variant px-sm py-1 rounded-full text-[11px] text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all text-left" onclick="sendChatMessage('Formations électriciens')">🎓 Formations NF</button>
+            </div>
+        </div>
+        <div class="p-sm bg-white dark:bg-slate-800 border-t border-outline-variant flex gap-xs">
+            <input class="w-full bg-surface dark:bg-slate-900 p-xs rounded border-none focus:ring-0 text-body-sm text-on-surface" id="chat-input" placeholder="Posez votre question technique..." type="text" onkeydown="if(event.key === 'Enter') sendChatMessage()"/>
+            <button class="material-symbols-outlined text-primary p-xs hover:bg-surface-variant rounded-full" onclick="sendChatMessage()">send</button>
+        </div>
+    </div>
+    <button class="w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all relative" onclick="toggleChat()">
+        <span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+        <span class="absolute -top-1 -right-1 w-4 h-4 bg-secondary-container border-2 border-white rounded-full animate-ping"></span>
+    </button>
+</div>
+
+<script>
+    // Theme dark mode toggle
+    function initDarkMode() {
+        const html = document.documentElement;
+        const toggleBtn = document.getElementById('dark-mode-toggle');
+        if (!toggleBtn) return;
+        
+        // Initial setup
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        
+        toggleBtn.addEventListener('click', () => {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    }
+
+    // Chatbot functionality
+    function initChatbot() {
+        const chatWindow = document.getElementById('chat-window');
+        const messagesContainer = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const presets = document.getElementById('chat-presets');
+        
+        if (!chatWindow || !messagesContainer || !chatInput) return;
+        
+        window.toggleChat = function() {
+            chatWindow.classList.toggle('hidden');
+        };
+        
+        window.sendChatMessage = function(customText) {
+            const query = (customText || chatInput.value).trim();
+            if (!query) return;
+            
+            // Append user message
+            appendMessage(query, true);
+            if (!customText) chatInput.value = '';
+            
+            // Show typing indicator
+            const typingDiv = document.createElement('div');
+            typingDiv.className = "bg-surface-variant dark:bg-slate-800 p-sm rounded-lg text-body-sm max-w-[85%] self-start italic opacity-70";
+            typingDiv.id = "chat-typing";
+            typingDiv.textContent = "AL Montassira écrit...";
+            messagesContainer.appendChild(typingDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            // Preset answers
+            setTimeout(() => {
+                const typing = document.getElementById('chat-typing');
+                if (typing) typing.remove();
+                
+                let reply = "Merci pour votre question. Un ingénieur conseil d'ELECZAR va vous répondre d'ici quelques minutes. Pour toute urgence, contactez notre showroom au +212 535 000 000.";
+                const q = query.toLowerCase();
+                
+                if (q.includes('stock') || q.includes('dispo') || q.includes('legrand') || q.includes('schneider') || q.includes('16a') || q.includes('référence')) {
+                    reply = "Nous disposons de plus de 12 000 produits en stock permanent à Meknès dans notre showroom de 500m², y compris des câbles Nexans, appareillages Ingelec et protections Legrand. Quel modèle recherchez-vous ?";
+                } else if (q.includes('devis') || q.includes('tarif') || q.includes('prix')) {
+                    reply = "Vous pouvez demander un devis en remplissant le formulaire en bas de page ou en ajoutant des produits à votre panier de devis (cliquez sur l'icône de caddie). Nous répondons sous 4 heures.";
+                } else if (q.includes('livraison') || q.includes('port') || q.includes('délais') || q.includes('delai')) {
+                    reply = "Nous livrons sous 24-48h à Meknès, Fès et partout au Maroc. La livraison est gratuite à partir de 5 000 MAD.";
+                } else if (q.includes('catalogue') || q.includes('pdf') || q.includes('télécharger')) {
+                    reply = "Vous pouvez télécharger notre E-Catalogue complet 2026 en cliquant sur ce lien direct : <a href='public/eleczar-catalogue.pdf' download class='text-primary font-bold underline hover:text-primary-container'>Télécharger le Catalogue PDF (12k refs)</a>.";
+                } else if (q.includes('formation') || q.includes('norme') || q.includes('nfc')) {
+                    reply = "ELECZAR propose des formations techniques gratuites sur la norme NF C 15-100 et la domotique intelligente dans notre showroom de 500m² à Meknès. Contactez-nous pour réserver.";
+                }
+                
+                appendMessage(reply, false, true);
+            }, 800);
+        };
+        
+        function appendMessage(text, isUser, isHtml = false) {
+            const div = document.createElement('div');
+            div.className = isUser 
+                ? "bg-primary text-on-primary p-sm rounded-lg text-body-sm max-w-[85%] self-end"
+                : "bg-surface-variant dark:bg-slate-800 p-sm rounded-lg text-body-sm max-w-[85%] self-start dark:text-zinc-100 font-body-sm";
+            if (isHtml) {
+                div.innerHTML = text;
+            } else {
+                div.textContent = text;
+            }
+            // Insert before presets
+            if (presets && !isUser) {
+                messagesContainer.insertBefore(div, presets);
+            } else {
+                messagesContainer.appendChild(div);
+            }
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+    }
+
+    // Quote Cart management
+    function initQuoteCart() {
+        const cartBadge = document.getElementById('cart-badge');
+        
+        window.getQuoteList = function() {
+            return JSON.parse(localStorage.getItem('eleczar_quote_list') || '[]');
+        };
+        
+        window.saveQuoteList = function(list) {
+            localStorage.setItem('eleczar_quote_list', JSON.stringify(list));
+            updateCartBadge();
+            // Dispatch event to update other pages
+            window.dispatchEvent(new Event('quote-cart-updated'));
+        };
+        
+        window.addToQuote = function(productName, productRef, productPrice, productBrand) {
+            let list = getQuoteList();
+            const existing = list.find(item => item.ref === productRef);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                list.push({ name: productName, ref: productRef, price: productPrice, brand: productBrand, qty: 1 });
+            }
+            saveQuoteList(list);
+            showToast(`"${productName}" ajouté à votre demande de devis !`);
+        };
+        
+        window.updateCartBadge = function() {
+            const list = getQuoteList();
+            const totalItems = list.reduce((sum, item) => sum + item.qty, 0);
+            if (cartBadge) {
+                cartBadge.textContent = totalItems;
+                if (totalItems > 0) {
+                    cartBadge.classList.remove('hidden');
+                } else {
+                    cartBadge.classList.add('hidden');
+                }
+            }
+        };
+        
+        window.showToast = function(message) {
+            let toast = document.getElementById('eleczar-toast');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'eleczar-toast';
+                toast.className = 'fixed top-24 right-lg bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 px-lg py-md rounded-xl shadow-2xl border border-outline-variant z-[999] transition-all duration-300 transform translate-y-[-20px] opacity-0 flex items-center gap-md font-label-md';
+                document.body.appendChild(toast);
+            }
+            toast.innerHTML = `<span class="material-symbols-outlined text-secondary">check_circle</span> <span>${message}</span>`;
+            toast.classList.remove('opacity-0', 'translate-y-[-20px]');
+            toast.classList.add('opacity-100', 'translate-y-0');
+            
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-[-20px]');
+            }, 3000);
+        };
+        
+        updateCartBadge();
+        window.addEventListener('quote-cart-updated', updateCartBadge);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initDarkMode();
+        initChatbot();
+        initQuoteCart();
+    });
+</script>
+
+<script>
+    // Global list of products
+    const ALL_PRODUCTS = [
+        { name: "Disjoncteur phase+neutre 16A", brand: "Legrand", ref: "LEG-16A", price: 45, status: "En Stock", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuARJYeO-CBe5812e5Ki7FUUgYu0j_KqL-gA0-Fsjpj8asyoVKkyn0FeBtOnEC48tVtPYTl0YUBxiGJYXVJ71iQYC-_XYoq8WSC-RW9HIc_iS3bsZY61YXtAju1KHzzBx3brRMPgTUBsjwBhivj141zVzREMkZP7Uqnf3oZOLhRMe2WgqsJQs1ZXHfCvqaljc_ax34jAhgVINAIwhNM2f_RfwychHtiEDuEa_x-osyZrd6iwsiRp_dqUWccS7E5DgK-Tn-T62CaoaK_Y", cat: "disj-mod", description: "Disjoncteur phase+neutre DNX³ 4500 Legrand. Idéal pour la protection des circuits terminaux résidentiels." },
+        { name: "Projecteur LED 50W IP65", brand: "Osram", ref: "OSR-PROJ50", price: 290, status: "En Stock", tag: "Promo", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAlFDSgGFYOoguVgoFhTA06qOiZAVYyRZBKQgksKP874-tk6fKep6kVAiaAVwtJObqB42sNBKy48Gh1kiUA5bykBNQij6sTVdHXmHfA8211jLI8LmjErIMYEhxHQpOhw6yxiUSARxtBF17T04FogLIotJRm-RVHRcPGACU4epGfKKgyvSZauEdlituY7KarpsCgubFkilfdjWNM6nib638SoQN48NwusF83x--oZ7CripWrGhEWrBfpS9lh039gkt5FnVggNy2oLBEy", cat: "ecl-pub", description: "Projecteur LED de forte puissance extérieure Osram Eco." },
+        { name: "Prise Murale Smart WiFi", brand: "Ingelec", ref: "ING-SMART10", price: 120, status: "Sur Commande", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0yGrOkgHDQEGnZF6P3WSUOIhKO6XfavySa2XP1m4iPzv2iCm1PIdZXPEDBanh1_QdJQsxZKwcnvaGeQl3ynL_X88gopRd284NZgCW3Rk1NwLXjReCI4WRfa4fdPFa1FjnIHaNNgayOB73UFC9CqC9PvAT4ETHcnHxwFq7MafLV3ej2AUP91QY80t4SZy4GjbuqUDAAR8y3CNRLQMXeX5M8fOaeRR-Ey9krHQILCbGNDK8WoHNwkTJI6gMZt9jE-Z4ClObzu4M3j9x", cat: "dom-sys", description: "Prise intelligente Ingelec avec connexion WiFi intégrée." },
+        { name: "Câble RO2V 3G1.5mm²", brand: "Nexans", ref: "NEX-RO2V3G15", price: 15, status: "En Stock", tag: null, img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD4Sae-fudG0ondmYbSHpR6C_09o3hJ8B0nuXIWQP5iLNuRohgU3mfKMHABqs1BQ59PfqJjFRCwZwvpRjU4BQBcrpOhpu2RrJW2fwYMldAiDiGXZSzzwt7FJBbIBTmblj2jea9a9HHAHQrjBhe__8b2Bfzs4CWDUktQVoGij1adoloMORP4tR1W9aJYDKf3fIQXt4-HBXGCuMUYulZ9BmkqfaxsFdNRwXHvoNIfPGXeTqghS5fg5zTV-Fy77aG7Rvq4Crlw1qMWQA57", cat: "fil", description: "Câble rigide cuivre Nexans U-1000 AR2V 3G1.5mm²." },
+        { name: "Kit Interphone Vidéo Fermax", brand: "Fermax", ref: "FER-KITVIDEO", price: 1450, status: "En Stock", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAd9ZVLTCMpWmG1XYiZZw0w5PahE6NLdyXPO1l82vXF2nQ03IaXDCKECiVAhnM6GQLATy40yisRJk4fAKbzYIrxM0dz34iAxmIlh9jrFJKoI7lc7TAd1v4agiTpFmQzrObWnwVoA1wVFjqBePfN64ffrblBlE-uxRw-LeRR8B3_s_Z1x04gJo6zPMdsTWHMnM3db3IbhgT4o1X4aGHbrABQ58rulSjeBUV8nfjojBQdaVlsL3XwxqPRihZk82MKYy5dfxQhOM_ckY9j", cat: "sec-cam", description: "Kit interphone vidéo Fermax pour contrôle d'accès résidentiel." },
+        { name: "Multimètre Digital Pro UT33", brand: "ABB", ref: "ABB-UT33D", price: 580, status: "En Stock", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBlpnNSheQY1y_E0M0RyvYfx7sHcsV0HmiqPbGilqqukGqTMOhq0fHnnCEdqtPIV61ELE0Y7j3IMHmLA4rW1S2KsMi3L7RnPIpaSYl3wDhJ5uz1g4-424GDxfg-BKU9dWsFMDMiWSjZGCBaN7QzqTSvQh87zCiAbHnYiQtEU1RLpk6pj2RGtg9typodfjukKyiU5bj6b4LNVBDUXeiulI6n6MqjQf7SIwZlEeUsDiLmzn9jlP1oHxCrqmPr5qwW5zc4Dlgq5Pk9vWM6", cat: "out", description: "Instrument de mesure de précision pour électriciens." },
+        { name: "Disjoncteur NSX 160N 3P", brand: "Schneider", ref: "LV430630", price: 2450, status: "En Stock", tag: "Promo", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD_7XOqY3UqbULCXLpptMhTtI082raxXn1zTNOyaa7_tugZvj8hnrl7o0Bq7re9r6vUvbXP8ypDS9oQkHRTg7hqG-iTxxCNb1CuDsxR2uqy7ilovVt7B21gCvp51TA8gAi_Qr6V2qr_shfeeKmVX1k_pGK_8d_oUa017sReSkaS5b2xa8wmum9m5fMCXCK2PU3Yq_iCibyYCG5FywZbpvOw7C9r6QDWiY4tpLLslmcjCChaZwlfq-ntE5MJOASW7wXiq6vtCcEeWlHm", cat: "disj-mod", description: "Disjoncteur boîtier moulé Compact Schneider Electric." },
+        { name: "Contacteur CTX³ 3P 40A", brand: "Legrand", ref: "LEG-CTX40", price: 890, status: "Sur Commande", tag: null, img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxMJm9HIfYnoPBfC4k7LSLNGsBu4UGa7pSO8-kepn4J7HlKeoPNc7ETY6iHzx3xLX_IJ5VbqNugFJdN9BCVW-EUTksKjg78pt1EKIBOUvDgaVTZ95b3zExSqpsk5EZSqPpLu717xyHwjroJJZvSCLWA2eP58esOGuQ3-hgmkzvBAqwfp66uo8R8KYk2mUKS7jUHCCga-A4V036hAIDuiY58Sr34jpYJ1wMoAo3igBXe9k5KByhiEjntzy1JxmIhm4zuU78Uq8pEB2Y", cat: "disj-mod", description: "Contacteur triphasé CTX³ Legrand 40A." },
+        { name: "Automate AC500 V3", brand: "ABB", ref: "ABB-AC500", price: 12400, status: "En Stock", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBL_I3flpiTEAl3kGtV2CVX6v-2jMkjgqTqJ7GbEPOD1iHJNsFKcX9EkwJZGF58qb8oxn5K21J3sz3u29ddauo1U0Ygh2Pr6N5gXunFt-uN8essXAk4rT_lG6HumxwUO02bGkIgVua-NsxVT7GdHzmcfMy881q2erVA0BL3FB1ZeVKhSyj_UgrWqZbIL6SpLqCqY9_Vl491GcqBa_Ay4ftRrxEDA3EqIe52qtN12LQC9uWSZcFRd5m_dFlos0KmmYV-g9iJXQQdn4eq", cat: "dom-sys", description: "Automate programmable industriel AC500 ABB." },
+        { name: "Armoire Électrique Gemini", brand: "ABB", ref: "ABB-GEMINI5", price: 3100, status: "En Stock", tag: null, img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAd9ZVLTCMpWmG1XYiZZw0w5PahE6NLdyXPO1l82vXF2nQ03IaXDCKECiVAhnM6GQLATy40yisRJk4fAKbzYIrxM0dz34iAxmIlh9jrFJKoI7lc7TAd1v4agiTpFmQzrObWnwVoA1wVFjqBePfN64ffrblBlE-uxRw-LeRR8B3_s_Z1x04gJo6zPMdsTWHMnM3db3IbhgT4o1X4aGHbrABQ58rulSjeBUV8nfjojBQdaVlsL3XwxqPRihZk82MKYy5dfxQhOM_ckY9j", cat: "arm", description: "Coffret de distribution thermoplastique ABB Gemini." },
+        { name: "Néon LED Ingelec 120cm", brand: "Ingelec", ref: "ING-NEON120", price: 75, status: "En Stock", tag: "Promo", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCW1jtCSJVEm4qCFvyIbsioddrm5FOuHbCAKHdYej6uM7n-suduZLPlFrp18-euN4oBagfZ6riZgOFj-t53MGj1P0FuZhzsQ1KQSxNlnquT00YwopyyHx8-XGUMAYiuyokY_GizWTQV9AHgJEWJVzT3CbWOLkyqHhYrTznUl5KBM6ZW95Zomjp1bK4VD2k_Jc5JAS-N8cA_rJAmRoSJe-7a878PXzMnc8Ird6zCsQJMK3SrGb_G4NwbzOZSqa7vKty6Ubx2-p57gTH4", cat: "tub-led", description: "Réglette LED étanche Ingelec." }
+    ];
+
+    let currentCategory = null;
+
+    // Load queries from URL
+    function loadUrlParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Search query
+        const q = urlParams.get('q') || urlParams.get('query');
+        if (q) {
+            document.getElementById('filter-ref').value = q;
+        }
+
+        // Category filter
+        const cat = urlParams.get('cat');
+        if (cat) {
+            currentCategory = cat;
+            showCategoryBadge(cat);
+        }
+    }
+
+    function showCategoryBadge(catCode) {
+        const banner = document.getElementById('category-badge-banner');
+        const badgeSpan = document.getElementById('active-category-badge').querySelector('span');
+        badgeSpan.textContent = catCode.toUpperCase();
+        banner.classList.remove('hidden');
+    }
+
+    window.clearCategoryFilter = function() {
+        currentCategory = null;
+        document.getElementById('category-badge-banner').classList.add('hidden');
+        const url = new URL(window.location);
+        url.searchParams.delete('cat');
+        window.history.pushState({}, '', url);
+        filterProducts();
+    };
+
+    window.updatePriceLabel = function(val) {
+        document.getElementById('price-val').textContent = Number(val).toLocaleString();
+        filterProducts();
+    };
+
+    window.resetFilters = function() {
+        document.querySelectorAll('.filter-brand').forEach(cb => cb.checked = false);
+        document.getElementById('price-slider').value = 15000;
+        document.getElementById('price-val').textContent = "15 000";
+        document.getElementById('filter-stock').checked = false;
+        document.getElementById('filter-ref').value = '';
+        currentCategory = null;
+        document.getElementById('category-badge-banner').classList.add('hidden');
+        window.history.pushState({}, '', window.location.pathname);
+        filterProducts();
+    };
+
+    // Core Filtering logic
+    window.filterProducts = function() {
+        const query = document.getElementById('filter-ref').value.toLowerCase();
+        const maxPrice = Number(document.getElementById('price-slider').value);
+        const stockOnly = document.getElementById('filter-stock').checked;
+        const sortVal = document.getElementById('sort-select').value;
+
+        const selectedBrands = [];
+        document.querySelectorAll('.filter-brand:checked').forEach(cb => {
+            selectedBrands.push(cb.value);
+        });
+
+        let filtered = ALL_PRODUCTS.filter(p => {
+            if (query && !p.name.toLowerCase().includes(query) && !p.ref.toLowerCase().includes(query) && !p.brand.toLowerCase().includes(query)) {
+                return false;
+            }
+            if (p.price > maxPrice) {
+                return false;
+            }
+            if (stockOnly && p.status !== "En Stock") {
+                return false;
+            }
+            if (selectedBrands.length > 0 && !selectedBrands.includes(p.brand)) {
+                return false;
+            }
+            if (currentCategory) {
+                if (p.cat !== currentCategory && !p.cat.startsWith(currentCategory + '-')) {
+                    return false;
+                }
+            }
+            return true;
+        });
+
+        if (sortVal === "asc") {
+            filtered.sort((a, b) => a.price - b.price);
+        } else if (sortVal === "desc") {
+            filtered.sort((a, b) => b.price - a.price);
+        } else if (sortVal === "nouveau") {
+            filtered.sort((a, b) => (b.tag === "Nouveau" ? 1 : 0) - (a.tag === "Nouveau" ? 1 : 0));
+        }
+
+        renderGrid(filtered);
+    };
+
+    function renderGrid(list) {
+        const grid = document.getElementById('product-grid');
+        const visibleCount = document.getElementById('visible-count');
+        const totalCount = document.getElementById('total-count');
+
+        visibleCount.textContent = list.length;
+        totalCount.textContent = ALL_PRODUCTS.length;
+
+        if (list.length === 0) {
+            grid.innerHTML = `
+                <div class="col-span-3 flex flex-col items-center justify-center text-center p-xxl bg-surface-container-low dark:bg-slate-800 rounded-xl border border-outline-variant/30 min-h-[300px]">
+                    <span class="material-symbols-outlined text-[64px] text-outline mb-md">search_off</span>
+                    <h4 class="font-headline-sm text-on-surface font-bold mb-xs">Aucun produit trouvé</h4>
+                    <p class="text-body-sm text-on-surface-variant max-w-sm">Désolé, aucune référence ne correspond à vos filtres.</p>
+                </div>
+            `;
+            return;
+        }
+
+        grid.innerHTML = list.map(p => {
+            const badgeClass = p.status === "En Stock" ? "bg-green-500" : "bg-error";
+            const tagBadge = p.tag ? `<span class="absolute top-sm left-sm bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">${p.tag}</span>` : '';
+            return `
+                <div class="bg-surface-container-lowest dark:bg-slate-850 rounded-xl border border-outline-variant dark:border-slate-700 p-md flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
+                    <div>
+                        <div class="relative h-48 mb-md overflow-hidden rounded-lg bg-surface-container dark:bg-slate-800">
+                            <img class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500" src="${p.img}" alt="${p.name}"/>
+                            <span class="absolute top-sm right-sm ${badgeClass} text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">${p.status}</span>
+                            ${tagBadge}
+                        </div>
+                        <p class="text-label-sm text-secondary font-bold uppercase mb-xs">${p.brand}</p>
+                        <h3 class="font-headline-sm text-on-surface mb-xs group-hover:text-primary transition-colors text-sm font-bold">${p.name}</h3>
+                        <p class="text-label-sm text-on-surface-variant mb-md">Ref: ${p.ref}</p>
+                    </div>
+                    <div class="pt-md border-t border-outline-variant dark:border-slate-700 flex justify-between items-center gap-xs">
+                        <div>
+                            <span class="block text-[10px] text-on-surface-variant uppercase font-bold">Prix HT</span>
+                            <span class="font-headline-sm text-on-surface text-sm font-bold">${p.price.toLocaleString()} MAD</span>
+                        </div>
+                        <div class="flex gap-1 shrink-0">
+                            <a href="detail.html?ref=${p.ref}" class="bg-surface-container text-on-surface px-md py-xs rounded-lg font-label-md hover:bg-surface-variant transition-colors text-xs flex items-center justify-center dark:bg-slate-700 dark:hover:bg-slate-600">Détails</a>
+                            <button onclick="addToQuote('${p.name}', '${p.ref}', '${p.price} MAD', '${p.brand}')" class="bg-secondary text-on-primary px-md py-xs rounded-lg font-label-md hover:bg-secondary-container transition-colors text-xs flex items-center gap-xs">
+                                <span class="material-symbols-outlined text-sm">add_shopping_cart</span> Devis
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadUrlParams();
+        filterProducts();
+    });
+</script>
+
+<!-- Chatbot IA 'AL Montassira' -->
+<div class="fixed bottom-lg right-lg z-[100] group" id="ai-chatbot">
+    <div class="hidden absolute bottom-20 right-0 w-80 bg-white dark:bg-slate-900 shadow-2xl rounded-2xl border border-outline-variant flex flex-col overflow-hidden" id="chat-window">
+        <div class="bg-primary p-md text-on-primary flex justify-between items-center">
+            <div class="flex items-center gap-sm">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+                <div>
+                    <p class="font-label-md text-label-md leading-tight">AL Montassira</p>
+                    <p class="text-[10px] opacity-80 uppercase tracking-widest">Support IA Expert</p>
+                </div>
+            </div>
+            <button class="material-symbols-outlined hover:bg-white/15 rounded-full p-1" onclick="toggleChat()">close</button>
+        </div>
+        <div class="h-[280px] p-md overflow-y-auto bg-surface-container-lowest flex flex-col gap-sm" id="chat-messages">
+            <div class="bg-surface-variant p-sm rounded-lg text-body-sm max-w-[85%] self-start dark:bg-slate-800 dark:text-zinc-100 font-body-sm">
+                Bonjour ! Je suis AL Montassira, l'assistante intelligente d'ELECZAR. Comment puis-je vous aider dans votre projet électrique aujourd'hui ?
+            </div>
+            <div class="flex flex-wrap gap-xs my-xs" id="chat-presets">
+                <button class="bg-surface dark:bg-slate-800 border border-outline-variant px-sm py-1 rounded-full text-[11px] text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all text-left" onclick="sendChatMessage('Disponibilité en stock')">📦 Stock &amp; Dispo</button>
+                <button class="bg-surface dark:bg-slate-800 border border-outline-variant px-sm py-1 rounded-full text-[11px] text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all text-left" onclick="sendChatMessage('Délais de livraison')">🚚 Livraison</button>
+                <button class="bg-surface dark:bg-slate-800 border border-outline-variant px-sm py-1 rounded-full text-[11px] text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all text-left" onclick="sendChatMessage('Télécharger Catalogue PDF')">📄 Catalogue PDF</button>
+                <button class="bg-surface dark:bg-slate-800 border border-outline-variant px-sm py-1 rounded-full text-[11px] text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all text-left" onclick="sendChatMessage('Obtenir un Devis')">💰 Demander Devis</button>
+                <button class="bg-surface dark:bg-slate-800 border border-outline-variant px-sm py-1 rounded-full text-[11px] text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all text-left" onclick="sendChatMessage('Formations électriciens')">🎓 Formations NF</button>
+            </div>
+        </div>
+        <div class="p-sm bg-white dark:bg-slate-800 border-t border-outline-variant flex gap-xs">
+            <input class="w-full bg-surface dark:bg-slate-900 p-xs rounded border-none focus:ring-0 text-body-sm text-on-surface" id="chat-input" placeholder="Posez votre question technique..." type="text" onkeydown="if(event.key === 'Enter') sendChatMessage()"/>
+            <button class="material-symbols-outlined text-primary p-xs hover:bg-surface-variant rounded-full" onclick="sendChatMessage()">send</button>
+        </div>
+    </div>
+    <button class="w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all relative" onclick="toggleChat()">
+        <span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+        <span class="absolute -top-1 -right-1 w-4 h-4 bg-secondary-container border-2 border-white rounded-full animate-ping"></span>
+    </button>
+</div>
+
+<script>
+    // Theme dark mode toggle
+    function initDarkMode() {
+        const html = document.documentElement;
+        const toggleBtn = document.getElementById('dark-mode-toggle');
+        if (!toggleBtn) return;
+        
+        // Initial setup
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        
+        toggleBtn.addEventListener('click', () => {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    }
+
+    // Chatbot functionality
+    function initChatbot() {
+        const chatWindow = document.getElementById('chat-window');
+        const messagesContainer = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const presets = document.getElementById('chat-presets');
+        
+        if (!chatWindow || !messagesContainer || !chatInput) return;
+        
+        window.toggleChat = function() {
+            chatWindow.classList.toggle('hidden');
+        };
+        
+        window.sendChatMessage = function(customText) {
+            const query = (customText || chatInput.value).trim();
+            if (!query) return;
+            
+            // Append user message
+            appendMessage(query, true);
+            if (!customText) chatInput.value = '';
+            
+            // Show typing indicator
+            const typingDiv = document.createElement('div');
+            typingDiv.className = "bg-surface-variant dark:bg-slate-800 p-sm rounded-lg text-body-sm max-w-[85%] self-start italic opacity-70";
+            typingDiv.id = "chat-typing";
+            typingDiv.textContent = "AL Montassira écrit...";
+            messagesContainer.appendChild(typingDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            // Preset answers
+            setTimeout(() => {
+                const typing = document.getElementById('chat-typing');
+                if (typing) typing.remove();
+                
+                let reply = "Merci pour votre question. Un ingénieur conseil d'ELECZAR va vous répondre d'ici quelques minutes. Pour toute urgence, contactez notre showroom au +212 535 000 000.";
+                const q = query.toLowerCase();
+                
+                if (q.includes('stock') || q.includes('dispo') || q.includes('legrand') || q.includes('schneider') || q.includes('16a') || q.includes('référence')) {
+                    reply = "Nous disposons de plus de 12 000 produits en stock permanent à Meknès dans notre showroom de 500m², y compris des câbles Nexans, appareillages Ingelec et protections Legrand. Quel modèle recherchez-vous ?";
+                } else if (q.includes('devis') || q.includes('tarif') || q.includes('prix')) {
+                    reply = "Vous pouvez demander un devis en remplissant le formulaire en bas de page ou en ajoutant des produits à votre panier de devis (cliquez sur l'icône de caddie). Nous répondons sous 4 heures.";
+                } else if (q.includes('livraison') || q.includes('port') || q.includes('délais') || q.includes('delai')) {
+                    reply = "Nous livrons sous 24-48h à Meknès, Fès et partout au Maroc. La livraison est gratuite à partir de 5 000 MAD.";
+                } else if (q.includes('catalogue') || q.includes('pdf') || q.includes('télécharger')) {
+                    reply = "Vous pouvez télécharger notre E-Catalogue complet 2026 en cliquant sur ce lien direct : <a href='public/eleczar-catalogue.pdf' download class='text-primary font-bold underline hover:text-primary-container'>Télécharger le Catalogue PDF (12k refs)</a>.";
+                } else if (q.includes('formation') || q.includes('norme') || q.includes('nfc')) {
+                    reply = "ELECZAR propose des formations techniques gratuites sur la norme NF C 15-100 et la domotique intelligente dans notre showroom de 500m² à Meknès. Contactez-nous pour réserver.";
+                }
+                
+                appendMessage(reply, false, true);
+            }, 800);
+        };
+        
+        function appendMessage(text, isUser, isHtml = false) {
+            const div = document.createElement('div');
+            div.className = isUser 
+                ? "bg-primary text-on-primary p-sm rounded-lg text-body-sm max-w-[85%] self-end"
+                : "bg-surface-variant dark:bg-slate-800 p-sm rounded-lg text-body-sm max-w-[85%] self-start dark:text-zinc-100 font-body-sm";
+            if (isHtml) {
+                div.innerHTML = text;
+            } else {
+                div.textContent = text;
+            }
+            // Insert before presets
+            if (presets && !isUser) {
+                messagesContainer.insertBefore(div, presets);
+            } else {
+                messagesContainer.appendChild(div);
+            }
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+    }
+
+    // Quote Cart management
+    function initQuoteCart() {
+        const cartBadge = document.getElementById('cart-badge');
+        
+        window.getQuoteList = function() {
+            return JSON.parse(localStorage.getItem('eleczar_quote_list') || '[]');
+        };
+        
+        window.saveQuoteList = function(list) {
+            localStorage.setItem('eleczar_quote_list', JSON.stringify(list));
+            updateCartBadge();
+            // Dispatch event to update other pages
+            window.dispatchEvent(new Event('quote-cart-updated'));
+        };
+        
+        window.addToQuote = function(productName, productRef, productPrice, productBrand) {
+            let list = getQuoteList();
+            const existing = list.find(item => item.ref === productRef);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                list.push({ name: productName, ref: productRef, price: productPrice, brand: productBrand, qty: 1 });
+            }
+            saveQuoteList(list);
+            showToast(`"${productName}" ajouté à votre demande de devis !`);
+        };
+        
+        window.updateCartBadge = function() {
+            const list = getQuoteList();
+            const totalItems = list.reduce((sum, item) => sum + item.qty, 0);
+            if (cartBadge) {
+                cartBadge.textContent = totalItems;
+                if (totalItems > 0) {
+                    cartBadge.classList.remove('hidden');
+                } else {
+                    cartBadge.classList.add('hidden');
+                }
+            }
+        };
+        
+        window.showToast = function(message) {
+            let toast = document.getElementById('eleczar-toast');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'eleczar-toast';
+                toast.className = 'fixed top-24 right-lg bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 px-lg py-md rounded-xl shadow-2xl border border-outline-variant z-[999] transition-all duration-300 transform translate-y-[-20px] opacity-0 flex items-center gap-md font-label-md';
+                document.body.appendChild(toast);
+            }
+            toast.innerHTML = `<span class="material-symbols-outlined text-secondary">check_circle</span> <span>${message}</span>`;
+            toast.classList.remove('opacity-0', 'translate-y-[-20px]');
+            toast.classList.add('opacity-100', 'translate-y-0');
+            
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-[-20px]');
+            }, 3000);
+        };
+        
+        updateCartBadge();
+        window.addEventListener('quote-cart-updated', updateCartBadge);
+    }
+
+    // Navbar mega-menu, drawer, search and accordions
+    function initNavbar() {
+        // Desktop Search Toggle
+        const searchToggleBtn = document.getElementById('search-toggle-btn');
+        const searchForm = document.getElementById('search-form');
+        const searchCloseBtn = document.getElementById('search-close-btn');
+
+        if (searchToggleBtn && searchForm && searchCloseBtn) {
+            searchToggleBtn.addEventListener('click', () => {
+                searchForm.classList.remove('hidden');
+                searchForm.querySelector('input').focus();
+            });
+            searchCloseBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                searchForm.classList.add('hidden');
+            });
+        }
+
+        // Desktop Dropdown Toggles (Hover Intent)
+        const triggers = document.querySelectorAll('.nav-dropdown-trigger');
+        let hoverTimeout;
+
+        triggers.forEach(trigger => {
+            const targetId = trigger.getAttribute('data-target');
+            const panel = document.getElementById(targetId);
+            const chevron = trigger.querySelector('.chevron-icon');
+
+            if (!panel) return;
+
+            const openDropdown = () => {
+                clearTimeout(hoverTimeout);
+                document.querySelectorAll('[id^="mega-menu-"], [id^="dropdown-"]').forEach(p => {
+                    if (p.id !== targetId) {
+                        p.classList.add('hidden', 'opacity-0', '-translate-y-2');
+                    }
+                });
+                document.querySelectorAll('.chevron-icon').forEach(c => c.classList.remove('rotate-180'));
+                
+                panel.classList.remove('hidden');
+                setTimeout(() => {
+                    panel.classList.remove('opacity-0', '-translate-y-2');
+                }, 10);
+                if (chevron) chevron.classList.add('rotate-180', 'text-[#0055FF]');
+            };
+
+            const closeDropdown = () => {
+                hoverTimeout = setTimeout(() => {
+                    panel.classList.add('opacity-0', '-translate-y-2');
+                    if (chevron) chevron.classList.remove('rotate-180', 'text-[#0055FF]');
+                    setTimeout(() => {
+                        panel.classList.add('hidden');
+                    }, 200);
+                }, 150);
+            };
+
+            trigger.addEventListener('mouseenter', openDropdown);
+            trigger.addEventListener('mouseleave', closeDropdown);
+            panel.addEventListener('mouseenter', () => clearTimeout(hoverTimeout));
+            panel.addEventListener('mouseleave', closeDropdown);
+        });
+
+        // Mobile Menu Sliding Drawer & Accordions
+        const mobileMenuTrigger = document.getElementById('mobile-menu-trigger');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const mobileBackdrop = document.getElementById('mobile-backdrop');
+        const mobileDrawerClose = document.getElementById('mobile-drawer-close');
+        const mobileSearchTrigger = document.getElementById('mobile-search-trigger');
+
+        const openMobileMenu = () => {
+            if (!mobileBackdrop || !mobileDrawer) return;
+            mobileBackdrop.classList.remove('hidden');
+            mobileDrawer.classList.remove('translate-x-full');
+            setTimeout(() => {
+                mobileBackdrop.classList.remove('opacity-0');
+            }, 10);
+            document.body.classList.add('overflow-hidden');
+        };
+
+        const closeMobileMenu = () => {
+            if (!mobileBackdrop || !mobileDrawer) return;
+            mobileBackdrop.classList.add('opacity-0');
+            mobileDrawer.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileBackdrop.classList.add('hidden');
+            }, 300);
+            document.body.classList.remove('overflow-hidden');
+        };
+
+        if (mobileMenuTrigger) mobileMenuTrigger.addEventListener('click', openMobileMenu);
+        if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMobileMenu);
+        if (mobileDrawerClose) mobileDrawerClose.addEventListener('click', closeMobileMenu);
+        if (mobileSearchTrigger) {
+            mobileSearchTrigger.addEventListener('click', () => {
+                openMobileMenu();
+                setTimeout(() => {
+                    const mobileInput = document.getElementById('mobile-search-input');
+                    if (mobileInput) mobileInput.focus();
+                }, 300);
+            });
+        }
+
+        // Mobile Accordions Toggle
+        const accordionTriggers = document.querySelectorAll('.mobile-accordion-trigger');
+        accordionTriggers.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.getAttribute('data-target');
+                const content = document.getElementById(targetId);
+                const chevron = btn.querySelector('.material-symbols-outlined');
+
+                if (content) content.classList.toggle('hidden');
+                if (chevron) chevron.classList.toggle('rotate-180');
+            });
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initDarkMode();
+        initChatbot();
+        initQuoteCart();
+        initNavbar();
+    });
+</script>
+</body></html>

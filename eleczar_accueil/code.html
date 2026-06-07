@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELECZAR | Distributeur de Matériel Électrique à Meknès</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#bec6e0",
+                      "on-primary": "#ffffff",
+                      "outline": "#737688",
+                      "on-tertiary-fixed-variant": "#3f465c",
+                      "surface": "#f7f9fb",
+                      "on-background": "#191c1e",
+                      "on-primary-fixed": "#001551",
+                      "on-secondary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#0039b3",
+                      "on-secondary-fixed-variant": "#7c2e00",
+                      "on-surface": "#191c1e",
+                      "inverse-surface": "#2d3133",
+                      "surface-tint": "#004dea",
+                      "primary-fixed-dim": "#b6c4ff",
+                      "on-error": "#ffffff",
+                      "on-tertiary-container": "#e0e7ff",
+                      "inverse-on-surface": "#eff1f3",
+                      "surface-bright": "#f7f9fb",
+                      "outline-variant": "#c3c5d9",
+                      "secondary-container": "#fe6500",
+                      "secondary-fixed-dim": "#ffb596",
+                      "on-primary-container": "#e3e6ff",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#e0e3e5",
+                      "primary": "#0041c8",
+                      "on-secondary-fixed": "#360f00",
+                      "background": "#f7f9fb",
+                      "on-tertiary-fixed": "#131b2e",
+                      "primary-container": "#0055ff",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#b6c4ff",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#5f677e",
+                      "surface-variant": "#e0e3e5",
+                      "tertiary": "#474f65",
+                      "secondary-fixed": "#ffdbcd",
+                      "tertiary-fixed": "#dae2fd",
+                      "surface-container-high": "#e6e8ea",
+                      "surface-container-low": "#f2f4f6",
+                      "primary-fixed": "#dce1ff",
+                      "on-error-container": "#93000a",
+                      "on-surface-variant": "#434656",
+                      "secondary": "#a33e00",
+                      "surface-container": "#eceef0",
+                      "surface-dim": "#d8dadc",
+                      "on-secondary-container": "#541d00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "unit": "4px",
+                      "lg": "24px",
+                      "max-width": "1280px",
+                      "xl": "32px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "xxl": "48px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "display-lg-mobile": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "label-md": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .infinite-scroll {
+            display: flex;
+            width: calc(250px * 24);
+            animation: scroll 40s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 12)); }
+        }
+        .circuit-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, #0055ff, transparent);
+            height: 1px;
+            width: 100%;
+            opacity: 0.1;
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 65, 200, 0.8), rgba(25, 28, 30, 0.95));
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-surface sticky top-0 z-50 shadow-md">
+<nav class="flex justify-between items-center w-full px-lg py-md max-w-max-width mx-auto">
+<div class="flex items-center gap-xl">
+<a href="../index.html" class="flex items-center">
+    <img src="../public/Untitled%20design.svg" alt="ELECZAR" class="h-10 w-auto" />
+</a>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md" href="#">Produits</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md" href="#">Secteurs</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md" href="#">Services</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden lg:flex items-center bg-surface-container-low px-md py-xs rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-sm w-48" placeholder="Rechercher un produit..." type="text"/>
+</div>
+<button class="bg-secondary text-on-primary px-lg py-sm rounded-lg font-label-md hover:shadow-lg transition-all scale-95 duration-150 ease-in-out">
+                    Commander en ligne
+                </button>
+<div class="flex gap-xs">
+<span class="material-symbols-outlined p-xs hover:bg-surface-variant rounded-full cursor-pointer">bolt</span>
+<span class="material-symbols-outlined p-xs hover:bg-surface-variant rounded-full cursor-pointer">dark_mode</span>
+</div>
+</div>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative h-[819px] flex items-center overflow-hidden bg-inverse-surface">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" data-alt="A high-tech industrial electrical room with complex wiring panels and glowing blue indicator lights. The perspective is cinematic, showcasing precision engineering in a modern facility. The lighting is cool and professional, with deep blues and crisp whites, evoking a sense of reliability and advanced technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdB2oq_umTu1W_7dNXvBHJ71u9ChT0hL-YHgRLbZYrBNdLY3mBzlw4Wmi9LtKnO7O2WavqoG3WrKOdUGciJBgHk1OLhU-OUVwPGCwsDjjzT2qjr3DP2qFL0mOFmQ8ofyt07RJnJJfKqkwvmIwVgkya91IUJ522uOgcPLpsQ3Fcy90zeasWsNdXT1iI2w3oL2Ryx6DBBslExZnBCeHMvWbo68pHdZQXHytkIJb5wAAuytvocSMN9hf2ohO0w-qKTSRLjSJrsk5QWbxI"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 max-w-max-width mx-auto px-lg w-full">
+<div class="max-w-2xl">
+<span class="text-secondary font-bold tracking-widest uppercase text-label-sm mb-md block">Depuis 1999 à Meknès</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary mb-lg leading-tight">
+                    Éclairez votre métier depuis 1999
+                </h2>
+<p class="text-on-primary-container font-body-lg mb-xl opacity-90">
+                    Distributeur de matériel électrique n°1 à Meknès - Plus de 12 000 produits certifiés pour les professionnels du bâtiment et de l'industrie.
+                </p>
+<div class="flex flex-col sm:flex-row gap-md">
+<button class="bg-secondary-container text-on-secondary-container px-xl py-md rounded-lg font-headline-sm hover:brightness-110 transition-all flex items-center justify-center gap-sm shadow-xl">
+                        Demander un devis gratuit
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-on-primary px-xl py-md rounded-lg font-headline-sm hover:bg-white/20 transition-all">
+                        Voir le catalogue
+                    </button>
+</div>
+</div>
+</div>
+<!-- Decorative Circuit Lines -->
+<div class="circuit-line top-1/4"></div>
+<div class="circuit-line top-2/4"></div>
+<div class="circuit-line top-3/4"></div>
+</section>
+<!-- Stats Bar -->
+<section class="bg-surface-container-lowest py-xl border-b border-outline-variant">
+<div class="max-w-max-width mx-auto px-lg grid grid-cols-2 md:grid-cols-4 gap-lg">
+<div class="text-center group">
+<div class="text-primary font-display-lg text-headline-lg mb-xs group-hover:scale-110 transition-transform">27</div>
+<div class="text-on-surface-variant font-label-md uppercase tracking-wider">Ans d'expérience</div>
+</div>
+<div class="text-center group border-l border-outline-variant/30">
+<div class="text-primary font-display-lg text-headline-lg mb-xs group-hover:scale-110 transition-transform">12k+</div>
+<div class="text-on-surface-variant font-label-md uppercase tracking-wider">Produits en stock</div>
+</div>
+<div class="text-center group border-l border-outline-variant/30">
+<div class="text-primary font-display-lg text-headline-lg mb-xs group-hover:scale-110 transition-transform">5k+</div>
+<div class="text-on-surface-variant font-label-md uppercase tracking-wider">Clients Pro</div>
+</div>
+<div class="text-center group border-l border-outline-variant/30">
+<div class="text-primary font-display-lg text-headline-lg mb-xs group-hover:scale-110 transition-transform">24h</div>
+<div class="text-on-surface-variant font-label-md uppercase tracking-wider">Livraison Express</div>
+</div>
+</div>
+</section>
+<!-- Categories Grid (Bento Style) -->
+<section class="py-xxl max-w-max-width mx-auto px-lg">
+<div class="flex justify-between items-end mb-xl">
+<div>
+<h3 class="font-headline-lg text-primary">Nos Catégories</h3>
+<p class="text-on-surface-variant font-body-md">Tout l'univers électrique sous un même toit.</p>
+</div>
+<a class="text-secondary font-label-md flex items-center gap-xs hover:underline" href="#">
+                Toutes les catégories <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- Card 1 -->
+<div class="group relative bg-surface-container-high h-64 rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all border border-outline-variant/20">
+<div class="absolute inset-0 p-lg z-10 flex flex-col justify-end">
+<span class="material-symbols-outlined text-secondary-container text-display-lg mb-sm">lightbulb</span>
+<h4 class="font-headline-sm text-on-surface">Éclairage</h4>
+<p class="text-body-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Solutions LED, Projecteurs, Décoratif</p>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-high to-transparent opacity-80"></div>
+</div>
+<!-- Card 2 -->
+<div class="group relative bg-primary-container/10 h-64 rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all border border-primary/10">
+<div class="absolute inset-0 p-lg z-10 flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary text-display-lg mb-sm">settings_input_component</span>
+<h4 class="font-headline-sm text-on-surface">Appareillage</h4>
+<p class="text-body-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Interrupteurs, Prises, Multiprises</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative bg-surface-container-high h-64 rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all border border-outline-variant/20">
+<div class="absolute inset-0 p-lg z-10 flex flex-col justify-end">
+<span class="material-symbols-outlined text-secondary-container text-display-lg mb-sm">shield</span>
+<h4 class="font-headline-sm text-on-surface">Protection</h4>
+<p class="text-body-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Disjoncteurs, Fusibles, Différentiels</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative bg-primary-container/10 h-64 rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all border border-primary/10">
+<div class="absolute inset-0 p-lg z-10 flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary text-display-lg mb-sm">dashboard</span>
+<h4 class="font-headline-sm text-on-surface">Tableaux</h4>
+<p class="text-body-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Armoires, Coffrets, Accessoires</p>
+</div>
+</div>
+<!-- Repeat for remaining 4 or keep 4 for clean desktop? User asked for 8. Adding 4 more compact. -->
+<div class="group relative bg-surface-container-high h-64 rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all border border-outline-variant/20">
+<div class="absolute inset-0 p-lg z-10 flex flex-col justify-end">
+<span class="material-symbols-outlined text-secondary-container text-display-lg mb-sm">cable</span>
+<h4 class="font-headline-sm text-on-surface">Câbles</h4>
+<p class="text-body-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Réseau, Puissance, Gaines</p>
+</div>
+</div>
+<div class="group relative bg-primary-container/10 h-64 rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all border border-primary/10">
+<div class="absolute inset-0 p-lg z-10 flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary text-display-lg mb-sm">smartphone</span>
+<h4 class="font-headline-sm text-on-surface">Domotique</h4>
+<p class="text-body-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Smart Home, Pilotage, Confort</p>
+</div>
+</div>
+<div class="group relative bg-surface-container-high h-64 rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all border border-outline-variant/20">
+<div class="absolute inset-0 p-lg z-10 flex flex-col justify-end">
+<span class="material-symbols-outlined text-secondary-container text-display-lg mb-sm">videocam</span>
+<h4 class="font-headline-sm text-on-surface">Sécurité</h4>
+<p class="text-body-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Alarme, Caméra, Interphone</p>
+</div>
+</div>
+<div class="group relative bg-primary-container/10 h-64 rounded-xl overflow-hidden cursor-pointer hover:shadow-xl transition-all border border-primary/10">
+<div class="absolute inset-0 p-lg z-10 flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary text-display-lg mb-sm">handyman</span>
+<h4 class="font-headline-sm text-on-surface">Outils</h4>
+<p class="text-body-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Mesure, Outillage à main</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Logo Carousel -->
+<div class="bg-surface-container-low py-xl overflow-hidden border-y border-outline-variant/30">
+<div class="infinite-scroll items-center gap-xxl">
+<!-- 12 Brands repeated -->
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">LEGRAND</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">INGELEC</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">OSRAM</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">NEXANS</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">KENN</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">LEUCI</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">AKUL</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">FERMAX</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">MEGAMAN</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">SLINEX</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">LUXTRON</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">ALVA</div>
+<!-- Repeat for loop -->
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">LEGRAND</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">INGELEC</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">OSRAM</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">NEXANS</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">KENN</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">LEUCI</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">AKUL</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">FERMAX</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">MEGAMAN</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">SLINEX</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">LUXTRON</div>
+<div class="w-[200px] text-center font-black text-outline text-headline-sm opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">ALVA</div>
+</div>
+</div>
+<!-- Featured Products -->
+<section class="py-xxl bg-surface">
+<div class="max-w-max-width mx-auto px-lg">
+<h3 class="font-headline-lg text-primary mb-xl">Produits Vedettes</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg">
+<!-- Product Card Pattern -->
+<script>
+                    const products = [
+                        { name: "Disjoncteur 16A", brand: "Legrand", price: "45 MAD", status: "En Stock", tag: "Nouveau", img: "https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80" },
+                        { name: "Projecteur LED 50W", brand: "Osram", price: "290 MAD", status: "En Stock", tag: "Promo", img: "https://images.unsplash.com/photo-1565814636199-ae8133055c1c?auto=format&fit=crop&q=80" },
+                        { name: "Prise Connectée", brand: "Ingelec", price: "120 MAD", status: "Sur Commande", tag: "Nouveau", img: "https://images.unsplash.com/photo-1558002038-103792e07924?auto=format&fit=crop&q=80" },
+                        { name: "Câble RO2V 3G1.5", brand: "Nexans", price: "15 MAD/m", status: "En Stock", tag: null, img: "https://images.unsplash.com/photo-1617471346061-5d329ab9c574?auto=format&fit=crop&q=80" }
+                    ];
+                </script>
+<!-- Explicit Product Rendering -->
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-xl transition-all">
+<div class="relative h-48">
+<img class="w-full h-full object-contain p-md" data-alt="Detailed studio product shot of a professional-grade electrical circuit breaker. The product is clean, white, and features technical markings. It is positioned against a neutral, high-key background with soft shadows, highlighting its industrial precision and build quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARJYeO-CBe5812e5Ki7FUUgYu0j_KqL-gA0-Fsjpj8asyoVKkyn0FeBtOnEC48tVtPYTl0YUBxiGJYXVJ71iQYC-_XYoq8WSC-RW9HIc_iS3bsZY61YXtAju1KHzzBx3brRMPgTUBsjwBhivj141zVzREMkZP7Uqnf3oZOLhRMe2WgqsJQs1ZXHfCvqaljc_ax34jAhgVINAIwhNM2f_RfwychHtiEDuEa_x-osyZrd6iwsiRp_dqUWccS7E5DgK-Tn-T62CaoaK_Y"/>
+<span class="absolute top-md right-md bg-green-500 text-white text-[10px] font-bold px-sm py-1 rounded-full uppercase">En Stock</span>
+<span class="absolute top-md left-md bg-primary text-white text-[10px] font-bold px-sm py-1 rounded-full uppercase">Nouveau</span>
+</div>
+<div class="p-md">
+<p class="text-on-surface-variant text-label-sm uppercase">Legrand</p>
+<h4 class="font-headline-sm text-on-surface mb-xs">Disjoncteur Phase+Neutre 16A</h4>
+<p class="text-primary font-bold text-headline-sm mb-md">45 MAD</p>
+<button class="w-full bg-secondary text-on-primary py-sm rounded-lg font-label-md hover:brightness-110 flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">request_quote</span> Devis
+                        </button>
+</div>
+</div>
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-xl transition-all">
+<div class="relative h-48">
+<img class="w-full h-full object-contain p-md" data-alt="A modern industrial LED floodlight with a sleek black aluminum casing and robust glass lens. The lighting is dramatic, showing the texture of the heatsink and the high-output diodes inside. Set in a professional studio environment with clean lines and technical focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlFDSgGFYOoguVgoFhTA06qOiZAVYyRZBKQgksKP874-tk6fKep6kVAiaAVwtJObqB42sNBKy48Gh1kiUA5bykBNQij6sTVdHXmHfA8211jLI8LmjErIMYEhxHQpOhw6yxiUSARxtBF17T04FogLIotJRm-RVHRcPGACU4epGfKKgyvSZauEdlituY7KarpsCgubFkilfdjWNM6nib638SoQN48NwusF83x--oZ7CripWrGhEWrBfpS9lh039gkt5FnVggNy2oLBEy"/>
+<span class="absolute top-md right-md bg-green-500 text-white text-[10px] font-bold px-sm py-1 rounded-full uppercase">En Stock</span>
+<span class="absolute top-md left-md bg-secondary text-white text-[10px] font-bold px-sm py-1 rounded-full uppercase">Promo</span>
+</div>
+<div class="p-md">
+<p class="text-on-surface-variant text-label-sm uppercase">Osram</p>
+<h4 class="font-headline-sm text-on-surface mb-xs">Projecteur LED 50W IP65</h4>
+<p class="text-primary font-bold text-headline-sm mb-md">290 MAD</p>
+<button class="w-full bg-secondary text-on-primary py-sm rounded-lg font-label-md hover:brightness-110 flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">request_quote</span> Devis
+                        </button>
+</div>
+</div>
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-xl transition-all">
+<div class="relative h-48">
+<img class="w-full h-full object-contain p-md" data-alt="A contemporary smart wall outlet with a minimalist design and a small glowing blue LED indicator. The finish is a matte light gray, suggesting high-end smart home technology. The shot is a close-up, focusing on the interface and elegant industrial design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0yGrOkgHDQEGnZF6P3WSUOIhKO6XfavySa2XP1m4iPzv2iCm1PIdZXPEDBanh1_QdJQsxZKwcnvaGeQl3ynL_X88gopRd284NZgCW3Rk1NwLXjReCI4WRfa4fdPFa1FjnIHaNNgayOB73UFC9CqC9PvAT4ETHcnHxwFq7MafLV3ej2AUP91QY80t4SZy4GjbuqUDAAR8y3CNRLQMXeX5M8fOaeRR-Ey9krHQILCbGNDK8WoHNwkTJI6gMZt9jE-Z4ClObzu4M3j9x"/>
+<span class="absolute top-md right-md bg-error text-white text-[10px] font-bold px-sm py-1 rounded-full uppercase">Sur Commande</span>
+</div>
+<div class="p-md">
+<p class="text-on-surface-variant text-label-sm uppercase">Ingelec</p>
+<h4 class="font-headline-sm text-on-surface mb-xs">Prise Murale Smart WiFi</h4>
+<p class="text-primary font-bold text-headline-sm mb-md">120 MAD</p>
+<button class="w-full bg-secondary text-on-primary py-sm rounded-lg font-label-md hover:brightness-110 flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">request_quote</span> Devis
+                        </button>
+</div>
+</div>
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-xl transition-all">
+<div class="relative h-48">
+<img class="w-full h-full object-contain p-md" data-alt="A coil of high-quality industrial power cable with a durable black outer sheath. The cross-section reveals copper wiring with standard color-coding (blue, brown, green-yellow). The lighting is bright and clear, emphasizing the industrial nature of the product for electrical contracting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4Sae-fudG0ondmYbSHpR6C_09o3hJ8B0nuXIWQP5iLNuRohgU3mfKMHABqs1BQ59PfqJjFRCwZwvpRjU4BQBcrpOhpu2RrJW2fwYMldAiDiGXZSzzwt7FJBbIBTmblj2jea9a9HHAHQrjBhe__8b2Bfzs4CWDUktQVoGij1adoloMORP4tR1W9aJYDKf3fIQXt4-HBXGCuMUYulZ9BmkqfaxsFdNRwXHvoNIfPGXeTqghS5fg5zTV-Fy77aG7Rvq4Crlw1qMWQA57"/>
+<span class="absolute top-md right-md bg-green-500 text-white text-[10px] font-bold px-sm py-1 rounded-full uppercase">En Stock</span>
+</div>
+<div class="p-md">
+<p class="text-on-surface-variant text-label-sm uppercase">Nexans</p>
+<h4 class="font-headline-sm text-on-surface mb-xs">Câble RO2V 3G1.5mm²</h4>
+<p class="text-primary font-bold text-headline-sm mb-md">15 MAD/m</p>
+<button class="w-full bg-secondary text-on-primary py-sm rounded-lg font-label-md hover:brightness-110 flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">request_quote</span> Devis
+                        </button>
+</div>
+</div>
+<!-- Row 2 (More products simplified for space) -->
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-xl transition-all hidden lg:block">
+<div class="relative h-48">
+<img class="w-full h-full object-contain p-md" data-alt="Technical view of a large industrial switchgear panel with numerous breakers and indicator lights. Professional lighting highlights the intricate wiring and solid construction." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd9ZVLTCMpWmG1XYiZZw0w5PahE6NLdyXPO1l82vXF2nQ03IaXDCKECiVAhnM6GQLATy40yisRJk4fAKbzYIrxM0dz34iAxmIlh9jrFJKoI7lc7TAd1v4agiTpFmQzrObWnwVoA1wVFjqBePfN64ffrblBlE-uxRw-LeRR8B3_s_Z1x04gJo6zPMdsTWHMnM3db3IbhgT4o1X4aGHbrABQ58rulSjeBUV8nfjojBQdaVlsL3XwxqPRihZk82MKYy5dfxQhOM_ckY9j"/>
+<span class="absolute top-md right-md bg-green-500 text-white text-[10px] font-bold px-sm py-1 rounded-full uppercase">En Stock</span>
+</div>
+<div class="p-md"><p class="text-on-surface-variant text-label-sm">FERMAX</p><h4 class="font-headline-sm">Kit Interphone Vidéo</h4><p class="text-primary font-bold">1,450 MAD</p></div>
+</div>
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-xl transition-all hidden lg:block">
+<div class="relative h-48">
+<img class="w-full h-full object-contain p-md" data-alt="Close up of high-performance electrical testing meter with digital display. Clean industrial aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlpnNSheQY1y_E0M0RyvYfx7sHcsV0HmiqPbGilqqukGqTMOhq0fHnnCEdqtPIV61ELE0Y7j3IMHmLA4rW1S2KsMi3L7RnPIpaSYl3wDhJ5uz1g4-424GDxfg-BKU9dWsFMDMiWSjZGCBaN7QzqTSvQh87zCiAbHnYiQtEU1RLpk6pj2RGtg9typodfjukKyiU5bj6b4LNVBDUXeiulI6n6MqjQf7SIwZlEeUsDiLmzn9jlP1oHxCrqmPr5qwW5zc4Dlgq5Pk9vWM6"/>
+<span class="absolute top-md right-md bg-green-500 text-white text-[10px] font-bold px-sm py-1 rounded-full uppercase">En Stock</span>
+</div>
+<div class="p-md"><p class="text-on-surface-variant text-label-sm">UNIT</p><h4 class="font-headline-sm">Multimètre Digital Pro</h4><p class="text-primary font-bold">580 MAD</p></div>
+</div>
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-xl transition-all hidden lg:block">
+<div class="relative h-48">
+<img class="w-full h-full object-contain p-md" data-alt="Box of high quality wire connectors and terminals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ0zPokQnR2m301F2hVdasS6eF82i6D4g16Hs4_5dfhHkxEhVSL1LY9Uxki7OcJddJtW2GGCXarxcwQkYsTR_Fbv5eDi2eB2HhRTWPWCqHeMY-QLSEBruN2hMcKTklvzDonWlAdGQCJcgsftOQRvmurGUvJZJ6x54V0jZaVjKDyLk3DksQ5mHoSnj1tPcQ8-ICpt1CNQvJiktMKEwOFB-1n8m9I7IpN0xsEfOXME8vybb_olZma5__WpdAANiyB26JMjKJgbkQ39GY"/>
+<span class="absolute top-md right-md bg-green-500 text-white text-[10px] font-bold px-sm py-1 rounded-full uppercase">En Stock</span>
+</div>
+<div class="p-md"><p class="text-on-surface-variant text-label-sm">WAGO</p><h4 class="font-headline-sm">Bornes de Connexion 221</h4><p class="text-primary font-bold">4.5 MAD</p></div>
+</div>
+<div class="group bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-xl transition-all hidden lg:block">
+<div class="relative h-48">
+<img class="w-full h-full object-contain p-md" data-alt="High quality decorative light fixture for commercial use." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW1jtCSJVEm4qCFvyIbsioddrm5FOuHbCAKHdYej6uM7n-suduZLPlFrp18-euN4oBagfZ6riZgOFj-t53MGj1P0FuZhzsQ1KQSxNlnquT00YwopyyHx8-XGUMAYiuyokY_GizWTQV9AHgJEWJVzT3CbWOLkyqHhYrTznUl5KBM6ZW95Zomjp1bK4VD2k_Jc5JAS-N8cA_rJAmRoSJe-7a878PXzMnc8Ird6zCsQJMK3SrGb_G4NwbzOZSqa7vKty6Ubx2-p57gTH4"/>
+<span class="absolute top-md right-md bg-green-500 text-white text-[10px] font-bold px-sm py-1 rounded-full uppercase">En Stock</span>
+</div>
+<div class="p-md"><p class="text-on-surface-variant text-label-sm">LUXTRON</p><h4 class="font-headline-sm">Applique Murale Design</h4><p class="text-primary font-bold">420 MAD</p></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-xxl bg-surface-container-low">
+<div class="max-w-max-width mx-auto px-lg">
+<h3 class="font-headline-lg text-primary text-center mb-xl">Plus qu'un fournisseur, un partenaire</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div class="bg-surface p-xl rounded-xl shadow-sm border border-outline-variant/30 flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary text-display-lg" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<div>
+<h4 class="font-headline-sm mb-sm">Livraison Rapide</h4>
+<p class="text-body-sm text-on-surface-variant">Livraison sous 24-48h dans toute la région de Meknès et Fès.</p>
+</div>
+</div>
+<div class="bg-surface p-xl rounded-xl shadow-sm border border-outline-variant/30 flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary text-display-lg" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<div>
+<h4 class="font-headline-sm mb-sm">Stock Permanent</h4>
+<p class="text-body-sm text-on-surface-variant">Plus de 12 000 références disponibles immédiatement en entrepôt.</p>
+</div>
+</div>
+<div class="bg-surface p-xl rounded-xl shadow-sm border border-outline-variant/30 flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary text-display-lg" style="font-variation-settings: 'FILL' 1;">sell</span>
+<div>
+<h4 class="font-headline-sm mb-sm">Tarifs Pro</h4>
+<p class="text-body-sm text-on-surface-variant">Conditions préférentielles et remises sur volume pour les installateurs.</p>
+</div>
+</div>
+<div class="bg-surface p-xl rounded-xl shadow-sm border border-outline-variant/30 flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary text-display-lg" style="font-variation-settings: 'FILL' 1;">school</span>
+<div>
+<h4 class="font-headline-sm mb-sm">Formations Tech</h4>
+<p class="text-body-sm text-on-surface-variant">Sessions techniques sur les nouvelles normes et produits innovants.</p>
+</div>
+</div>
+<div class="bg-surface p-xl rounded-xl shadow-sm border border-outline-variant/30 flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary text-display-lg" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<div>
+<h4 class="font-headline-sm mb-sm">Support Dédié</h4>
+<p class="text-body-sm text-on-surface-variant">Une équipe d'experts pour vous conseiller sur vos cahiers des charges.</p>
+</div>
+</div>
+<div class="bg-surface p-xl rounded-xl shadow-sm border border-outline-variant/30 flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary text-display-lg" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<div>
+<h4 class="font-headline-sm mb-sm">Showroom</h4>
+<p class="text-body-sm text-on-surface-variant">Venez découvrir nos produits en situation dans notre magasin de Meknès.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Summary -->
+<section class="py-xxl overflow-hidden">
+<div class="max-w-max-width mx-auto px-lg grid md:grid-cols-2 gap-xxl items-center">
+<div class="relative">
+<img class="rounded-xl shadow-2xl relative z-10" data-alt="The exterior and interior storefront of a modern electrical distribution center in Morocco. The building is clean and professional, with organized shelving and bright lighting. Professionals are interacting in a high-tech environment that emphasizes scale and local heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL0yZ8Ni2kvUly4U7m1xkkF1R2FJC321pASJVX67IAJXbqPVTSiDeoUSAovZ-CHhfxHNIz5VwfUItyzrlUyvdeT4K4jMWiqv1q-c9w84f4qZJoxVeAfScLO5gDDlZu6fp0tgdCl_N1jRE53tTfMd5-a0Wc7_weYMt0aF1PgFXnyWe9_JttWhSIp3SZIWJw-CVZTVbCyY7A26NoLBErHYr77Se-aX0gsMrozs4ofg7hMKA6BT93EZEvmxDjR1Tu9ghJedg-Yx197PEG"/>
+<div class="absolute -bottom-lg -right-lg bg-primary p-xl rounded-xl z-20 text-on-primary shadow-xl hidden md:block">
+<p class="font-display-lg text-headline-lg">25+</p>
+<p class="font-label-md">Années au service<br/>des électriciens</p>
+</div>
+</div>
+<div>
+<h3 class="font-headline-lg text-primary mb-lg">L'expertise ELECZAR</h3>
+<p class="font-body-lg text-on-surface-variant mb-md">
+                    Fondé en 1999, ELECZAR s'est imposé comme le leader de la distribution de matériel électrique dans la région de Meknès-Tafilalet. 
+                </p>
+<p class="font-body-md text-on-surface-variant mb-xl">
+                    Nous sélectionnons les meilleures marques mondiales pour garantir la sécurité et la performance de vos installations. Que vous soyez un artisan indépendant ou une grande entreprise industrielle, nous vous apportons la puissance de la précision.
+                </p>
+<button class="border-2 border-primary text-primary px-xl py-md rounded-lg font-headline-sm hover:bg-primary hover:text-on-primary transition-all">
+                    En savoir plus sur notre histoire
+                </button>
+</div>
+</div>
+</section>
+<!-- Testimonials & Blog -->
+<section class="py-xxl bg-surface-container-highest/20">
+<div class="max-w-max-width mx-auto px-lg">
+<div class="grid lg:grid-cols-3 gap-xxl">
+<!-- Testimonials -->
+<div class="lg:col-span-2">
+<h3 class="font-headline-lg text-primary mb-xl">Ce que disent nos clients</h3>
+<div class="grid md:grid-cols-2 gap-lg">
+<div class="bg-surface p-lg rounded-xl shadow-sm border border-outline-variant/30">
+<div class="flex text-secondary-container mb-md">
+<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+</div>
+<p class="italic text-body-md mb-lg">"Meilleur stock de Meknès. Toujours disponibles pour des conseils techniques sur les gros tableaux industriels."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center text-on-primary-container font-bold">AM</div>
+<div>
+<p class="font-label-md">Ahmed Mansouri</p>
+<p class="text-body-sm text-on-surface-variant">Entrepreneur BTP</p>
+</div>
+</div>
+</div>
+<div class="bg-surface p-lg rounded-xl shadow-sm border border-outline-variant/30">
+<div class="flex text-secondary-container mb-md">
+<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+</div>
+<p class="italic text-body-md mb-lg">"La livraison sur chantier en moins de 24h nous a sauvé sur plusieurs projets urgents. Un vrai partenaire."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-secondary-fixed-dim rounded-full flex items-center justify-center text-on-secondary-fixed font-bold">SB</div>
+<div>
+<p class="font-label-md">Said Bennani</p>
+<p class="text-body-sm text-on-surface-variant">Installateur Électricien</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Blog Side -->
+<div>
+<h3 class="font-headline-lg text-primary mb-xl">Actualités</h3>
+<div class="space-y-lg">
+<a class="group block" href="#">
+<p class="text-secondary text-label-sm font-bold mb-xs">Nouveautés</p>
+<h4 class="font-headline-sm group-hover:text-primary transition-colors">Norme NF C 15-100 : Ce qui change en 2024</h4>
+<p class="text-body-sm text-on-surface-variant mt-xs">Lire l'article →</p>
+</a>
+<div class="h-px bg-outline-variant/30"></div>
+<a class="group block" href="#">
+<p class="text-secondary text-label-sm font-bold mb-xs">Tutoriel</p>
+<h4 class="font-headline-sm group-hover:text-primary transition-colors">Comment optimiser l'éclairage LED industriel ?</h4>
+<p class="text-body-sm text-on-surface-variant mt-xs">Lire l'article →</p>
+</a>
+<div class="h-px bg-outline-variant/30"></div>
+<a class="group block" href="#">
+<p class="text-secondary text-label-sm font-bold mb-xs">Événement</p>
+<h4 class="font-headline-sm group-hover:text-primary transition-colors">Journée technique Legrand chez Eleczar</h4>
+<p class="text-body-sm text-on-surface-variant mt-xs">Lire l'article →</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA / Contact Form -->
+<section class="py-xxl bg-primary overflow-hidden relative">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0 50 Q 25 25 50 50 T 100 50" fill="none" stroke="white" stroke-width="0.5"></path>
+<path d="M0 60 Q 25 35 50 60 T 100 60" fill="none" stroke="white" stroke-width="0.5"></path>
+<path d="M0 40 Q 25 15 50 40 T 100 40" fill="none" stroke="white" stroke-width="0.5"></path>
+</svg>
+</div>
+<div class="max-w-max-width mx-auto px-lg relative z-10">
+<div class="bg-white rounded-2xl shadow-2xl p-xl md:p-xxl flex flex-col md:flex-row gap-xxl">
+<div class="md:w-1/2">
+<h3 class="font-display-lg text-primary mb-lg">Prêt pour votre prochain projet ?</h3>
+<p class="text-on-surface-variant font-body-lg mb-xl">Remplissez le formulaire et recevez un devis personnalisé sous 4 heures ouvrables.</p>
+<div class="space-y-md">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-sm rounded-lg">call</span>
+<span class="font-headline-sm text-on-surface">+212 535 000 000</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-sm rounded-lg">mail</span>
+<span class="font-headline-sm text-on-surface">contact@eleczar.ma</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-sm rounded-lg">location_on</span>
+<span class="font-headline-sm text-on-surface">Zone Industrielle, Meknès</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/2">
+<form class="space-y-md">
+<div class="grid grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="text-label-sm font-bold">Nom Complet</label>
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary focus:ring-0 p-sm" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="text-label-sm font-bold">Téléphone</label>
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary focus:ring-0 p-sm" placeholder="06..." type="tel"/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="text-label-sm font-bold">Email</label>
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary focus:ring-0 p-sm" placeholder="votre@email.com" type="email"/>
+</div>
+<div class="space-y-xs">
+<label class="text-label-sm font-bold">Votre Message / Liste de produits</label>
+<textarea class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary focus:ring-0 p-sm" placeholder="Détaillez votre besoin ici..." rows="4"></textarea>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container py-md rounded-lg font-headline-sm hover:brightness-110 shadow-lg transition-all" type="submit">
+                            Envoyer ma demande
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant py-xxl">
+<div class="w-full px-margin-desktop py-xxl grid grid-cols-2 md:grid-cols-6 gap-gutter max-w-max-width mx-auto">
+<div class="col-span-2">
+<h4 class="font-headline-sm text-primary font-bold mb-lg">ELECZAR</h4>
+<p class="text-body-sm text-on-surface-variant mb-xl">
+                    Le partenaire de confiance des électriciens au Maroc. Qualité certifiée et expertise technique depuis 1999.
+                </p>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary">face_nod</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary">dine_in</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary">camera</span>
+</div>
+</div>
+<div>
+<h5 class="font-label-md text-on-surface mb-lg uppercase">Produits</h5>
+<ul class="space-y-sm text-body-sm text-on-surface-variant">
+<li class="hover:text-primary cursor-pointer">Éclairage</li>
+<li class="hover:text-primary cursor-pointer">Câblage</li>
+<li class="hover:text-primary cursor-pointer">Solaire</li>
+<li class="hover:text-primary cursor-pointer">Protection</li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-on-surface mb-lg uppercase">Secteurs</h5>
+<ul class="space-y-sm text-body-sm text-on-surface-variant">
+<li class="hover:text-primary cursor-pointer">Résidentiel</li>
+<li class="hover:text-primary cursor-pointer">Industriel</li>
+<li class="hover:text-primary cursor-pointer">Tertiaire</li>
+<li class="hover:text-primary cursor-pointer">Agricole</li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-on-surface mb-lg uppercase">Services</h5>
+<ul class="space-y-sm text-body-sm text-on-surface-variant">
+<li class="hover:text-primary cursor-pointer">Livraison</li>
+<li class="hover:text-primary cursor-pointer">Devis</li>
+<li class="hover:text-primary cursor-pointer">Assistance</li>
+<li class="hover:text-primary cursor-pointer">Catalogue</li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-on-surface mb-lg uppercase">Contact</h5>
+<ul class="space-y-sm text-body-sm text-on-surface-variant">
+<li>Meknès HQ</li>
+<li>support@eleczar.ma</li>
+<li>Mentions Légales</li>
+</ul>
+</div>
+</div>
+<div class="max-w-max-width mx-auto px-lg mt-xl pt-xl border-t border-outline-variant/30 text-center text-body-sm text-on-surface-variant">
+            © 2024 ELECZAR. Precision Electrical Distribution. ICE: 001234567890001
+        </div>
+</footer>
+<!-- AI Chatbot Widget -->
+<div class="fixed bottom-lg right-lg z-[100] group" id="ai-chatbot">
+<div class="hidden absolute bottom-20 right-0 w-80 bg-white rounded-2xl shadow-2xl border border-outline-variant overflow-hidden" id="chat-bubble">
+<div class="bg-primary p-md text-on-primary flex justify-between items-center">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div>
+<p class="font-label-md">AL Montassira</p>
+<p class="text-[10px] opacity-80">En ligne pour vous aider</p>
+</div>
+</div>
+<button class="material-symbols-outlined hover:rotate-90 transition-transform" onclick="toggleChat()">close</button>
+</div>
+<div class="p-md h-64 overflow-y-auto bg-surface-container-low text-body-sm space-y-md">
+<div class="bg-white p-sm rounded-lg shadow-sm w-3/4">Bonjour ! Je suis AL Montassira, votre assistant ELECZAR. Comment puis-je vous aider aujourd'hui ?</div>
+<div class="bg-primary/10 p-sm rounded-lg shadow-sm w-3/4 ml-auto text-right">Je cherche des disjoncteurs Legrand 16A.</div>
+<div class="bg-white p-sm rounded-lg shadow-sm w-3/4">Très bon choix ! Nous avons actuellement plus de 500 unités en stock à Meknès. Voulez-vous que je les ajoute à votre devis ?</div>
+</div>
+<div class="p-md border-t border-outline-variant bg-white flex items-center gap-sm">
+<input class="flex-1 bg-surface-container-low border-none rounded-full text-body-sm focus:ring-1 focus:ring-primary px-md py-xs" placeholder="Tapez votre message..." type="text"/>
+<button class="material-symbols-outlined text-primary">send</button>
+</div>
+</div>
+<button class="bg-secondary-container text-on-secondary-container w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform relative" onclick="toggleChat()">
+<span class="material-symbols-outlined text-display-lg" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<span class="absolute top-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></span>
+</button>
+</div>
+<script>
+        function toggleChat() {
+            const chat = document.getElementById('chat-bubble');
+            chat.classList.toggle('hidden');
+        }
+
+        // Simple scroll reveal animations
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    section.classList.add('opacity-100');
+                    section.classList.remove('opacity-0');
+                }
+            });
+        });
+
+        // Sticky Navbar subtle transformation
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-1');
+                header.classList.remove('py-md');
+            } else {
+                header.classList.add('py-md');
+                header.classList.remove('py-1');
+            }
+        });
+    </script>
+</body></html>
