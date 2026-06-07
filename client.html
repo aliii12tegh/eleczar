@@ -1054,66 +1054,65 @@
     }
 
     // Quote Cart management
-    function initQuoteCart() {
-        const cartBadge = document.getElementById('cart-badge');
-        
-        window.getQuoteList = function() {
-            return JSON.parse(localStorage.getItem('eleczar_quote_list') || '[]');
-        };
-        
-        window.saveQuoteList = function(list) {
-            localStorage.setItem('eleczar_quote_list', JSON.stringify(list));
-            updateCartBadge();
-            // Dispatch event to update other pages
-            window.dispatchEvent(new Event('quote-cart-updated'));
-        };
-        
-        window.addToQuote = function(productName, productRef, productPrice, productBrand) {
-            let list = getQuoteList();
-            const existing = list.find(item => item.ref === productRef);
-            if (existing) {
-                existing.qty += 1;
-            } else {
-                list.push({ name: productName, ref: productRef, price: productPrice, brand: productBrand, qty: 1 });
-            }
-            saveQuoteList(list);
-            showToast(`"${productName}" ajouté à votre demande de devis !`);
-        };
-        
-        window.updateCartBadge = function() {
-            const list = getQuoteList();
-            const totalItems = list.reduce((sum, item) => sum + item.qty, 0);
-            const badges = [document.getElementById('cart-badge'), document.getElementById('cart-badge-mobile')];
-            badges.forEach(badge => {
-                if (badge) {
-                    badge.textContent = totalItems;
-                    if (totalItems > 0) {
-                        badge.classList.remove('hidden');
-                    } else {
-                        badge.classList.add('hidden');
-                    }
+        // Globally define cart functions so they are available immediately
+    window.getQuoteList = function() {
+        return JSON.parse(localStorage.getItem('eleczar_quote_list') || '[]');
+    };
+    
+    window.saveQuoteList = function(list) {
+        localStorage.setItem('eleczar_quote_list', JSON.stringify(list));
+        updateCartBadge();
+        // Dispatch event to update other pages
+        window.dispatchEvent(new Event('quote-cart-updated'));
+    };
+    
+    window.addToQuote = function(productName, productRef, productPrice, productBrand) {
+        let list = getQuoteList();
+        const existing = list.find(item => item.ref === productRef);
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            list.push({ name: productName, ref: productRef, price: productPrice, brand: productBrand, qty: 1 });
+        }
+        saveQuoteList(list);
+        showToast(`"${productName}" ajouté à votre demande de devis !`);
+    };
+    
+    window.updateCartBadge = function() {
+        const list = getQuoteList();
+        const totalItems = list.reduce((sum, item) => sum + item.qty, 0);
+        const badges = [document.getElementById('cart-badge'), document.getElementById('cart-badge-mobile')];
+        badges.forEach(badge => {
+            if (badge) {
+                badge.textContent = totalItems;
+                if (totalItems > 0) {
+                    badge.classList.remove('hidden');
+                } else {
+                    badge.classList.add('hidden');
                 }
-            });
-        };
-        
-        window.showToast = function(message) {
-            let toast = document.getElementById('eleczar-toast');
-            if (!toast) {
-                toast = document.createElement('div');
-                toast.id = 'eleczar-toast';
-                toast.className = 'fixed top-24 right-lg bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 px-lg py-md rounded-xl shadow-2xl border border-outline-variant z-[999] transition-all duration-300 transform translate-y-[-20px] opacity-0 flex items-center gap-md font-label-md';
-                document.body.appendChild(toast);
             }
-            toast.innerHTML = `<span class="material-symbols-outlined text-secondary">check_circle</span> <span>${message}</span>`;
-            toast.classList.remove('opacity-0', 'translate-y-[-20px]');
-            toast.classList.add('opacity-100', 'translate-y-0');
-            
-            setTimeout(() => {
-                toast.classList.remove('opacity-100', 'translate-y-0');
-                toast.classList.add('opacity-0', 'translate-y-[-20px]');
-            }, 3000);
-        };
+        });
+    };
+    
+    window.showToast = function(message) {
+        let toast = document.getElementById('eleczar-toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'eleczar-toast';
+            toast.className = 'fixed top-24 right-lg bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 px-lg py-md rounded-xl shadow-2xl border border-outline-variant z-[999] transition-all duration-300 transform translate-y-[-20px] opacity-0 flex items-center gap-md font-label-md';
+            document.body.appendChild(toast);
+        }
+        toast.innerHTML = `<span class="material-symbols-outlined text-secondary">check_circle</span> <span>${message}</span>`;
+        toast.classList.remove('opacity-0', 'translate-y-[-20px]');
+        toast.classList.add('opacity-100', 'translate-y-0');
         
+        setTimeout(() => {
+            toast.classList.remove('opacity-100', 'translate-y-0');
+            toast.classList.add('opacity-0', 'translate-y-[-20px]');
+        }, 3000);
+    };
+
+    function initQuoteCart() {
         updateCartBadge();
         window.addEventListener('quote-cart-updated', updateCartBadge);
     }
