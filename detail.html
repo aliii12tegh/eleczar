@@ -1076,9 +1076,11 @@
         document.getElementById('label-360').textContent = `Angle: ${val} / 12`;
     };
 
-    document.addEventListener('DOMContentLoaded', () => {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadProduct);
+    } else {
         loadProduct();
-    });
+    }
 </script>
 
 <!-- Chatbot IA 'AL Montassira' -->
