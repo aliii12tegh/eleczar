@@ -553,7 +553,69 @@
             </div>
         </div>
     </header>
-<main class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-xxl circuit-bg dark:text-zinc-100">
+<main id="auth-container" class="max-w-md mx-auto my-xl px-margin-mobile md:px-margin-desktop py-xl bg-white dark:bg-slate-900 rounded-2xl border border-outline-variant dark:border-slate-800 shadow-xl flex flex-col gap-lg dark:text-zinc-100 hidden">
+    <!-- Header -->
+    <div class="text-center flex flex-col items-center">
+        <span class="material-symbols-outlined text-[48px] text-[#0055FF] mb-2">lock</span>
+        <h2 class="text-2xl font-black text-gray-800 dark:text-white">Espace Client Pro</h2>
+        <p class="text-xs text-gray-500 dark:text-zinc-400 mt-1">Veuillez vous connecter ou vous inscrire pour commander</p>
+    </div>
+
+    <!-- Tabs Toggle -->
+    <div class="flex border-b border-gray-100 dark:border-slate-800">
+        <button id="tab-login" onclick="switchTab('login')" class="flex-1 pb-3 text-sm font-bold text-[#0055FF] border-b-2 border-[#0055FF] transition-all">Connexion</button>
+        <button id="tab-signup" onclick="switchTab('signup')" class="flex-1 pb-3 text-sm font-bold text-gray-400 hover:text-gray-600 transition-all">Créer un Compte</button>
+    </div>
+
+    <!-- Alert Box -->
+    <div id="auth-alert" class="hidden p-sm rounded-lg text-xs font-semibold"></div>
+
+    <!-- Form: Login -->
+    <form id="form-login" onsubmit="handleLoginSubmit(event)" class="flex flex-col gap-md">
+        <div class="flex flex-col gap-xs">
+            <label for="login-email" class="text-xs font-bold uppercase text-gray-500 dark:text-zinc-400">Email Professionnel *</label>
+            <input type="email" id="login-email" required class="bg-gray-50 dark:bg-slate-950 border border-outline-variant dark:border-slate-800 rounded-lg p-sm text-sm text-gray-800 dark:text-white focus:ring-primary focus:border-primary focus:outline-none"/>
+        </div>
+        <div class="flex flex-col gap-xs">
+            <label for="login-password" class="text-xs font-bold uppercase text-gray-500 dark:text-zinc-400">Mot de passe *</label>
+            <input type="password" id="login-password" required class="bg-gray-50 dark:bg-slate-950 border border-outline-variant dark:border-slate-800 rounded-lg p-sm text-sm text-gray-800 dark:text-white focus:ring-primary focus:border-primary focus:outline-none"/>
+        </div>
+        <button type="submit" class="w-full bg-[#0055FF] hover:bg-blue-600 text-white font-bold py-3 rounded-xl shadow-md transition-all mt-sm flex items-center justify-center gap-xs">
+            <span class="material-symbols-outlined text-[18px]">login</span>
+            Se connecter
+        </button>
+    </form>
+
+    <!-- Form: Signup -->
+    <form id="form-signup" onsubmit="handleSignupSubmit(event)" class="flex flex-col gap-md hidden">
+        <div class="flex flex-col gap-xs">
+            <label for="signup-company" class="text-xs font-bold uppercase text-gray-500 dark:text-zinc-400">Entreprise / Nom Complet *</label>
+            <input type="text" id="signup-company" required class="bg-gray-50 dark:bg-slate-950 border border-outline-variant dark:border-slate-800 rounded-lg p-sm text-sm text-gray-800 dark:text-white focus:ring-primary focus:border-primary focus:outline-none"/>
+        </div>
+        <div class="flex flex-col gap-xs">
+            <label for="signup-phone" class="text-xs font-bold uppercase text-gray-500 dark:text-zinc-400">Téléphone *</label>
+            <input type="tel" id="signup-phone" required placeholder="06XXXXXXXX" class="bg-gray-50 dark:bg-slate-950 border border-outline-variant dark:border-slate-800 rounded-lg p-sm text-sm text-gray-800 dark:text-white focus:ring-primary focus:border-primary focus:outline-none"/>
+        </div>
+        <div class="flex flex-col gap-xs">
+            <label for="signup-city" class="text-xs font-bold uppercase text-gray-500 dark:text-zinc-400">Ville *</label>
+            <input type="text" id="signup-city" required placeholder="Meknès, Fès..." class="bg-gray-50 dark:bg-slate-950 border border-outline-variant dark:border-slate-800 rounded-lg p-sm text-sm text-gray-800 dark:text-white focus:ring-primary focus:border-primary focus:outline-none"/>
+        </div>
+        <div class="flex flex-col gap-xs">
+            <label for="signup-email" class="text-xs font-bold uppercase text-gray-500 dark:text-zinc-400">Email Professionnel *</label>
+            <input type="email" id="signup-email" required class="bg-gray-50 dark:bg-slate-950 border border-outline-variant dark:border-slate-800 rounded-lg p-sm text-sm text-gray-800 dark:text-white focus:ring-primary focus:border-primary focus:outline-none"/>
+        </div>
+        <div class="flex flex-col gap-xs">
+            <label for="signup-password" class="text-xs font-bold uppercase text-gray-500 dark:text-zinc-400">Mot de passe *</label>
+            <input type="password" id="signup-password" required class="bg-gray-50 dark:bg-slate-950 border border-outline-variant dark:border-slate-800 rounded-lg p-sm text-sm text-gray-800 dark:text-white focus:ring-primary focus:border-primary focus:outline-none"/>
+        </div>
+        <button type="submit" class="w-full bg-[#0055FF] hover:bg-blue-600 text-white font-bold py-3 rounded-xl shadow-md transition-all mt-sm flex items-center justify-center gap-xs">
+            <span class="material-symbols-outlined text-[18px]">person_add</span>
+            Créer mon Compte Pro
+        </button>
+    </form>
+</main>
+
+<main id="client-main-content" class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-xxl circuit-bg dark:text-zinc-100 hidden">
     <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-xl gap-md">
         <div>
             <h1 class="font-headline-lg text-headline-lg text-primary dark:text-blue-400 font-extrabold text-3xl">Votre Espace Devis &amp; Commandes</h1>
@@ -561,7 +623,10 @@
         </div>
         <div class="flex items-center gap-sm bg-surface-container dark:bg-slate-900 border border-outline-variant dark:border-slate-800 p-sm rounded-lg shrink-0">
             <span class="material-symbols-outlined text-primary">account_circle</span>
-            <span class="font-bold text-sm text-on-surface font-body-sm">Espace Pro Client</span>
+            <div class="flex flex-col">
+                <span class="font-bold text-xs text-on-surface font-body-sm" id="user-company-display">Espace Pro Client</span>
+                <button onclick="handleLogout()" class="text-left text-[10px] text-error font-bold hover:underline">Se déconnecter</button>
+            </div>
         </div>
     </div>
 
@@ -916,7 +981,143 @@
         }).join('');
     }
     
+    // User Authentication & Private Page Logic
+    window.switchTab = function(tab) {
+        const tabLogin = document.getElementById('tab-login');
+        const tabSignup = document.getElementById('tab-signup');
+        const formLogin = document.getElementById('form-login');
+        const formSignup = document.getElementById('form-signup');
+        const alertBox = document.getElementById('auth-alert');
+        if (alertBox) alertBox.classList.add('hidden');
+        
+        if (tab === 'login') {
+            tabLogin.className = "flex-1 pb-3 text-sm font-bold text-[#0055FF] border-b-2 border-[#0055FF] transition-all";
+            tabSignup.className = "flex-1 pb-3 text-sm font-bold text-gray-400 hover:text-gray-600 transition-all";
+            formLogin.classList.remove('hidden');
+            formSignup.classList.add('hidden');
+        } else {
+            tabSignup.className = "flex-1 pb-3 text-sm font-bold text-[#0055FF] border-b-2 border-[#0055FF] transition-all";
+            tabLogin.className = "flex-1 pb-3 text-sm font-bold text-gray-400 hover:text-gray-600 transition-all";
+            formSignup.classList.remove('hidden');
+            formLogin.classList.add('hidden');
+        }
+    };
+
+    window.handleLoginSubmit = function(e) {
+        e.preventDefault();
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+        const alertBox = document.getElementById('auth-alert');
+        
+        let users = JSON.parse(localStorage.getItem('eleczar_registered_users') || '[]');
+        
+        // Seed default testing user if not exists
+        if (users.length === 0) {
+            users.push({
+                company: "Showroom Pro Meknès",
+                phone: "0600000000",
+                city: "Meknès",
+                email: "pro@eleczar.ma",
+                password: "password123"
+            });
+            localStorage.setItem('eleczar_registered_users', JSON.stringify(users));
+        }
+        
+        const user = users.find(u => u.email === email && u.password === password);
+        
+        if (user) {
+            localStorage.setItem('eleczar_is_logged_in', 'true');
+            localStorage.setItem('eleczar_user_email', user.email);
+            localStorage.setItem('eleczar_user_company', user.company);
+            localStorage.setItem('eleczar_user_phone', user.phone);
+            localStorage.setItem('eleczar_user_city', user.city);
+            
+            showToast("Connexion réussie. Bienvenue dans votre Espace Pro !");
+            checkAuthState();
+        } else {
+            alertBox.textContent = "Email ou mot de passe incorrect. Pour tester, utilisez : pro@eleczar.ma / password123";
+            alertBox.className = "p-sm rounded-lg text-xs font-semibold bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400";
+            alertBox.classList.remove('hidden');
+        }
+    };
+
+    window.handleSignupSubmit = function(e) {
+        e.preventDefault();
+        const company = document.getElementById('signup-company').value;
+        const phone = document.getElementById('signup-phone').value;
+        const city = document.getElementById('signup-city').value;
+        const email = document.getElementById('signup-email').value;
+        const password = document.getElementById('signup-password').value;
+        const alertBox = document.getElementById('auth-alert');
+        
+        let users = JSON.parse(localStorage.getItem('eleczar_registered_users') || '[]');
+        
+        if (users.some(u => u.email === email)) {
+            alertBox.textContent = "Cet email est déjà enregistré.";
+            alertBox.className = "p-sm rounded-lg text-xs font-semibold bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400";
+            alertBox.classList.remove('hidden');
+            return;
+        }
+        
+        users.push({ company, phone, city, email, password });
+        localStorage.setItem('eleczar_registered_users', JSON.stringify(users));
+        
+        alertBox.textContent = "Compte créé avec succès ! Vous pouvez maintenant vous connecter.";
+        alertBox.className = "p-sm rounded-lg text-xs font-semibold bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400";
+        alertBox.classList.remove('hidden');
+        
+        // Auto-switch to login tab
+        setTimeout(() => {
+            switchTab('login');
+            document.getElementById('login-email').value = email;
+            document.getElementById('login-password').focus();
+        }, 1500);
+    };
+
+    window.handleLogout = function() {
+        localStorage.setItem('eleczar_is_logged_in', 'false');
+        localStorage.removeItem('eleczar_user_email');
+        localStorage.removeItem('eleczar_user_company');
+        localStorage.removeItem('eleczar_user_phone');
+        localStorage.removeItem('eleczar_user_city');
+        showToast("Déconnexion effectuée.");
+        checkAuthState();
+    };
+
+    window.checkAuthState = function() {
+        const isLoggedIn = localStorage.getItem('eleczar_is_logged_in') === 'true';
+        const mainContent = document.getElementById('client-main-content');
+        const authContainer = document.getElementById('auth-container');
+        
+        if (isLoggedIn) {
+            if (mainContent) mainContent.classList.remove('hidden');
+            if (authContainer) authContainer.classList.add('hidden');
+            
+            // Prefill checkout details
+            const userCompany = localStorage.getItem('eleczar_user_company') || '';
+            const userPhone = localStorage.getItem('eleczar_user_phone') || '';
+            const userEmail = localStorage.getItem('eleczar_user_email') || '';
+            const userCity = localStorage.getItem('eleczar_user_city') || '';
+            
+            const nameField = document.getElementById('client-name');
+            const phoneField = document.getElementById('client-phone');
+            const emailField = document.getElementById('client-email');
+            const cityField = document.getElementById('client-city');
+            const companyDisplay = document.getElementById('user-company-display');
+            
+            if (nameField) nameField.value = userCompany;
+            if (phoneField) phoneField.value = userPhone;
+            if (emailField) emailField.value = userEmail;
+            if (cityField) cityField.value = userCity;
+            if (companyDisplay) companyDisplay.textContent = userCompany;
+        } else {
+            if (mainContent) mainContent.classList.add('hidden');
+            if (authContainer) authContainer.classList.remove('hidden');
+        }
+    };
+    
     document.addEventListener('DOMContentLoaded', () => {
+        checkAuthState();
         renderCart();
         renderHistory();
         window.addEventListener('quote-cart-updated', renderCart);
