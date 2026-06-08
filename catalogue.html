@@ -838,63 +838,7 @@
 
 <script>
     // Global list of products
-    const ALL_PRODUCTS = [
-        {
-            name: "Lampadaire LUXTRON",
-            brand: "Luxtron",
-            ref: "LUX-LED-IP66",
-            price: 1850,
-            status: "En Stock",
-            tag: "Nouveau",
-            img: "https://eleczar.ma/wp-content/uploads/2025/01/Luminaire-luxtron-LED-ip66-led-300x300.png",
-            cat: "ecl-public",
-            description: "Lampadaire LED Luxtron haute performance IP66 pour éclairage extérieur public."
-        },
-        {
-            name: "Lampadaire MEGAMAN ZDL1128",
-            brand: "Megaman",
-            ref: "MEG-ZDL1128",
-            price: 2200,
-            status: "En Stock",
-            tag: "Nouveau",
-            img: "https://eleczar.ma/wp-content/uploads/2024/12/20230706162926_4107-300x300.png",
-            cat: "ecl-public",
-            description: "Lampadaire Megaman ZDL1128, idéal pour l'éclairage de voiries et espaces publics."
-        },
-        {
-            name: "Lampadaire MEGAMAN ZDL1129",
-            brand: "Megaman",
-            ref: "MEG-ZDL1129",
-            price: 2450,
-            status: "En Stock",
-            tag: "Nouveau",
-            img: "https://eleczar.ma/wp-content/uploads/2021/01/20210924121306_3624-300x300.png",
-            cat: "ecl-public",
-            description: "Lampadaire extérieur Megaman ZDL1129 pour éclairage public à haute efficacité énergétique."
-        },
-        {
-            name: "Luminaire COBRA COB LED",
-            brand: "Cobra",
-            ref: "COB-LED-250W",
-            price: 1950,
-            status: "En Stock",
-            tag: "Nouveau",
-            img: "https://eleczar.ma/wp-content/uploads/2025/02/IP65-Garden-Park-Courtyard-Lamp-250W-LED-COB-Street-Light-2-Years-Warranty-300x300.jpg",
-            cat: "ecl-public",
-            description: "Luminaire routier COBRA COB LED 250W IP65 avec garantie de 2 ans. Parfait pour les parcs, cours et avenues."
-        },
-        { name: "Disjoncteur phase+neutre 16A", brand: "Legrand", ref: "LEG-16A", price: 45, status: "En Stock", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuARJYeO-CBe5812e5Ki7FUUgYu0j_KqL-gA0-Fsjpj8asyoVKkyn0FeBtOnEC48tVtPYTl0YUBxiGJYXVJ71iQYC-_XYoq8WSC-RW9HIc_iS3bsZY61YXtAju1KHzzBx3brRMPgTUBsjwBhivj141zVzREMkZP7Uqnf3oZOLhRMe2WgqsJQs1ZXHfCvqaljc_ax34jAhgVINAIwhNM2f_RfwychHtiEDuEa_x-osyZrd6iwsiRp_dqUWccS7E5DgK-Tn-T62CaoaK_Y", cat: "disj-mod", description: "Disjoncteur phase+neutre DNX³ 4500 Legrand. Idéal pour la protection des circuits terminaux résidentiels." },
-        { name: "Projecteur LED 50W IP65", brand: "Osram", ref: "OSR-PROJ50", price: 290, status: "En Stock", tag: "Promo", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAlFDSgGFYOoguVgoFhTA06qOiZAVYyRZBKQgksKP874-tk6fKep6kVAiaAVwtJObqB42sNBKy48Gh1kiUA5bykBNQij6sTVdHXmHfA8211jLI8LmjErIMYEhxHQpOhw6yxiUSARxtBF17T04FogLIotJRm-RVHRcPGACU4epGfKKgyvSZauEdlituY7KarpsCgubFkilfdjWNM6nib638SoQN48NwusF83x--oZ7CripWrGhEWrBfpS9lh039gkt5FnVggNy2oLBEy", cat: "ecl-public", description: "Projecteur LED de forte puissance extérieure Osram Eco." },
-        { name: "Prise Murale Smart WiFi", brand: "Ingelec", ref: "ING-SMART10", price: 120, status: "Sur Commande", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0yGrOkgHDQEGnZF6P3WSUOIhKO6XfavySa2XP1m4iPzv2iCm1PIdZXPEDBanh1_QdJQsxZKwcnvaGeQl3ynL_X88gopRd284NZgCW3Rk1NwLXjReCI4WRfa4fdPFa1FjnIHaNNgayOB73UFC9CqC9PvAT4ETHcnHxwFq7MafLV3ej2AUP91QY80t4SZy4GjbuqUDAAR8y3CNRLQMXeX5M8fOaeRR-Ey9krHQILCbGNDK8WoHNwkTJI6gMZt9jE-Z4ClObzu4M3j9x", cat: "dom-sys", description: "Prise intelligente Ingelec avec connexion WiFi intégrée." },
-        { name: "Câble RO2V 3G1.5mm²", brand: "Nexans", ref: "NEX-RO2V3G15", price: 15, status: "En Stock", tag: null, img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD4Sae-fudG0ondmYbSHpR6C_09o3hJ8B0nuXIWQP5iLNuRohgU3mfKMHABqs1BQ59PfqJjFRCwZwvpRjU4BQBcrpOhpu2RrJW2fwYMldAiDiGXZSzzwt7FJBbIBTmblj2jea9a9HHAHQrjBhe__8b2Bfzs4CWDUktQVoGij1adoloMORP4tR1W9aJYDKf3fIQXt4-HBXGCuMUYulZ9BmkqfaxsFdNRwXHvoNIfPGXeTqghS5fg5zTV-Fy77aG7Rvq4Crlw1qMWQA57", cat: "fil", description: "Câble rigide cuivre Nexans U-1000 AR2V 3G1.5mm²." },
-        { name: "Kit Interphone Vidéo Fermax", brand: "Fermax", ref: "FER-KITVIDEO", price: 1450, status: "En Stock", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAd9ZVLTCMpWmG1XYiZZw0w5PahE6NLdyXPO1l82vXF2nQ03IaXDCKECiVAhnM6GQLATy40yisRJk4fAKbzYIrxM0dz34iAxmIlh9jrFJKoI7lc7TAd1v4agiTpFmQzrObWnwVoA1wVFjqBePfN64ffrblBlE-uxRw-LeRR8B3_s_Z1x04gJo6zPMdsTWHMnM3db3IbhgT4o1X4aGHbrABQ58rulSjeBUV8nfjojBQdaVlsL3XwxqPRihZk82MKYy5dfxQhOM_ckY9j", cat: "sec-cam", description: "Kit interphone vidéo Fermax pour contrôle d'accès résidentiel." },
-        { name: "Multimètre Digital Pro UT33", brand: "ABB", ref: "ABB-UT33D", price: 580, status: "En Stock", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBlpnNSheQY1y_E0M0RyvYfx7sHcsV0HmiqPbGilqqukGqTMOhq0fHnnCEdqtPIV61ELE0Y7j3IMHmLA4rW1S2KsMi3L7RnPIpaSYl3wDhJ5uz1g4-424GDxfg-BKU9dWsFMDMiWSjZGCBaN7QzqTSvQh87zCiAbHnYiQtEU1RLpk6pj2RGtg9typodfjukKyiU5bj6b4LNVBDUXeiulI6n6MqjQf7SIwZlEeUsDiLmzn9jlP1oHxCrqmPr5qwW5zc4Dlgq5Pk9vWM6", cat: "out", description: "Instrument de mesure de précision pour électriciens." },
-        { name: "Disjoncteur NSX 160N 3P", brand: "Schneider", ref: "LV430630", price: 2450, status: "En Stock", tag: "Promo", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD_7XOqY3UqbULCXLpptMhTtI082raxXn1zTNOyaa7_tugZvj8hnrl7o0Bq7re9r6vUvbXP8ypDS9oQkHRTg7hqG-iTxxCNb1CuDsxR2uqy7ilovVt7B21gCvp51TA8gAi_Qr6V2qr_shfeeKmVX1k_pGK_8d_oUa017sReSkaS5b2xa8wmum9m5fMCXCK2PU3Yq_iCibyYCG5FywZbpvOw7C9r6QDWiY4tpLLslmcjCChaZwlfq-ntE5MJOASW7wXiq6vtCcEeWlHm", cat: "disj-mod", description: "Disjoncteur boîtier moulé Compact Schneider Electric." },
-        { name: "Contacteur CTX³ 3P 40A", brand: "Legrand", ref: "LEG-CTX40", price: 890, status: "Sur Commande", tag: null, img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxMJm9HIfYnoPBfC4k7LSLNGsBu4UGa7pSO8-kepn4J7HlKeoPNc7ETY6iHzx3xLX_IJ5VbqNugFJdN9BCVW-EUTksKjg78pt1EKIBOUvDgaVTZ95b3zExSqpsk5EZSqPpLu717xyHwjroJJZvSCLWA2eP58esOGuQ3-hgmkzvBAqwfp66uo8R8KYk2mUKS7jUHCCga-A4V036hAIDuiY58Sr34jpYJ1wMoAo3igBXe9k5KByhiEjntzy1JxmIhm4zuU78Uq8pEB2Y", cat: "disj-mod", description: "Contacteur triphasé CTX³ Legrand 40A." },
-        { name: "Automate AC500 V3", brand: "ABB", ref: "ABB-AC500", price: 12400, status: "En Stock", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBL_I3flpiTEAl3kGtV2CVX6v-2jMkjgqTqJ7GbEPOD1iHJNsFKcX9EkwJZGF58qb8oxn5K21J3sz3u29ddauo1U0Ygh2Pr6N5gXunFt-uN8essXAk4rT_lG6HumxwUO02bGkIgVua-NsxVT7GdHzmcfMy881q2erVA0BL3FB1ZeVKhSyj_UgrWqZbIL6SpLqCqY9_Vl491GcqBa_Ay4ftRrxEDA3EqIe52qtN12LQC9uWSZcFRd5m_dFlos0KmmYV-g9iJXQQdn4eq", cat: "dom-sys", description: "Automate programmable industriel AC500 ABB." },
-        { name: "Armoire Électrique Gemini", brand: "ABB", ref: "ABB-GEMINI5", price: 3100, status: "En Stock", tag: null, img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAd9ZVLTCMpWmG1XYiZZw0w5PahE6NLdyXPO1l82vXF2nQ03IaXDCKECiVAhnM6GQLATy40yisRJk4fAKbzYIrxM0dz34iAxmIlh9jrFJKoI7lc7TAd1v4agiTpFmQzrObWnwVoA1wVFjqBePfN64ffrblBlE-uxRw-LeRR8B3_s_Z1x04gJo6zPMdsTWHMnM3db3IbhgT4o1X4aGHbrABQ58rulSjeBUV8nfjojBQdaVlsL3XwxqPRihZk82MKYy5dfxQhOM_ckY9j", cat: "arm", description: "Coffret de distribution thermoplastique ABB Gemini." },
-        { name: "Néon LED Ingelec 120cm", brand: "Ingelec", ref: "ING-NEON120", price: 75, status: "En Stock", tag: "Promo", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCW1jtCSJVEm4qCFvyIbsioddrm5FOuHbCAKHdYej6uM7n-suduZLPlFrp18-euN4oBagfZ6riZgOFj-t53MGj1P0FuZhzsQ1KQSxNlnquT00YwopyyHx8-XGUMAYiuyokY_GizWTQV9AHgJEWJVzT3CbWOLkyqHhYrTznUl5KBM6ZW95Zomjp1bK4VD2k_Jc5JAS-N8cA_rJAmRoSJe-7a878PXzMnc8Ird6zCsQJMK3SrGb_G4NwbzOZSqa7vKty6Ubx2-p57gTH4", cat: "tub-led", description: "Réglette LED étanche Ingelec." }
-    ];
+    const ALL_PRODUCTS = [];
 
     let currentCategory = null;
 
