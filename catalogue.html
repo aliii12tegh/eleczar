@@ -630,7 +630,7 @@
 </div>
 </div>
 <!-- Product Grid (15 items) -->
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
 <!-- Repeated Cards for Prototype (Mocking 15 items) -->
 <!-- Item 1 -->
 <div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-md flex flex-col group hover:shadow-xl transition-all duration-300">
@@ -839,6 +839,50 @@
 <script>
     // Global list of products
     const ALL_PRODUCTS = [
+        {
+            name: "Lampadaire LUXTRON",
+            brand: "Luxtron",
+            ref: "LUX-LED-IP66",
+            price: 1850,
+            status: "En Stock",
+            tag: "Nouveau",
+            img: "https://eleczar.ma/wp-content/uploads/2025/01/Luminaire-luxtron-LED-ip66-led-300x300.png",
+            cat: "ecl-public",
+            description: "Lampadaire LED Luxtron haute performance IP66 pour éclairage extérieur public."
+        },
+        {
+            name: "Lampadaire MEGAMAN ZDL1128",
+            brand: "Megaman",
+            ref: "MEG-ZDL1128",
+            price: 2200,
+            status: "En Stock",
+            tag: "Nouveau",
+            img: "https://eleczar.ma/wp-content/uploads/2024/12/20230706162926_4107-300x300.png",
+            cat: "ecl-public",
+            description: "Lampadaire Megaman ZDL1128, idéal pour l'éclairage de voiries et espaces publics."
+        },
+        {
+            name: "Lampadaire MEGAMAN ZDL1129",
+            brand: "Megaman",
+            ref: "MEG-ZDL1129",
+            price: 2450,
+            status: "En Stock",
+            tag: "Nouveau",
+            img: "https://eleczar.ma/wp-content/uploads/2021/01/20210924121306_3624-300x300.png",
+            cat: "ecl-public",
+            description: "Lampadaire extérieur Megaman ZDL1129 pour éclairage public à haute efficacité énergétique."
+        },
+        {
+            name: "Luminaire COBRA COB LED",
+            brand: "Cobra",
+            ref: "COB-LED-250W",
+            price: 1950,
+            status: "En Stock",
+            tag: "Nouveau",
+            img: "https://eleczar.ma/wp-content/uploads/2025/02/IP65-Garden-Park-Courtyard-Lamp-250W-LED-COB-Street-Light-2-Years-Warranty-300x300.jpg",
+            cat: "ecl-public",
+            description: "Luminaire routier COBRA COB LED 250W IP65 avec garantie de 2 ans. Parfait pour les parcs, cours et avenues."
+        },
         { name: "Disjoncteur phase+neutre 16A", brand: "Legrand", ref: "LEG-16A", price: 45, status: "En Stock", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuARJYeO-CBe5812e5Ki7FUUgYu0j_KqL-gA0-Fsjpj8asyoVKkyn0FeBtOnEC48tVtPYTl0YUBxiGJYXVJ71iQYC-_XYoq8WSC-RW9HIc_iS3bsZY61YXtAju1KHzzBx3brRMPgTUBsjwBhivj141zVzREMkZP7Uqnf3oZOLhRMe2WgqsJQs1ZXHfCvqaljc_ax34jAhgVINAIwhNM2f_RfwychHtiEDuEa_x-osyZrd6iwsiRp_dqUWccS7E5DgK-Tn-T62CaoaK_Y", cat: "disj-mod", description: "Disjoncteur phase+neutre DNX³ 4500 Legrand. Idéal pour la protection des circuits terminaux résidentiels." },
         { name: "Projecteur LED 50W IP65", brand: "Osram", ref: "OSR-PROJ50", price: 290, status: "En Stock", tag: "Promo", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAlFDSgGFYOoguVgoFhTA06qOiZAVYyRZBKQgksKP874-tk6fKep6kVAiaAVwtJObqB42sNBKy48Gh1kiUA5bykBNQij6sTVdHXmHfA8211jLI8LmjErIMYEhxHQpOhw6yxiUSARxtBF17T04FogLIotJRm-RVHRcPGACU4epGfKKgyvSZauEdlituY7KarpsCgubFkilfdjWNM6nib638SoQN48NwusF83x--oZ7CripWrGhEWrBfpS9lh039gkt5FnVggNy2oLBEy", cat: "ecl-pub", description: "Projecteur LED de forte puissance extérieure Osram Eco." },
         { name: "Prise Murale Smart WiFi", brand: "Ingelec", ref: "ING-SMART10", price: 120, status: "Sur Commande", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0yGrOkgHDQEGnZF6P3WSUOIhKO6XfavySa2XP1m4iPzv2iCm1PIdZXPEDBanh1_QdJQsxZKwcnvaGeQl3ynL_X88gopRd284NZgCW3Rk1NwLXjReCI4WRfa4fdPFa1FjnIHaNNgayOB73UFC9CqC9PvAT4ETHcnHxwFq7MafLV3ej2AUP91QY80t4SZy4GjbuqUDAAR8y3CNRLQMXeX5M8fOaeRR-Ey9krHQILCbGNDK8WoHNwkTJI6gMZt9jE-Z4ClObzu4M3j9x", cat: "dom-sys", description: "Prise intelligente Ingelec avec connexion WiFi intégrée." },
@@ -1206,6 +1250,50 @@
 <script>
     // Global list of products
     const ALL_PRODUCTS = [
+        {
+            name: "Lampadaire LUXTRON",
+            brand: "Luxtron",
+            ref: "LUX-LED-IP66",
+            price: 1850,
+            status: "En Stock",
+            tag: "Nouveau",
+            img: "https://eleczar.ma/wp-content/uploads/2025/01/Luminaire-luxtron-LED-ip66-led-300x300.png",
+            cat: "ecl-public",
+            description: "Lampadaire LED Luxtron haute performance IP66 pour éclairage extérieur public."
+        },
+        {
+            name: "Lampadaire MEGAMAN ZDL1128",
+            brand: "Megaman",
+            ref: "MEG-ZDL1128",
+            price: 2200,
+            status: "En Stock",
+            tag: "Nouveau",
+            img: "https://eleczar.ma/wp-content/uploads/2024/12/20230706162926_4107-300x300.png",
+            cat: "ecl-public",
+            description: "Lampadaire Megaman ZDL1128, idéal pour l'éclairage de voiries et espaces publics."
+        },
+        {
+            name: "Lampadaire MEGAMAN ZDL1129",
+            brand: "Megaman",
+            ref: "MEG-ZDL1129",
+            price: 2450,
+            status: "En Stock",
+            tag: "Nouveau",
+            img: "https://eleczar.ma/wp-content/uploads/2021/01/20210924121306_3624-300x300.png",
+            cat: "ecl-public",
+            description: "Lampadaire extérieur Megaman ZDL1129 pour éclairage public à haute efficacité énergétique."
+        },
+        {
+            name: "Luminaire COBRA COB LED",
+            brand: "Cobra",
+            ref: "COB-LED-250W",
+            price: 1950,
+            status: "En Stock",
+            tag: "Nouveau",
+            img: "https://eleczar.ma/wp-content/uploads/2025/02/IP65-Garden-Park-Courtyard-Lamp-250W-LED-COB-Street-Light-2-Years-Warranty-300x300.jpg",
+            cat: "ecl-public",
+            description: "Luminaire routier COBRA COB LED 250W IP65 avec garantie de 2 ans. Parfait pour les parcs, cours et avenues."
+        },
         { name: "Disjoncteur phase+neutre 16A", brand: "Legrand", ref: "LEG-16A", price: 45, status: "En Stock", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuARJYeO-CBe5812e5Ki7FUUgYu0j_KqL-gA0-Fsjpj8asyoVKkyn0FeBtOnEC48tVtPYTl0YUBxiGJYXVJ71iQYC-_XYoq8WSC-RW9HIc_iS3bsZY61YXtAju1KHzzBx3brRMPgTUBsjwBhivj141zVzREMkZP7Uqnf3oZOLhRMe2WgqsJQs1ZXHfCvqaljc_ax34jAhgVINAIwhNM2f_RfwychHtiEDuEa_x-osyZrd6iwsiRp_dqUWccS7E5DgK-Tn-T62CaoaK_Y", cat: "disj-mod", description: "Disjoncteur phase+neutre DNX³ 4500 Legrand. Idéal pour la protection des circuits terminaux résidentiels." },
         { name: "Projecteur LED 50W IP65", brand: "Osram", ref: "OSR-PROJ50", price: 290, status: "En Stock", tag: "Promo", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAlFDSgGFYOoguVgoFhTA06qOiZAVYyRZBKQgksKP874-tk6fKep6kVAiaAVwtJObqB42sNBKy48Gh1kiUA5bykBNQij6sTVdHXmHfA8211jLI8LmjErIMYEhxHQpOhw6yxiUSARxtBF17T04FogLIotJRm-RVHRcPGACU4epGfKKgyvSZauEdlituY7KarpsCgubFkilfdjWNM6nib638SoQN48NwusF83x--oZ7CripWrGhEWrBfpS9lh039gkt5FnVggNy2oLBEy", cat: "ecl-pub", description: "Projecteur LED de forte puissance extérieure Osram Eco." },
         { name: "Prise Murale Smart WiFi", brand: "Ingelec", ref: "ING-SMART10", price: 120, status: "Sur Commande", tag: "Nouveau", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0yGrOkgHDQEGnZF6P3WSUOIhKO6XfavySa2XP1m4iPzv2iCm1PIdZXPEDBanh1_QdJQsxZKwcnvaGeQl3ynL_X88gopRd284NZgCW3Rk1NwLXjReCI4WRfa4fdPFa1FjnIHaNNgayOB73UFC9CqC9PvAT4ETHcnHxwFq7MafLV3ej2AUP91QY80t4SZy4GjbuqUDAAR8y3CNRLQMXeX5M8fOaeRR-Ey9krHQILCbGNDK8WoHNwkTJI6gMZt9jE-Z4ClObzu4M3j9x", cat: "dom-sys", description: "Prise intelligente Ingelec avec connexion WiFi intégrée." },
