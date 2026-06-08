@@ -806,14 +806,20 @@
 
     function showCategoryBadge(catCode) {
         const banner = document.getElementById('category-badge-banner');
-        const badgeSpan = document.getElementById('active-category-badge').querySelector('span');
-        badgeSpan.textContent = catCode.toUpperCase();
-        banner.classList.remove('hidden');
+        if (banner) {
+            const badgeSpan = document.getElementById('active-category-badge');
+            const span = badgeSpan ? badgeSpan.querySelector('span') : null;
+            if (span) {
+                span.textContent = catCode.toUpperCase();
+            }
+            banner.classList.remove('hidden');
+        }
     }
 
     window.clearCategoryFilter = function() {
         currentCategory = null;
-        document.getElementById('category-badge-banner').classList.add('hidden');
+        const banner = document.getElementById('category-badge-banner');
+        if (banner) banner.classList.add('hidden');
         const url = new URL(window.location);
         url.searchParams.delete('cat');
         window.history.pushState({}, '', url);
@@ -832,7 +838,8 @@
         document.getElementById('filter-stock').checked = false;
         document.getElementById('filter-ref').value = '';
         currentCategory = null;
-        document.getElementById('category-badge-banner').classList.add('hidden');
+        const banner = document.getElementById('category-badge-banner');
+        if (banner) banner.classList.add('hidden');
         window.history.pushState({}, '', window.location.pathname);
         filterProducts();
     };
