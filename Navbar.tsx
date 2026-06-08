@@ -394,8 +394,13 @@ export default function Navbar() {
           
           {/* Logo Brand area */}
           <div className="flex items-center space-x-8">
-            <Link href="/" className="flex items-center group">
-              <img src="/logo.svg" alt="ELECZAR Logo" className="h-10 w-auto" />
+            <Link href="/" className="flex items-center space-x-2 group">
+              <div className="p-1.5 bg-gray-50 border border-gray-100 rounded-lg shadow-sm group-hover:shadow transition-shadow">
+                <BoltIcon />
+              </div>
+              <span className="text-2xl font-black tracking-tight text-[#1F2937] transition-colors duration-200">
+                ELEC<span className="text-[#0055FF] group-hover:text-blue-500">ZAR</span>
+              </span>
             </Link>
             
             {/* ==========================================
@@ -741,8 +746,11 @@ export default function Navbar() {
         
         {/* Drawer Header */}
         <div className="p-4 border-b border-gray-100 flex justify-between items-center">
-          <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
-            <img src="/logo.svg" alt="ELECZAR Logo" className="h-8 w-auto" />
+          <Link href="/" className="flex items-center space-x-2" onClick={() => setMobileMenuOpen(false)}>
+            <BoltIcon />
+            <span className="text-xl font-black text-gray-800">
+              ELEC<span className="text-[#0055FF]">ZAR</span>
+            </span>
           </Link>
           <button 
             onClick={() => setMobileMenuOpen(false)}
