@@ -858,7 +858,96 @@
 
 <script>
     // Detailed list of products
-    const ALL_PRODUCTS = [];
+    const ALL_PRODUCTS = [
+        {
+            name: "Lampadaire LUXTRON",
+            brand: "Luxtron",
+            ref: "LUX-LED-IP66",
+            price: 1850,
+            status: "En Stock",
+            tag: "Nouveau",
+            img: "https://eleczar.ma/wp-content/uploads/2025/01/Luminaire-luxtron-LED-ip66-led-300x300.png",
+            cat: "ecl-public",
+            description: "Lampadaire LED Luxtron haute performance IP66 pour éclairage extérieur public.",
+            specs: {
+                "Gamme": "LUXTRON LED",
+                "Indice de Protection": "IP66",
+                "Source Lumineuse": "LED haute puissance",
+                "Tension d'entrée": "220-240V CA",
+                "Matériau": "Aluminium moulé"
+            },
+            faq: [
+                { q: "Quelle est la durée de garantie ?", a: "Ce produit bénéficie d'une garantie constructeur de 2 ans." }
+            ],
+            normes: ["CE", "IP66", "RoHS"]
+        },
+        {
+            name: "Lampadaire MEGAMAN ZDL1128",
+            brand: "Megaman",
+            ref: "MEG-ZDL1128",
+            price: 2200,
+            status: "En Stock",
+            tag: "Nouveau",
+            img: "https://eleczar.ma/wp-content/uploads/2024/12/20230706162926_4107-300x300.png",
+            cat: "ecl-public",
+            description: "Lampadaire Megaman ZDL1128, idéal pour l'éclairage de voiries et espaces publics.",
+            specs: {
+                "Gamme": "ZDL1128",
+                "Marque": "Megaman",
+                "Type": "Routier / Public",
+                "Source Lumineuse": "LED",
+                "Indice de Protection": "IP65"
+            },
+            faq: [
+                { q: "Est-il livré avec le bras de fixation ?", a: "Le bras de fixation est vendu séparément ou fourni selon les configurations de commande." }
+            ],
+            normes: ["CE", "IP65", "RoHS"]
+        },
+        {
+            name: "Lampadaire MEGAMAN ZDL1129",
+            brand: "Megaman",
+            ref: "MEG-ZDL1129",
+            price: 2450,
+            status: "En Stock",
+            tag: "Nouveau",
+            img: "https://eleczar.ma/wp-content/uploads/2021/01/20210924121306_3624-300x300.png",
+            cat: "ecl-public",
+            description: "Lampadaire extérieur Megaman ZDL1129 pour éclairage public à haute efficacité énergétique.",
+            specs: {
+                "Gamme": "ZDL1129",
+                "Marque": "Megaman",
+                "Source Lumineuse": "LED",
+                "Indice de Protection": "IP66",
+                "Tension de service": "220-240V CA"
+            },
+            faq: [
+                { q: "Quelle est la durée de vie estimée des LEDs ?", a: "Les LEDs ont une durée de vie moyenne de 50 000 heures." }
+            ],
+            normes: ["CE", "IP66", "RoHS"]
+        },
+        {
+            name: "Luminaire COBRA COB LED",
+            brand: "Cobra",
+            ref: "COB-LED-250W",
+            price: 1950,
+            status: "En Stock",
+            tag: "Nouveau",
+            img: "https://eleczar.ma/wp-content/uploads/2025/02/IP65-Garden-Park-Courtyard-Lamp-250W-LED-COB-Street-Light-2-Years-Warranty-300x300.jpg",
+            cat: "ecl-public",
+            description: "Luminaire routier COBRA COB LED 250W IP65 avec garantie de 2 ans. Parfait pour les parcs, cours et avenues.",
+            specs: {
+                "Puissance": "250 W",
+                "Technologie": "COB LED",
+                "Indice de Protection": "IP65",
+                "Garantie": "2 Ans",
+                "Usage": "Jardin, Parc, Ruelle, Cour"
+            },
+            faq: [
+                { q: "Quelle est la puissance lumineuse ?", a: "Il développe 250W de puissance avec une technologie COB LED très lumineuse." }
+            ],
+            normes: ["CE", "IP65", "RoHS"]
+        }
+    ];
 
     let currentProduct = null;
 
