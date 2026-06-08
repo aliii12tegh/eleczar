@@ -60,6 +60,12 @@ const SwitchIcon = () => (
   </svg>
 );
 
+const SecurityIcon = () => (
+  <svg className="w-5 h-5 text-[#0055FF]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+  </svg>
+);
+
 const ChevronDownIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   <svg className={`transition-transform duration-200 ${className}`} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
@@ -243,14 +249,16 @@ export default function Navbar() {
         ],
       },
       {
-        title: "Appareillage électrique",
-        icon: <SwitchIcon />,
+        title: "Sécurité & Vidéosurveillance",
+        icon: <SecurityIcon />,
         items: [
-          { name: "Interrupteurs (tous types)", href: "/catalogue?cat=app-interrupteurs" },
-          { name: "Prises (BV, industrielles, USB)", href: "/catalogue?cat=app-prises" },
-          { name: "Variateurs & gradateurs", href: "/catalogue?cat=app-variateurs" },
-          { name: "Boutons poussoirs", href: "/catalogue?cat=app-poussoirs" },
-          { name: "Timbres & sonneries", href: "/catalogue?cat=app-sonneries" },
+          { name: "Caméras IP", href: "/catalogue?cat=sec-cam-ip" },
+          { name: "Caméras analogiques", href: "/catalogue?cat=sec-cam-ana" },
+          { name: "DVR/NVR enregistreurs", href: "/catalogue?cat=sec-dvr-nvr" },
+          { name: "Interphones audio", href: "/catalogue?cat=sec-interphone-audio" },
+          { name: "Vidéophones", href: "/catalogue?cat=sec-videophone" },
+          { name: "Systèmes d'alarme", href: "/catalogue?cat=sec-alarme" },
+          { name: "Détecteurs fumée & gaz", href: "/catalogue?cat=sec-detecteur" },
         ],
       },
     ],
